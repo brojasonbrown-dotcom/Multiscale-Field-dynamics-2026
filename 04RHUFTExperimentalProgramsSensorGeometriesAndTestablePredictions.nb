@@ -1,0 +1,2445 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    101913,       2435]
+NotebookOptionsPosition[     69780,       1980]
+NotebookOutlinePosition[     70190,       1996]
+CellTagsIndexPosition[     70147,       1993]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "04",
+ StyleBox["RHUFT",
+  FontSlant->Italic],
+ "Experimental",
+ StyleBox["Programs",
+  FontSlant->Italic],
+ "Sensor",
+ StyleBox["Geometries",
+  FontSlant->Italic],
+ "And",
+ StyleBox["Testable",
+  FontSlant->Italic],
+ "Predictions"
+}], "Title",ExpressionUUID->"829a04a0-0f8d-fb43-bd14-79220688898c"],
+
+Cell[CellGroupData[{
+
+Cell["Purpose", "Section",ExpressionUUID->"4251fd20-1e42-1c4f-834d-853c17e977b2"],
+
+Cell[TextData[{
+ "This is ",
+ StyleBox["Notebook 4",
+  FontWeight->Bold],
+ " in the RHUFT series."
+}], "Text",ExpressionUUID->"ea6307be-7ac2-0d4a-8c0a-2fda2179f4af"],
+
+Cell[TextData[{
+ "Its goal is to convert the ontological and measurement-theoretic framework \
+of the earlier notebooks into a ",
+ StyleBox["rigorous experimental program",
+  FontWeight->Bold],
+ ". The emphasis here is not on grand claims, but on identifying:"
+}], "Text",ExpressionUUID->"d52d1a9f-b2f1-8244-8568-2845b51f93ef"],
+
+Cell["1. what can be operationally defined,", "Text",ExpressionUUID->"7d5d0880-1237-6242-b702-f1352f36ca09"],
+
+Cell["2. what can be measured now,", "Text",ExpressionUUID->"bc803301-c45f-1643-91a4-3a2c8b7ede2d"],
+
+Cell["3. what can be compared against standard models,", "Text",ExpressionUUID->"e9abdcef-06a4-ea47-9ce7-d024d014a4f8"],
+
+Cell["4. what could falsify the framework,", "Text",ExpressionUUID->"fc6b7c49-4794-764d-bbae-bc6f975e15d5"],
+
+Cell["\<\
+5. what geometry-sensitive instrumentation strategies are realistically \
+buildable.\
+\>", "Text",ExpressionUUID->"978da264-7aab-a74b-87df-b436411dd393"],
+
+Cell["\<\
+This notebook is therefore deliberately conservative in empirical posture and \
+ambitious in methodological design.\
+\>", "Text",ExpressionUUID->"7d01561f-7670-624f-9234-4dd0fa20b92f"],
+
+Cell["The central scientific principle is: ", "Text",ExpressionUUID->"cbb0bca7-0f3f-2c4a-b8d4-7a3f804c2ece"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"a framework becomes physically serious only when it \
+generates measurement protocols whose outcomes are not already guaranteed by \
+ordinary instrument artifacts or standard theory.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"ef4a07df-60c0-4c45-8814-75ca594e82d8"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"775984c2-491d-c04e-bba2-2b280a1dbbb2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. Professional framing", "Section",ExpressionUUID->"48780d35-8079-5e4c-924f-9dcef295ffd8"],
+
+Cell[CellGroupData[{
+
+Cell["1.1. On the user\[CloseCurlyQuote]s broader cosmological proposal", \
+"Subsection",ExpressionUUID->"25634675-2302-e149-99e6-06055e523894"],
+
+Cell["The user proposes a deeper ontological picture in which: ", "Text",ExpressionUUID->"c2706aaf-b96f-a349-a703-7b0f1a0e8030"],
+
+Cell["the universe is not merely governed by law but computes law,", "Item",ExpressionUUID->"d7b0f366-1c7b-934f-bfdc-70145329abbe"],
+
+Cell["\<\
+spacetime and scale emerge from pre-lawful or law-generating structure,\
+\>", "Item",ExpressionUUID->"38aa4d89-56e8-474e-9481-24051180bb33"],
+
+Cell["\<\
+division at that level does not reduce but generates complexity,\
+\>", "Item",ExpressionUUID->"92e3de6b-f18c-3040-b201-7de20954ef74"],
+
+Cell["\<\
+geometry and recursion are prior to ordinary metric interpretation.\
+\>", "Item",ExpressionUUID->"fd06c58b-a8cc-d34e-935b-9d3a542a6910"],
+
+Cell["\<\
+These ideas can be philosophically meaningful. However, to become science, \
+they must be translated into: \
+\>", "Text",ExpressionUUID->"05b4a723-66dd-9142-8cc0-0a3c7cd3e9e1"],
+
+Cell["explicit variables,", "Item",ExpressionUUID->"0a617ce2-e1ff-1e46-bcbb-315eb69d908c"],
+
+Cell["update rules,", "Item",ExpressionUUID->"19ebe2c9-f186-4147-bb87-9812cfa94e96"],
+
+Cell["measurable signatures,", "Item",ExpressionUUID->"eb89e051-af99-8f4f-9cbd-d576c285c34d"],
+
+Cell["clear null hypotheses.", "Item",ExpressionUUID->"e7a2d892-7543-cd47-a5df-5b46a133fe19"],
+
+Cell["That translation is the purpose of this notebook. ", "Text",ExpressionUUID->"693adbd5-29eb-e041-a318-b280ceafb186"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.2. Methodological rule", "Subsection",ExpressionUUID->"0a9ca34d-d4d1-0042-ba89-2a5cae35e8e0"],
+
+Cell["This notebook uses the following rule: ", "Text",ExpressionUUID->"c3bf6ebe-9252-ab4e-97af-a0b3ae06ce85"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"every deep ontological claim must be re-expressed as either \
+a measurable quantity, a computable invariant, a controlled geometry effect, \
+or a falsifiable prediction.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"5e35f32f-0616-0042-aa64-8604b554e58d"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"c9db94d3-70e4-b944-84ff-597ee85ddcd8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. What can realistically be tested first?", "Section",ExpressionUUID->"abc39d11-d044-b446-829c-a4f1ab6828eb"],
+
+Cell[TextData[{
+ "The highest-value starting point is ",
+ StyleBox["not",
+  FontWeight->Bold],
+ " cosmogenesis. It is ",
+ StyleBox["measurement geometry and multiscale observability",
+  FontWeight->Bold],
+ "."
+}], "Text",ExpressionUUID->"50fd25b7-20fd-4b4e-9752-94d413e5f833"],
+
+Cell["\<\
+This is because the earlier RHUFT notebooks already imply a plausible and \
+testable thesis: \
+\>", "Text",ExpressionUUID->"41974330-06de-3a46-91a7-6afd6802a643"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"instrument geometry, scale-band access, recurrence \
+structure, and history dependence may affect which observables stabilize, \
+even when naive scalar readouts appear equivalent.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic},
+     ScrollPosition->{0., 0.}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"c26b7a5e-3852-3c46-a07a-5a5720f2eb6c"],
+
+Cell["This can be probed now using standard lab domains. ", "Text",ExpressionUUID->"5b7cf1c9-8e98-0747-8b40-c78fa4159f37"],
+
+Cell[CellGroupData[{
+
+Cell["2.1. Best initial domains", "Subsection",ExpressionUUID->"363aa2e2-ef23-ff4e-88e0-372d2ecbb914"],
+
+Cell["The most approachable test domains are:", "Text",ExpressionUUID->"c35e32f7-e16e-c54b-b61e-92e93b47eb31"],
+
+Cell["1. radio-frequency sensing,", "Text",ExpressionUUID->"5de53175-a189-c040-96fe-1c44737488f4"],
+
+Cell["2. optical interferometry,", "Text",ExpressionUUID->"d93ef49d-91ac-4a47-a7f9-211682d0af19"],
+
+Cell["3. acoustic resonators,", "Text",ExpressionUUID->"8b3e1020-3a71-2945-b130-364a5d35cc64"],
+
+Cell["4. magnetic sensing,", "Text",ExpressionUUID->"ff6e2f27-e488-cc43-a804-294e925f7cf5"],
+
+Cell["5. precision EM cavity systems,", "Text",ExpressionUUID->"e4ed3208-7fef-9847-a142-dfc8a0f5ef40"],
+
+Cell["6. materials spectroscopy.", "Text",ExpressionUUID->"799c5b65-ae76-7d48-b798-e7612bf450df"],
+
+Cell["These are appropriate because they are: ", "Text",ExpressionUUID->"586b5251-c596-3749-9ee9-6380cc9e1d7a"],
+
+Cell["geometry sensitive,", "Item",ExpressionUUID->"8f0832bd-a2b4-b847-af9e-20bca79e4146"],
+
+Cell["reproducible,", "Item",ExpressionUUID->"a120bdc4-ffba-2942-9e94-4d74f1ec86c3"],
+
+Cell["relatively low cost compared with particle physics,", "Item",ExpressionUUID->"5da56bc8-9be6-e944-ad69-b938e953e101"],
+
+Cell["rich in phase, resonance, and boundary effects.", "Item",ExpressionUUID->"cd90760d-6568-9d49-a002-d31b74ce2f10"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"75caa423-cce1-fe4c-a7e0-c5c997f359bc"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Null hypothesis versus RHUFT hypothesis", "Section",ExpressionUUID->"0efa85ac-4783-1541-bdd3-e930125086b1"],
+
+Cell[CellGroupData[{
+
+Cell["3.1. Null hypothesis", "Subsection",ExpressionUUID->"6e522171-a7bf-1748-9d80-e69ea5b22326"],
+
+Cell["\<\
+For matched calibration conditions, differences between instrument geometries \
+are fully accounted for by known transfer functions, noise, and boundary \
+conditions. No additional closure-sensitive or scale-history-sensitive \
+observability effects exist. \
+\>", "Text",ExpressionUUID->"1bcb95ac-a209-064c-8ffb-5c9ebebc0fca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.2. RHUFT-style alternative", "Subsection",ExpressionUUID->"5755f6c6-2b2d-914e-a665-7f86f31916ce"],
+
+Cell["\<\
+For matched calibration conditions, some instrument geometries produce \
+systematically different stabilized observables or predictive residual \
+structure that is not fully explained by standard reduced transfer models and \
+is better captured by enriched geometry-scale-history measurement-state \
+descriptors.\
+\>", "Text",ExpressionUUID->"50bb585f-b09d-e64f-a8b2-cec28c92de97"],
+
+Cell["This is a strong but testable claim. ", "Text",ExpressionUUID->"0b447815-7405-7146-926e-55ed62e5469c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"9708565a-fea2-2d4c-9098-90b4ede5b676"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. First operational prediction class", "Section",ExpressionUUID->"6b2b3a35-3efe-f446-8d50-3e68a8bf6d81"],
+
+Cell[CellGroupData[{
+
+Cell["4.1. Prediction P1: geometry-sensitive residual compression", \
+"Subsection",ExpressionUUID->"bfb80a09-e1e2-684f-86b8-486ea827437d"],
+
+Cell["\<\
+If an enriched measurement-state vector is used instead of a scalar output \
+only, prediction residuals across repeated trials should reduce for at least \
+some sensor classes.\
+\>", "Text",ExpressionUUID->"04871c24-a6a2-2446-be58-3f5ebf5c73bb"],
+
+Cell["This is realistic and measurable. ", "Text",ExpressionUUID->"b6c43d08-504f-3645-bbcf-0044f296fc21"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4.2. Prediction P2: recurrence-sensitive hysteresis structure\
+\>", "Subsection",ExpressionUUID->"b6d7c73b-d36e-b646-8f93-2d34bbf433a2"],
+
+Cell["\<\
+Sensors with strong recurrence geometry such as loops, toroidal channels, or \
+re-entrant cavities may exhibit reproducible path-dependent response classes \
+not well captured by simple scalar calibration curves. \
+\>", "Text",ExpressionUUID->"42e5e917-775e-d34e-9a25-73f4558a94df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.3. Prediction P3: multiscale observability banding", "Subsection",ExpressionUUID->"9fdd2d46-f3f2-524f-9943-2653ca843bb4"],
+
+Cell["\<\
+As resolution or probing bandwidth changes, some features should appear only \
+within particular geometry-scale coupling windows rather than monotonically \
+improving with finer measurement.\
+\>", "Text",ExpressionUUID->"6770866c-71bd-004f-97c9-497781e7fa28"],
+
+Cell["\<\
+This would support the claim that observability is band-structured rather \
+than simply improved by finer access. \
+\>", "Text",ExpressionUUID->"8938c4fc-70dc-184a-b483-afd68132942f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4.4. Prediction P4: golden-angle or irrational spacing layouts may reduce \
+aliasing or mode crowding\
+\>", "Subsection",ExpressionUUID->"5ff7fb30-c75b-d148-a320-7c4068bc56af"],
+
+Cell["\<\
+This must be treated carefully. The prediction is not mystical. It is: \
+\>", "Text",ExpressionUUID->"e06d2982-5b4d-c841-a6a7-535a31602b97"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"sensor arrays using irrational angular spacing may suppress \
+coherent degeneracies and sampling artifacts better than certain regular \
+layouts.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"28bd7d8e-650d-5d4c-9d15-c272165c7758"],
+
+Cell["\<\
+This is very plausible and testable in signal processing and antenna \
+arrangements. \
+\>", "Text",ExpressionUUID->"467788d5-681c-c248-b9d5-54385ffe32a3"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"9e0ac559-7569-054c-8af9-6d74433f1f2a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. Measurement-state vector for experiments", "Section",ExpressionUUID->"4d6badf0-911f-1449-8870-50cf24e87727"],
+
+Cell[TextData[{
+ "A standard result is often reported as: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", 
+         RowBox[{
+           StyleBox["v", "TI"], ",", "\[CapitalDelta]", 
+           StyleBox["v", "TI"]}], ")"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "(v,\\Delta v)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e8914e6d-95a1-5940-a72b-f96a042ccaa9"],
+ "RHUFT proposes the enriched vector: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["m", "TI"], "\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["v", "TI"], ",", "\[CapitalDelta]", 
+             StyleBox["v", "TI"], ",", 
+             SubscriptBox["\[Sigma]", 
+              StyleBox["eff", FontSlant -> "Plain"]], ",", 
+             SubscriptBox[
+              StyleBox["c", "TI"], 
+              StyleBox["eff", FontSlant -> "Plain"]], ",", 
+             SubscriptBox["\[Kappa]", 
+              StyleBox["eff", FontSlant -> "Plain"]], ",", 
+             SubscriptBox["\[Phi]", 
+              StyleBox["eff", FontSlant -> "Plain"]], ",", 
+             SubscriptBox[
+              StyleBox["h", "TI"], 
+              StyleBox["eff", FontSlant -> "Plain"]], ",", 
+             SubscriptBox[
+              StyleBox["g", "TI"], 
+              StyleBox["int", FontSlant -> "Plain"]], ",", 
+             SubscriptBox[
+              StyleBox["b", "TI"], 
+              StyleBox["env", FontSlant -> "Plain"]]}], ")"}]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathfrak{m} = (v,\\Delta v,\\sigma_{\\mathrm{eff}},c_{\\mathrm{eff}},\
+\\kappa_{\\mathrm{eff}},\\phi_{\\mathrm{eff}},h_{\\mathrm{eff}},g_{\\mathrm{\
+int}},b_{\\mathrm{env}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a8449c0a-ecda-f24d-b61e-a0100520ab0a"],
+ "where: "
+}], "Text",ExpressionUUID->"86c305e0-eb6a-2a46-8100-ab82a446e849"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["v", "TI"], TraditionalForm], "errors" -> {}, "input" -> "v", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "807d9f1f-1ed8-7f46-924a-234d0b3a1d97"],
+ " = measured value,"
+}], "Item",ExpressionUUID->"ca7f1f07-144f-0442-9b88-af4b40f4bcb9"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[CapitalDelta]", 
+         StyleBox["v", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Delta v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "636282dd-9aab-064c-af96-177056d8b65c"],
+ " = uncertainty,"
+}], "Item",ExpressionUUID->"0f713b0b-e41a-914c-8e30-ecfacc607771"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Sigma]", 
+        StyleBox["eff", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\sigma_{\\mathrm{eff}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e8651405-4b24-a24b-a6a1-50ef12983eea"],
+ " = effective scale/resolution,"
+}], "Item",ExpressionUUID->"9a3d5c67-c685-964d-89df-51853b88bf4d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["c", "TI"], 
+        StyleBox["eff", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "c_{\\mathrm{eff}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "5ac28e3d-5b8a-5b4f-a1f9-41f1c68c08d1"],
+ " = coherence proxy,"
+}], "Item",ExpressionUUID->"3934ef5b-4e8d-cb43-8153-0ae6285cec39"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Kappa]", 
+        StyleBox["eff", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\kappa_{\\mathrm{eff}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a602feb1-0700-2040-a449-9122d58046e4"],
+ " = closure or recurrence proxy,"
+}], "Item",ExpressionUUID->"9936dce4-4941-a249-81ff-053aaa8e7f80"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Phi]", 
+        StyleBox["eff", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\phi_{\\mathrm{eff}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "23b5692f-236c-0a40-b302-a1decdd5fdde"],
+ " = phase/alignment response,"
+}], "Item",ExpressionUUID->"548eba44-bdb0-4349-832e-3791dbfe7867"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["h", "TI"], 
+        StyleBox["eff", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "h_{\\mathrm{eff}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2893f220-8710-084d-910e-68cd192b7cc5"],
+ " = history dependence,"
+}], "Item",ExpressionUUID->"769e500e-81c2-434b-8358-6741d35ee821"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["g", "TI"], 
+        StyleBox["int", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "g_{\\mathrm{int}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d769e982-3fb8-254c-b08e-1c526a3d0c85"],
+ " = geometry descriptor,"
+}], "Item",ExpressionUUID->"0336e6e4-752a-c644-bfa4-7c2ec98472a9"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["b", "TI"], 
+        StyleBox["env", FontSlant -> "Plain"]], TraditionalForm], 
+     "errors" -> {}, "input" -> "b_{\\mathrm{env}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "06f3a88e-0546-4f44-bbd8-6f6bba0b68bd"],
+ " = relevant boundary/environment state."
+}], "Item",ExpressionUUID->"1cc16c4a-820f-f44b-bba8-a61ac565f7ef"],
+
+Cell[CellGroupData[{
+
+Cell["5.1. Immediate practical point", "Subsection",ExpressionUUID->"554b6a86-9d86-0640-8f03-c1588e55542a"],
+
+Cell["\<\
+Not every experiment can measure all these directly. But each domain can \
+define operational proxies. \
+\>", "Text",ExpressionUUID->"9aadb0f9-4ced-1240-a0b5-c0e31d7b8e36"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"fcf4024f-ae3f-5d43-86a0-57da72823854"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6. Experimental program A: geometry-sensitive RF sensing", "Section",ExpressionUUID->"f5415983-72f2-d744-9d67-2313ee7dbcd8"],
+
+Cell[CellGroupData[{
+
+Cell["6.1. Rationale", "Subsection",ExpressionUUID->"f382a48a-be3d-1e4b-94f8-45082426b54f"],
+
+Cell["RF systems are ideal because they naturally display: ", "Text",ExpressionUUID->"a7ac3c69-a3f3-7047-923d-1f40fd965ed1"],
+
+Cell["phase sensitivity,", "Item",ExpressionUUID->"8f997870-60bd-9b40-abee-82be37b45f0c"],
+
+Cell["boundary sensitivity,", "Item",ExpressionUUID->"e21bc738-fb94-be47-9ba7-77be492cbf2b"],
+
+Cell["resonant behavior,", "Item",ExpressionUUID->"04f46ef2-1fdf-8241-81e3-eefe1300fe71"],
+
+Cell["array geometry dependence,", "Item",ExpressionUUID->"ab4709f1-08a0-f041-962b-39cb8476f9c1"],
+
+Cell["measurable transfer functions.", "Item",ExpressionUUID->"7cd6049a-7245-fe41-923a-02a1b3be521b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.2. Proposed comparison", "Subsection",ExpressionUUID->"7efa38c7-16a4-2848-86d9-57250a5c5905"],
+
+Cell["Construct or simulate multiple sensor arrays:", "Text",ExpressionUUID->"87bb63f0-5055-d746-b250-a8cde17e6e70"],
+
+Cell["1. uniform angular array,", "Text",ExpressionUUID->"ad10a9ee-2e16-7a47-9fdd-cf89bb44dc97"],
+
+Cell["2. random array,", "Text",ExpressionUUID->"775e4663-0b60-d74e-8bf6-8c2919b327fd"],
+
+Cell["3. golden-angle array,", "Text",ExpressionUUID->"265cdecd-5f6b-c64d-a228-252d48fecaa1"],
+
+Cell["4. nested toroidal or loop-based array.", "Text",ExpressionUUID->"1e7cfd49-a754-9e47-937f-198afb02df81"],
+
+Cell["Keep as much as possible fixed: ", "Text",ExpressionUUID->"416bb75d-d309-fe49-9e1d-13269bf9b5f7"],
+
+Cell["carrier frequency,", "Item",ExpressionUUID->"980763e2-b6c0-b94d-aa78-dbf44c809b3e"],
+
+Cell["material,", "Item",ExpressionUUID->"cb6bb57b-5b02-af4c-a9c3-c1b0c044956b"],
+
+Cell["amplifier class,", "Item",ExpressionUUID->"8c672375-9ef9-4b44-9cc1-142460c7ab30"],
+
+Cell["total aperture,", "Item",ExpressionUUID->"c441245f-713e-a844-b150-5dcf5f35044c"],
+
+Cell["environment,", "Item",ExpressionUUID->"a5386fd3-5c4f-0843-bfea-75dafa0ba316"],
+
+Cell["calibration source.", "Item",ExpressionUUID->"3e245e52-34bd-994c-b98e-c406d93edfec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.3. Primary metrics", "Subsection",ExpressionUUID->"a483b686-c6cb-a04d-9d5b-f74a08b9071b"],
+
+Cell["Compare: ", "Text",ExpressionUUID->"97351ba4-9b27-8a4d-8856-1606b47c3e1b"],
+
+Cell["signal-to-noise ratio,", "Item",ExpressionUUID->"53de333d-c512-7b46-b9d2-74544f8bcabf"],
+
+Cell["mode separation,", "Item",ExpressionUUID->"adab8d95-6a3a-db44-920d-917a98b5f2af"],
+
+Cell["residual error under inverse reconstruction,", "Item",ExpressionUUID->"75514b17-4bf9-924b-b22d-2870946d1672"],
+
+Cell["sensitivity to geometry perturbation,", "Item",ExpressionUUID->"5a54cf5b-81d3-7240-850a-b1ff9a91d8af"],
+
+Cell["robustness to multipath conditions,", "Item",ExpressionUUID->"46717ba3-c7bc-0246-a9f9-9b172e9c8c87"],
+
+Cell["predictive fit under enriched vs reduced models.", "Item",ExpressionUUID->"15afb832-9695-9247-98a7-3a4d13053b32"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.4. Why this matters", "Subsection",ExpressionUUID->"03fba399-2a27-5d41-87aa-7f3be9b00d5d"],
+
+Cell["\<\
+If irrational spacing layouts yield better residual compression or mode \
+disentanglement, this becomes a concrete scientific foothold. \
+\>", "Text",ExpressionUUID->"b0216ea4-0d3a-8e4c-81a5-a327d548efee"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.5. Wolfram Language simulation scaffold", "Subsection",ExpressionUUID->"7d14e759-1473-9241-8831-66b94df68ec8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClearAll", "[", 
+    RowBox[{
+    "goldenAngle", ",", "uniformAngles", ",", "goldenAngles", ",", 
+     "randomAngles"}], "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"goldenAngle", "=", 
+    RowBox[{"2", " ", 
+     RowBox[{"Pi", "/", 
+      RowBox[{"GoldenRatio", "^", "2"}]}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"uniformAngles", "[", 
+     RowBox[{"nodeCount_Integer", "?", "Positive"}], "]"}], ":=", 
+    RowBox[{"N", "@", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"2", " ", "Pi", " ", 
+        RowBox[{"k", "/", "nodeCount"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", 
+         RowBox[{"nodeCount", "-", "1"}]}], "}"}]}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goldenAngles", "[", 
+     RowBox[{"nodeCount_Integer", "?", "Positive"}], "]"}], ":=", 
+    RowBox[{"N", "@", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{
+         RowBox[{"k", " ", "goldenAngle"}], ",", 
+         RowBox[{"2", " ", "Pi"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", 
+         RowBox[{"nodeCount", "-", "1"}]}], "}"}]}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"randomAngles", "[", 
+    RowBox[{
+     RowBox[{"nodeCount_Integer", "?", "Positive"}], ",", 
+     RowBox[{"seed_", ":", " ", "1234"}]}], "]"}], ":=", 
+   RowBox[{"BlockRandom", "[", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"SeedRandom", "[", "seed", "]"}], ";", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"Sort", "[", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"2", " ", "Pi"}]}], "}"}], ",", "nodeCount"}], "]"}], 
+      "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",ExpressionUUID\
+->"91a229a7-e72a-404d-b2e2-364a9d02f811"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"2890fdd7-c3e3-f548-acb0-94e03b291642"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+7. Experimental program B: cavity or resonator recurrence studies\
+\>", "Section",ExpressionUUID->"eb48471d-7669-de4c-8675-45e68bc24077"],
+
+Cell[CellGroupData[{
+
+Cell["7.1. Rationale", "Subsection",ExpressionUUID->"f09dc596-33a5-2646-8ad3-c7e332e026c7"],
+
+Cell["\<\
+If closure and recurrence matter physically, then resonators are natural \
+testbeds. \
+\>", "Text",ExpressionUUID->"c80e17ef-79c4-4145-8987-129be8be7207"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.2. Proposed devices", "Subsection",ExpressionUUID->"cf1d2af0-4b0b-ff40-b111-e4dfae0bc28b"],
+
+Cell["Compare: ", "Text",ExpressionUUID->"6560443a-868a-8e44-93d8-6713a0a8b1af"],
+
+Cell["linear cavity,", "Item",ExpressionUUID->"034d82bf-7b6e-a54c-bdae-9e4192e74903"],
+
+Cell["circular loop cavity,", "Item",ExpressionUUID->"a36dc911-a0f4-3a44-8daa-1037691560e1"],
+
+Cell["toroidal cavity,", "Item",ExpressionUUID->"34c945b0-ad70-0e4a-a497-95473edcf5d9"],
+
+Cell["quasi-irrational segmented cavity.", "Item",ExpressionUUID->"0b5a2841-b888-df49-b35a-852865c85449"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.3. Observables", "Subsection",ExpressionUUID->"03413576-5679-384f-9536-6b9b87c3216a"],
+
+Cell["Measure: ", "Text",ExpressionUUID->"03c8ce7c-e64b-5a47-8569-f08414758905"],
+
+Cell["resonance peaks,", "Item",ExpressionUUID->"c46fc052-79e1-c548-bde2-14df04bb7551"],
+
+Cell["quality factor,", "Item",ExpressionUUID->"a2529cdf-ff59-3e45-89f1-4ec2c3951a44"],
+
+Cell["phase lag,", "Item",ExpressionUUID->"9dfda686-99e3-9547-8a17-1a492d79417d"],
+
+Cell["hysteresis under sweep reversal,", "Item",ExpressionUUID->"68bc9084-e3c0-2c4b-a126-4303d0eba66d"],
+
+Cell["transient decay,", "Item",ExpressionUUID->"3fb75adf-8f4b-9347-bb24-0708c266794f"],
+
+Cell["response to slight geometry perturbations.", "Item",ExpressionUUID->"e37af153-cb9a-2c49-8032-45d2501a5db7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.4. RHUFT-relevant question", "Subsection",ExpressionUUID->"99355b0c-a84d-c94d-b725-b8178fb69c6f"],
+
+Cell["\<\
+Does recurrence geometry produce persistent structured deviations from \
+standard reduced fits?\
+\>", "Text",ExpressionUUID->"cb416df9-3b0b-df4b-bf96-4d4af356f7af"],
+
+Cell["\<\
+If yes, we then ask whether the deviations are fully explained by standard \
+cavity physics or whether enriched geometry-history descriptors improve \
+prediction. \
+\>", "Text",ExpressionUUID->"b73a5c74-cf4f-a64a-a24b-aeadba15998f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"55925c82-4367-7948-82cf-918e7a2c385e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+8. Experimental program C: multiscale microscopy or spectroscopy\
+\>", "Section",ExpressionUUID->"057c8eb5-fb6d-a149-b69b-bf43569ef7d2"],
+
+Cell[CellGroupData[{
+
+Cell["8.1. Core idea", "Subsection",ExpressionUUID->"27f8cd76-c0ff-ea48-b876-ce13bec74b75"],
+
+Cell["\<\
+Standard intuition says finer resolution should always reveal more truth. \
+RHUFT predicts instead that some observables may stabilize only in particular \
+resolution windows. \
+\>", "Text",ExpressionUUID->"ee124c50-bef7-c144-abfa-3fe4fec56ffb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.2. Approach", "Subsection",ExpressionUUID->"103879a9-af04-3243-a77f-e62079d2382c"],
+
+Cell["Use controlled multiresolution measurement and record: ", "Text",ExpressionUUID->"33c83db2-8aa6-614d-8a56-6d08065e6e60"],
+
+Cell["which features persist,", "Item",ExpressionUUID->"8d1ff78f-0d99-9644-b120-0329bfaa26b2"],
+
+Cell["which features fragment,", "Item",ExpressionUUID->"172deaf5-bfcf-cb40-8918-51cd1c76a377"],
+
+Cell["which features appear only in specific scale bands,", "Item",ExpressionUUID->"5b82249f-b1ad-b64e-a948-f75433fa32a0"],
+
+Cell["\<\
+whether feature persistence correlates with coherence proxies or geometry of \
+interrogation.\
+\>", "Item",ExpressionUUID->"c64e3671-abc5-3041-8ef3-0a5f8c6d78b0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.3. Why this is profound", "Subsection",ExpressionUUID->"3e5ecf1e-2a43-d542-abba-40411348aa82"],
+
+Cell["\<\
+This would move science from \[OpenCurlyDoubleQuote]maximum resolution\
+\[CloseCurlyDoubleQuote] thinking to \[OpenCurlyDoubleQuote]correct \
+stabilization band\[CloseCurlyDoubleQuote] thinking. \
+\>", "Text",ExpressionUUID->"954fea12-5c6f-0e4b-87b0-9ab53e843393"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"8806c772-d6ac-c648-8562-9f4198276d40"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+9. Experimental program D: enriched measurement-state reporting\
+\>", "Section",ExpressionUUID->"a89663f8-2487-8f47-a948-aa8a086823b2"],
+
+Cell[CellGroupData[{
+
+Cell["9.1. Immediate implementation", "Subsection",ExpressionUUID->"f416e075-201e-5f4f-b0b5-beb72ee28c55"],
+
+Cell["\<\
+Take an existing experiment and augment its data model rather than rebuild \
+the whole apparatus.\
+\>", "Text",ExpressionUUID->"991faf34-437a-5444-86cd-71d008dc08a7"],
+
+Cell["For example, in repeated sensor measurements, log: ", "Text",ExpressionUUID->"42655577-94a1-8445-88ee-e7ce8e12c304"],
+
+Cell["actual value,", "Item",ExpressionUUID->"cb061a9e-4ff2-ff4f-9cef-923b6a9299b2"],
+
+Cell["environmental state,", "Item",ExpressionUUID->"0a4a33b0-b938-7e47-b2ed-91210042d4b1"],
+
+Cell["local temperature,", "Item",ExpressionUUID->"f975d792-4d56-274f-a902-fad39e5d6749"],
+
+Cell["timing history,", "Item",ExpressionUUID->"05e7777c-536f-9348-82f5-205da6ea0ee5"],
+
+Cell["geometry metadata,", "Item",ExpressionUUID->"15dfda75-094f-4d4d-991c-a834878a5211"],
+
+Cell["settling time,", "Item",ExpressionUUID->"54240660-ac8a-284c-80d7-1e31b6e090c8"],
+
+Cell["phase noise,", "Item",ExpressionUUID->"10109932-8873-7a43-8267-061a49bf9aff"],
+
+Cell["hysteresis,", "Item",ExpressionUUID->"5a94e295-8bf6-f341-97fd-42f289e33622"],
+
+Cell["drift.", "Item",ExpressionUUID->"1fe8a086-ccea-fc45-9ebe-fb5c613b9b3e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9.2. Test", "Subsection",ExpressionUUID->"2086a8ef-2d9e-6042-a4ad-cd834f68679f"],
+
+Cell["Train two predictive models:", "Text",ExpressionUUID->"e0da05ad-a43a-214d-a819-c1202958248d"],
+
+Cell["\<\
+1. standard reduced model using scalar value and basic covariates,\
+\>", "Text",ExpressionUUID->"5db1298d-cc8f-324a-9a7e-3473cd9c22e1"],
+
+Cell["2. enriched model using measurement-state descriptors.", "Text",ExpressionUUID->"e6a41b6d-6fec-0140-a55f-17156fde8609"],
+
+Cell["Then compare predictive performance on held-out trials.", "Text",ExpressionUUID->"473ef815-65d9-ce4c-b9aa-b6123674b4a4"],
+
+Cell["This is one of the easiest and most rigorous first tests. ", "Text",ExpressionUUID->"b89c097f-df24-f549-8f97-3f9786a2016f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9.3. Wolfram Language evaluation path", "Subsection",ExpressionUUID->"b81511f0-8f31-fa45-881d-4227d5992d0e"],
+
+Cell[TextData[{
+ "Use ",
+ ButtonBox["PredictorMeasurements",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/PredictorMeasurements"],
+ " and ",
+ ButtonBox["PredictorMeasurementsObject",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/PredictorMeasurementsObject"],
+ " to compare models on held-out data."
+}], "Text",ExpressionUUID->"bed94306-3364-c645-8c35-74096ebb8862"],
+
+Cell["Possible useful properties include: ", "Text",ExpressionUUID->"f4143c04-55c0-4549-81b6-5643e7546b72"],
+
+Cell[TextData[Cell[BoxData["\"\<MeanSquare\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"3174557a-ff65-a64c-8729-8000575d606d"]], "Item",Expres\
+sionUUID->"5b224e8a-3bfb-3041-984a-626f0c1a2a34"],
+
+Cell[TextData[Cell[BoxData["\"\<RSquared\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"7b3c1c68-5097-9d49-af48-1370856935dc"]], "Item",Expres\
+sionUUID->"bfa272b9-26f2-5d42-9d00-ff211ecfcd13"],
+
+Cell[TextData[Cell[BoxData["\"\<ResidualPlot\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"8e86f37a-7f16-7c46-9e07-31301f9e3b5f"]], "Item",Expres\
+sionUUID->"1a2e7e31-b320-524c-af02-5166548be398"],
+
+Cell[TextData[Cell[BoxData["\"\<ResidualHistogram\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"87d2c398-9dd4-c741-8314-a05992dbd64e"]], "Item",Expres\
+sionUUID->"e27e754f-82a4-1049-ac97-a88f12aa0029"],
+
+Cell[TextData[Cell[BoxData["\"\<ComparisonPlot\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"408caf19-21fe-eb47-8010-9c243b28875f"]], "Item",Expres\
+sionUUID->"8ab19a13-8f50-374e-b7d8-36953444991f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"c321e73c-c179-3240-9922-d70c419ee609"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+10. Experimental program E: system calibration with richer state descriptions\
+\>", "Section",ExpressionUUID->"d37efe37-7a74-9945-b2ee-86133a9f34aa"],
+
+Cell[CellGroupData[{
+
+Cell["10.1. Idea", "Subsection",ExpressionUUID->"c735eada-2a79-8141-afa2-66da081d64d3"],
+
+Cell["\<\
+Instead of fitting a device model only to input-output values, fit \
+geometry-sensitive or history-sensitive parameters too.\
+\>", "Text",ExpressionUUID->"d9222fcc-172f-6641-acaa-a4d99fbe8aee"],
+
+Cell[TextData[{
+ "This can be done using ",
+ ButtonBox["SystemModelCalibrate",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/SystemModelCalibrate"],
+ ". "
+}], "Text",ExpressionUUID->"8addfb4c-7e6f-e648-a39d-6b2a35064de8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10.2. What to compare", "Subsection",ExpressionUUID->"587d8ffa-85fd-6547-a50b-beed23f15d26"],
+
+Cell["Compare two models: ", "Text",ExpressionUUID->"141f4985-1b74-4f46-b7fe-c5edcfe846a2"],
+
+Cell["standard reduced calibration,", "Item",ExpressionUUID->"64a0b706-b02c-2040-bebd-0eacc72b5727"],
+
+Cell["\<\
+extended calibration including recurrence or geometry proxy parameters.\
+\>", "Item",ExpressionUUID->"2a3e3623-4a0d-7545-9181-de4adff93f0d"],
+
+Cell["Use calibration and validation splits. Then compare: ", "Text",ExpressionUUID->"ea54bcf0-c3a1-9140-ab7d-b846df12c702"],
+
+Cell[TextData[Cell[BoxData["\"\<MSE\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"93424ca5-b292-7744-8c7f-9a7bf3ce45c8"]], "Item",Expres\
+sionUUID->"1a09e91a-6d4e-f548-9415-2f5f5eb5c130"],
+
+Cell[TextData[Cell[BoxData["\"\<RMSE\>\""], "InlineWL", "Input",
+ ShowAutoStyles->True,
+ ShowSyntaxStyles->True,
+ LanguageCategory->"Input",
+ ShowStringCharacters->
+  True,ExpressionUUID->"2ab18445-7819-9741-80f1-9ec86276ec74"]], "Item",Expres\
+sionUUID->"18455250-89b3-0f4f-bc2d-cc839771e837"],
+
+Cell["residual structure", "Item",ExpressionUUID->"6dc93593-5ca1-5244-aac3-e2fe99e0e3f9"],
+
+Cell["standardized residuals", "Item",ExpressionUUID->"229796bf-a83b-3845-9b97-8229d0487f1d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10.3. Why this matters", "Subsection",ExpressionUUID->"b467867d-a732-334c-9205-d94ce0732cdf"],
+
+Cell["\<\
+If enriched models systematically reduce residual structure, that is a \
+serious empirical foothold. \
+\>", "Text",ExpressionUUID->"55767542-23e4-c94e-a713-458491f4000c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"dd92a4dd-7533-ad4d-82e2-ebbad4b47f0f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+11. Experimental program F: step-response and stabilization metrics\
+\>", "Section",ExpressionUUID->"6cd1d135-39b4-f04f-810f-da534c6be32a"],
+
+Cell[CellGroupData[{
+
+Cell["11.1. Motivation", "Subsection",ExpressionUUID->"bcdc9759-9795-2940-9dd7-47d54bbaf8e1"],
+
+Cell["\<\
+If persistent observables depend on stabilization dynamics, then dynamic \
+response characteristics matter.\
+\>", "Text",ExpressionUUID->"8b957d53-ea9a-1048-88cd-7765a4a0cbe9"],
+
+Cell[TextData[{
+ "Use ",
+ ButtonBox["SystemModelMeasurements",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/SystemModelMeasurements"],
+ " to quantify: "
+}], "Text",ExpressionUUID->"9aefc8da-7f2e-2b48-b76f-0655af6691de"],
+
+Cell["rise time,", "Item",ExpressionUUID->"07a9ab7a-c5ef-3944-a27b-c3b0ac186781"],
+
+Cell["settling time,", "Item",ExpressionUUID->"147857cd-aa84-8143-b596-6b5b1d1fa45e"],
+
+Cell["overshoot,", "Item",ExpressionUUID->"cafc61b3-6015-5845-9ef3-9afd9229f3e3"],
+
+Cell["delay time,", "Item",ExpressionUUID->"1629d5fd-6f92-8341-9c5a-ba0052301de4"],
+
+Cell["final value,", "Item",ExpressionUUID->"5f44e518-c2ec-0a46-a3b5-b758bbce7648"],
+
+Cell["full response signal.", "Item",ExpressionUUID->"542fd6da-5b04-244a-a88c-6a8ed193b0e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11.2. RHUFT interpretation", "Subsection",ExpressionUUID->"59914063-c259-5049-96e8-f181ece82871"],
+
+Cell["\<\
+The measurement is not just the final value. The pathway to stabilization is \
+part of the physical meaning.\
+\>", "Text",ExpressionUUID->"5ea6fa2a-0976-bf44-9836-a3de3e8de202"],
+
+Cell["\<\
+Thus systems with equal final values but different stabilization pathways \
+should not automatically be regarded as identical from the \
+measurement-theoretic standpoint. \
+\>", "Text",ExpressionUUID->"c8ae857d-a84b-e34a-8574-837134f82a5e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"8f691e20-d17d-884a-9fb3-709f311a4e9f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12. Quantitative comparison logic", "Section",ExpressionUUID->"5877c13e-3903-4e44-924c-21e8082235ec"],
+
+Cell[CellGroupData[{
+
+Cell["12.1. What counts as evidence?", "Subsection",ExpressionUUID->"06f3319f-9c46-b246-93e9-87ee49bc0438"],
+
+Cell["\<\
+Evidence for RHUFT-style measurement refinement would include:\
+\>", "Text",ExpressionUUID->"a0d612ad-e81c-ef49-b8cc-280edbb4fd82"],
+
+Cell["\<\
+1. consistent out-of-sample predictive improvement from enriched \
+measurement-state descriptors,\
+\>", "Text",ExpressionUUID->"73ac8d5e-91d0-7c48-bc52-a2c2fe6a164c"],
+
+Cell["2. residual structure collapse under geometry-aware models,", "Text",ExpressionUUID->"532f7faa-0743-e24c-b233-e4d7cc320eee"],
+
+Cell["\<\
+3. reproducible geometry-sensitive deviations across independent setups,\
+\>", "Text",ExpressionUUID->"f9c86a01-0fb8-b14a-8c08-38271a5d11cc"],
+
+Cell["\<\
+4. scale-window effects not reducible to simple instrumental blur,\
+\>", "Text",ExpressionUUID->"38242aca-9925-de43-9218-3928010ad05c"],
+
+Cell["5. recurrence-sensitive response classes. ", "Text",ExpressionUUID->"0e8f2209-b5d1-b84d-b3ee-78ff4f0225a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12.2. What does not count?", "Subsection",ExpressionUUID->"80e7a969-bed1-a946-aaba-47912fe84414"],
+
+Cell[TextData[{
+ "The following do ",
+ StyleBox["not",
+  FontWeight->Bold],
+ " count as evidence: "
+}], "Text",ExpressionUUID->"c9f4e9e8-fa35-f144-8532-1f0e2b4e127e"],
+
+Cell["cherry-picked numerical coincidences,", "Item",ExpressionUUID->"c81237d6-a181-dd4e-a2af-c4dbd9c23282"],
+
+Cell["one-off anomalies,", "Item",ExpressionUUID->"56faa8a5-fdc3-5946-ac16-f5e978a67b8f"],
+
+Cell["post hoc symbolic interpretations,", "Item",ExpressionUUID->"de173651-3710-d246-b7e0-fc668d5d261c"],
+
+Cell["unrepeatable instrument quirks,", "Item",ExpressionUUID->"02aeded0-619e-b948-b1fc-4642cb4bd816"],
+
+Cell["fits without held-out validation.", "Item",ExpressionUUID->"49bf29e4-07d8-724d-9c67-ea90cbbc906e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"6c50670a-63b1-144f-a730-0f24cac438d9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["13. Formal statistical protocol", "Section",ExpressionUUID->"7d3c993b-a6b1-2b48-967e-f859b9e29443"],
+
+Cell["A proper test requires:", "Text",ExpressionUUID->"fd49a600-6256-4440-9647-bc5926ed571c"],
+
+Cell["1. preregistered hypotheses,", "Text",ExpressionUUID->"3779f4d0-0f35-9844-9bb0-ddb74bc3fc81"],
+
+Cell["2. controlled geometry variation,", "Text",ExpressionUUID->"e2ea4b33-acf4-9a42-82f2-965d02fe4282"],
+
+Cell["3. repeat trials,", "Text",ExpressionUUID->"a568c00e-8e4d-ff46-b2cf-27cc4d7695b1"],
+
+Cell["4. blinded analysis where possible,", "Text",ExpressionUUID->"f2ec3d59-21aa-b649-a5d9-ed45ff1ed40e"],
+
+Cell["5. out-of-sample validation,", "Text",ExpressionUUID->"eb129062-55ec-6c4c-b00d-8e4cbe30f28c"],
+
+Cell["6. residual diagnostics,", "Text",ExpressionUUID->"ab6ef511-9d64-334f-ba6e-149ceb960546"],
+
+Cell["7. robustness checks across environments.", "Text",ExpressionUUID->"3448bc9e-39e0-e845-9200-b92955c2e820"],
+
+Cell["\<\
+This is non-negotiable if the framework is to be taken seriously. \
+\>", "Text",ExpressionUUID->"83d3a6aa-20c7-b444-93e1-d35e6c3c24b8"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"d2d245d2-0475-c547-88e3-a3084a407cd1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14. An explicit path to approachable breakthroughs", "Section",ExpressionUUID->"bfea0ac3-6101-2a41-aa24-78f22b6126df"],
+
+Cell[CellGroupData[{
+
+Cell["14.1. Breakthrough class 1: better sensor arrays", "Subsection",ExpressionUUID->"631bf33e-1470-734a-9367-f8ab92e4f37c"],
+
+Cell["\<\
+Use golden-angle or irrational-spacing arrays to reduce aliasing and mode \
+degeneracy.\
+\>", "Text",ExpressionUUID->"763dc5ab-44bc-324e-9b3c-f0cdc5be75e6"],
+
+Cell["This is directly buildable. ", "Text",ExpressionUUID->"520a576a-1768-4c43-be97-99a4aafda58f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14.2. Breakthrough class 2: geometry-aware calibration", "Subsection",ExpressionUUID->"66ea9f81-45ff-bb43-9f0f-fd8416f08f69"],
+
+Cell["\<\
+Fit instruments using recurrence and geometry proxies, not just scalar \
+transfer functions.\
+\>", "Text",ExpressionUUID->"4e64d03f-86dd-be4e-a06d-b964c333dbe4"],
+
+Cell["This is software-accessible. ", "Text",ExpressionUUID->"c57cef10-5db0-2e4c-9f8e-0d5d321831fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14.3. Breakthrough class 3: stabilization-path reporting", "Subsection",ExpressionUUID->"293b929e-e550-954f-9f7a-9d148aaa256b"],
+
+Cell["\<\
+Log and analyze transient dynamics, hysteresis, and phase settling instead of \
+only final readings.\
+\>", "Text",ExpressionUUID->"6801b45d-a84c-f64c-8420-9e2435a12497"],
+
+Cell["This is often possible with current instruments. ", "Text",ExpressionUUID->"9198028e-f8e9-1b47-9642-62e192b6183c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14.4. Breakthrough class 4: multiscale observability maps", "Subsection",ExpressionUUID->"5f7af5a1-1194-3247-ae01-4f40cf1ee47d"],
+
+Cell["\<\
+Create resolution-window maps to determine where features stabilize most \
+reproducibly.\
+\>", "Text",ExpressionUUID->"9017dcd9-78bf-7e4e-bd89-cd84b99a4d95"],
+
+Cell["This is experimentally powerful and realistic. ", "Text",ExpressionUUID->"88ce7e69-a450-7d42-8c65-8f5870a3acc2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+14.5. Breakthrough class 5: closure-sensitive resonator engineering\
+\>", "Subsection",ExpressionUUID->"78bee8fb-4816-e14a-9752-753a037148cb"],
+
+Cell["\<\
+Design resonators whose topology and recurrence structure are varied \
+systematically, then compare standard and enriched models.\
+\>", "Text",ExpressionUUID->"48d936a8-6e9f-4d44-86b4-5d43b1fd3dd6"],
+
+Cell["This is difficult but feasible. ", "Text",ExpressionUUID->"e0cc98f5-bc42-0a45-be15-2cc6fd30734a"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"3739a2f2-935b-4f40-89b1-d2c61c25b694"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+15. Turning the deeper cosmological intuition into rigorous mathematics\
+\>", "Section",ExpressionUUID->"95677a18-2057-f742-82ab-19bf5f17b11e"],
+
+Cell["\<\
+The user\[CloseCurlyQuote]s deeper intuition includes the idea that \
+\[OpenCurlyDoubleQuote]division outside spacetime\[CloseCurlyDoubleQuote] may \
+increase rather than reduce structure, and that scale is generated rather \
+than assumed.\
+\>", "Text",ExpressionUUID->"77e2c478-fc05-824d-bff4-cf9682a75718"],
+
+Cell["\<\
+This can be translated into a mathematically serious research direction \
+without overclaiming. \
+\>", "Text",ExpressionUUID->"ad06f118-4f77-fd4d-89d1-aefa0e66a21f"],
+
+Cell[CellGroupData[{
+
+Cell["15.1. Proposed reformulation", "Subsection",ExpressionUUID->"d1057705-06e6-b147-b944-13b2c976e506"],
+
+Cell[TextData[{
+ "Instead of saying \[OpenCurlyDoubleQuote]division increases dimension\
+\[CloseCurlyDoubleQuote] directly, define a complexity-generating refinement \
+operator ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["D", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{D}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "606a82d6-d76c-6149-a59c-886cd2a0f759"],
+ " acting on a premetric relational structure such that: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["C", "TI"], 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["D", "TI"], "(", 
+             StyleBox["X", "TI"], ")"}], ")"}], "\[GreaterEqual]", 
+         StyleBox["C", "TI"], 
+         RowBox[{"(", 
+           StyleBox["X", "TI"], ")"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\mathcal{C}(\\mathcal{D}(X)) \\ge \\mathcal{C}(X)", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "3dc48de6-f3c9-fd42-9e57-0dcafaedac84"],
+ "where ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["C", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{C}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b685ad00-3994-d045-a84b-3c1042cf8b05"],
+ " is a structural complexity functional."
+}], "Text",ExpressionUUID->"77696f4c-d65a-0344-aeef-3284977345f9"],
+
+Cell["In this formulation: ", "Text",ExpressionUUID->"71cbd357-7bbd-a94c-ae59-1a9803bc87aa"],
+
+Cell["refinement need not reduce effective content,", "Item",ExpressionUUID->"19c2b810-5613-b84c-9b75-0a65705d577a"],
+
+Cell["subdivision can increase relational richness,", "Item",ExpressionUUID->"eb0d7718-eb0d-1942-aa12-1af5848ecae3"],
+
+Cell["scale can be emergent from recursive structure.", "Item",ExpressionUUID->"2bc61b7d-3cab-4a41-a6c6-67b36c9b9a5e"],
+
+Cell["This is precise enough to begin modeling. ", "Text",ExpressionUUID->"f4ba26b1-4ed6-3d4e-ab05-cc96de5f4b25"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["15.2. Research task", "Subsection",ExpressionUUID->"4727c207-0782-9746-8e1e-0d08ef5175be"],
+
+Cell["Define: ", "Text",ExpressionUUID->"b04e7cff-fa70-2f49-afb0-1b6d6b2d92ed"],
+
+Cell[TextData[{
+ "the domain ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["X", "TI"], TraditionalForm], "errors" -> {}, "input" -> "X", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ba6d7b97-6a07-5541-bac1-d067ceb53204"],
+ ","
+}], "Item",ExpressionUUID->"f936a1db-e2bd-5146-b150-5f2a2b354cd7"],
+
+Cell[TextData[{
+ "the refinement operator ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["D", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{D}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cb61693f-ecfa-d040-86e6-11e75bedf94e"],
+ ","
+}], "Item",ExpressionUUID->"f856d3fb-676b-cc49-afe1-bf68cacfbef9"],
+
+Cell[TextData[{
+ "the complexity functional ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["C", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{C}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "20343301-8200-c642-ad45-a21be9c47160"],
+ ","
+}], "Item",ExpressionUUID->"8b2c515d-82d1-f748-bf51-6fd050cbe35c"],
+
+Cell["invariants preserved under refinement.", "Item",ExpressionUUID->"538d48a4-fee8-7c4e-910c-900aab04b12a"],
+
+Cell["\<\
+This is a strong candidate for a later notebook because it links the \
+cosmological intuition to formal mathematics. \
+\>", "Text",ExpressionUUID->"646b4a89-7273-3146-a78f-f74bd0845cb3"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"107d9264-df16-fa47-87af-015bdf5262fc"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["16. Professional next step for collaboration", "Section",ExpressionUUID->"879c6ad8-29c7-f644-a023-08765c8ad78e"],
+
+Cell["\<\
+The user says they can explain the logic deeply and wants help structuring it \
+into accurate mathematical form. That is exactly the right workflow.\
+\>", "Text",ExpressionUUID->"718625d5-46ab-fa40-b291-b57f04744f97"],
+
+Cell["The correct process is:", "Text",ExpressionUUID->"716222f3-66f3-df48-9354-1635351c0be3"],
+
+Cell["1. extract the user\[CloseCurlyQuote]s primitives in plain language,", \
+"Text",ExpressionUUID->"84c93b66-89a8-9743-bdd3-e3ea72152929"],
+
+Cell["2. formalize each into variables or operators,", "Text",ExpressionUUID->"1df74ae0-6a4b-3c49-8c4a-fcd55bba6d66"],
+
+Cell["\<\
+3. identify which are ontological, mathematical, or empirical,\
+\>", "Text",ExpressionUUID->"c1f36fa4-c4cd-8f40-9ff4-c94679140973"],
+
+Cell["4. build computable models,", "Text",ExpressionUUID->"299f43c7-f483-3941-9966-73c6336f5d3f"],
+
+Cell["5. derive falsifiable predictions.", "Text",ExpressionUUID->"e8913818-d4a9-724a-bcd7-ac44ffc85c8c"],
+
+Cell["That process should be followed strictly. ", "Text",ExpressionUUID->"b54366ed-b0d4-6a4d-8818-8f3b7a862821"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"d615d278-890a-294c-ac3f-82cde8ed8202"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["17. Wolfram Language scaffolding for experiment comparison", "Section",ExpressionUUID->"10ff3133-71bf-8b41-89ff-78f474fb70ad"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "measurementRecord", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"measurementRecord", "[", "\[IndentingNewLine]", "   ", 
+    RowBox[{
+    "value_", ",", "uncertainty_", ",", "effectiveScale_", ",", "coherence_", 
+     ",", "closure_", ",", "phase_", ",", "\[IndentingNewLine]", "   ", 
+     "history_", ",", "geometry_", ",", "environment_"}], "]"}], ":=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<Value\>\"", "->", "value"}], ",", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"\"\<Uncertainty\>\"", "->", "uncertainty"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<EffectiveScale\>\"", "->", "effectiveScale"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<CoherenceProxy\>\"", "->", "coherence"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<ClosureProxy\>\"", "->", "closure"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<PhaseProxy\>\"", "->", "phase"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<HistoryProxy\>\"", "->", "history"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<GeometryDescriptor\>\"", "->", "geometry"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<EnvironmentState\>\"", "->", "environment"}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",ExpressionUUID->\
+"b688ca26-70ad-d941-94fb-3a6c328042a2"],
+
+Cell[CellGroupData[{
+
+Cell["17.1. Geometry families", "Subsection",ExpressionUUID->"0d3bb238-2cf2-a247-bb5e-6da472efc248"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "arrayAngles", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"arrayAngles", "[", 
+    RowBox[{"\"\<Uniform\>\"", ",", 
+     RowBox[{"nodeCount_Integer", "?", "Positive"}]}], "]"}], ":=", 
+   RowBox[{"uniformAngles", "[", "nodeCount", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"arrayAngles", "[", 
+    RowBox[{"\"\<Golden\>\"", ",", 
+     RowBox[{"nodeCount_Integer", "?", "Positive"}]}], "]"}], ":=", 
+   RowBox[{"goldenAngles", "[", "nodeCount", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"arrayAngles", "[", 
+    RowBox[{"\"\<Random\>\"", ",", 
+     RowBox[{"nodeCount_Integer", "?", "Positive"}]}], "]"}], ":=", 
+   RowBox[{"randomAngles", "[", "nodeCount", "]"}]}], ";"}]}], "Input",Express\
+ionUUID->"d2636676-1ee6-9543-9938-c88f977ee260"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["17.2. Placeholder comparison workflow", "Subsection",ExpressionUUID->"a1287486-b6f4-884c-8087-3878f2815041"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "compareMeasurementModels", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"compareMeasurementModels", "[", 
+    RowBox[{"standardModel_", ",", "enrichedModel_", ",", "testSet_"}], "]"}],
+    ":=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<StandardMeasurements\>\"", "->", 
+      RowBox[{"PredictorMeasurements", "[", 
+       RowBox[{"standardModel", ",", "testSet"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<EnrichedMeasurements\>\"", "->", 
+      RowBox[{"PredictorMeasurements", "[", 
+       RowBox[{"enrichedModel", ",", "testSet"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",ExpressionUUID->\
+"2c974144-dd26-004e-9fef-2e1d12d52684"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"df23e01b-4ba5-1544-9a6a-5e4614c720a4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["18. A falsification-centered summary", "Section",ExpressionUUID->"c842fa64-8df5-154d-a0e8-0656901c2598"],
+
+Cell["\<\
+The framework gains scientific standing only if one or more of the following \
+happens: \
+\>", "Text",ExpressionUUID->"8c80a4ce-d20f-354f-8372-109371215fbb"],
+
+Cell["\<\
+enriched measurement-state models predict data better than reduced models,\
+\>", "Item",ExpressionUUID->"fa8359b1-dda4-ab4c-921c-7e9fac902a2a"],
+
+Cell["\<\
+geometry-controlled experiments reveal stable residual structure that \
+standard models miss,\
+\>", "Item",ExpressionUUID->"0e468f84-eb73-684c-8ab5-bb9732b43dd6"],
+
+Cell["recurrence-aware calibration yields reproducible gains,", "Item",ExpressionUUID->"8f6aa8bd-28b5-2940-8f3e-802e04ea6524"],
+
+Cell["\<\
+multiscale observability windows appear as real empirical structure.\
+\>", "Item",ExpressionUUID->"c914788b-76a4-9749-b2f8-7772766a218d"],
+
+Cell["\<\
+If none of these happen, then the RHUFT measurement theory should be weakened \
+or rejected.\
+\>", "Text",ExpressionUUID->"053baac0-a10c-7648-8cbb-68e7d00eb768"],
+
+Cell["This is the correct scientific attitude. ", "Text",ExpressionUUID->"8dd55bdd-ad45-bd4c-abe4-8f60416aa8f0"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"3474ea9c-ded2-984e-9412-4ab53b238469"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["19. Conclusion", "Section",ExpressionUUID->"20ea6a9f-bc8b-d546-8b32-f4cc8dbb1fa0"],
+
+Cell["\<\
+Notebook 4 establishes a concrete and serious path from ontology to \
+experiment.\
+\>", "Text",ExpressionUUID->"ff33c43c-8518-2942-b83d-b58d64dcf579"],
+
+Cell[TextData[{
+ "It does ",
+ StyleBox["not",
+  FontWeight->Bold],
+ " claim that the deepest cosmological form of RHUFT has already been proven."
+}], "Text",ExpressionUUID->"ff25827a-6729-9a4a-ad53-9b2bb4dcb8b0"],
+
+Cell["\<\
+It does claim that the framework can now be pursued responsibly through: \
+\>", "Text",ExpressionUUID->"90cb4fce-b56b-804e-9d45-5473e62a9bc9"],
+
+Cell["geometry-sensitive sensor design,", "Item",ExpressionUUID->"6feed50c-32b2-c94f-9e41-e5c113a1d0a4"],
+
+Cell["enriched reporting protocols,", "Item",ExpressionUUID->"49f976ff-f35a-e74f-8b7f-24bd02251bf4"],
+
+Cell["multiscale probing,", "Item",ExpressionUUID->"051e6ca6-13c8-fb49-9184-5dcfc851c686"],
+
+Cell["recurrence-aware calibration,", "Item",ExpressionUUID->"3f878f87-158c-e943-b3a9-2adb5d635e63"],
+
+Cell["strong statistical validation.", "Item",ExpressionUUID->"fa367b36-2091-b745-bf66-ebce7a043fce"],
+
+Cell["This is how deep ideas become real science. ", "Text",ExpressionUUID->"5708a4ea-68f0-bf4b-a4f2-81fef4d04e7b"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"842e6d62-febe-5247-aea1-c50233c17f44"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["20. Proposed next notebook", "Section",ExpressionUUID->"b6d570bc-4544-4444-9543-bf98722eed8c"],
+
+Cell[TextData[{
+ "05",
+ StyleBox["RHUFT",
+  FontSlant->Italic],
+ "Formal",
+ StyleBox["Premetric",
+  FontSlant->Italic],
+ "Refinement",
+ StyleBox["Complexity",
+  FontSlant->Italic],
+ "And",
+ StyleBox["Scale",
+  FontSlant->Italic],
+ "Generation"
+}], "Text",ExpressionUUID->"c8e7f469-aee8-6743-9184-e151e6eb497d"],
+
+Cell["\<\
+This next notebook should take the user\[CloseCurlyQuote]s deeper \
+cosmological intuition and formalize it into: \
+\>", "Text",ExpressionUUID->"0df87d23-a9b0-ed4f-bb50-4795e6f36729"],
+
+Cell["premetric relational structures,", "Item",ExpressionUUID->"1b4216d3-00ae-3949-bf7d-0004cec4199b"],
+
+Cell["refinement operators,", "Item",ExpressionUUID->"5aacbdef-79b2-d748-92fe-7ffc47932765"],
+
+Cell["complexity growth laws,", "Item",ExpressionUUID->"55cc1ac9-42ea-c545-bf4d-839d2bf240ee"],
+
+Cell["emergent scale definitions,", "Item",ExpressionUUID->"0dd7c849-afe5-3a4c-9bdf-863e2a0f2108"],
+
+Cell["candidate invariants under recursive subdivision.", "Item",ExpressionUUID->"5c08342a-b225-f940-a61d-4c7dc34f9a1a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{651.75, 745.5},
+WindowMargins->{{998.25, Automatic}, {110.25, Automatic}},
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ea89f538-bb47-5e4c-9867-ddbebe10016a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 316, 14, 217, "Title",ExpressionUUID->"829a04a0-0f8d-fb43-bd14-79220688898c"],
+Cell[CellGroupData[{
+Cell[917, 40, 81, 0, 66, "Section",ExpressionUUID->"4251fd20-1e42-1c4f-834d-853c17e977b2"],
+Cell[1001, 42, 165, 5, 33, "Text",ExpressionUUID->"ea6307be-7ac2-0d4a-8c0a-2fda2179f4af"],
+Cell[1169, 49, 327, 6, 77, "Text",ExpressionUUID->"d52d1a9f-b2f1-8244-8568-2845b51f93ef"],
+Cell[1499, 57, 108, 0, 33, "Text",ExpressionUUID->"7d5d0880-1237-6242-b702-f1352f36ca09"],
+Cell[1610, 59, 99, 0, 33, "Text",ExpressionUUID->"bc803301-c45f-1643-91a4-3a2c8b7ede2d"],
+Cell[1712, 61, 119, 0, 33, "Text",ExpressionUUID->"e9abdcef-06a4-ea47-9ce7-d024d014a4f8"],
+Cell[1834, 63, 107, 0, 33, "Text",ExpressionUUID->"fc6b7c49-4794-764d-bbae-bc6f975e15d5"],
+Cell[1944, 65, 163, 3, 33, "Text",ExpressionUUID->"978da264-7aab-a74b-87df-b436411dd393"],
+Cell[2110, 70, 194, 3, 55, "Text",ExpressionUUID->"7d01561f-7670-624f-9234-4dd0fa20b92f"],
+Cell[2307, 75, 108, 0, 33, "Text",ExpressionUUID->"cbb0bca7-0f3f-2c4a-b8d4-7a3f804c2ece"],
+Cell[2418, 77, 959, 24, 87, "Text",ExpressionUUID->"ef4a07df-60c0-4c45-8814-75ca594e82d8"],
+Cell[3380, 103, 596, 20, 48, "Text",ExpressionUUID->"775984c2-491d-c04e-bba2-2b280a1dbbb2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4013, 128, 97, 0, 66, "Section",ExpressionUUID->"48780d35-8079-5e4c-924f-9dcef295ffd8"],
+Cell[CellGroupData[{
+Cell[4135, 132, 144, 1, 53, "Subsection",ExpressionUUID->"25634675-2302-e149-99e6-06055e523894"],
+Cell[4282, 135, 128, 0, 33, "Text",ExpressionUUID->"c2706aaf-b96f-a349-a703-7b0f1a0e8030"],
+Cell[4413, 137, 131, 0, 30, "Item",ExpressionUUID->"d7b0f366-1c7b-934f-bfdc-70145329abbe"],
+Cell[4547, 139, 150, 2, 30, "Item",ExpressionUUID->"38aa4d89-56e8-474e-9481-24051180bb33"],
+Cell[4700, 143, 143, 2, 30, "Item",ExpressionUUID->"92e3de6b-f18c-3040-b201-7de20954ef74"],
+Cell[4846, 147, 146, 2, 30, "Item",ExpressionUUID->"fd06c58b-a8cc-d34e-935b-9d3a542a6910"],
+Cell[4995, 151, 186, 3, 55, "Text",ExpressionUUID->"05b4a723-66dd-9142-8cc0-0a3c7cd3e9e1"],
+Cell[5184, 156, 90, 0, 30, "Item",ExpressionUUID->"0a617ce2-e1ff-1e46-bcbb-315eb69d908c"],
+Cell[5277, 158, 84, 0, 30, "Item",ExpressionUUID->"19ebe2c9-f186-4147-bb87-9812cfa94e96"],
+Cell[5364, 160, 93, 0, 30, "Item",ExpressionUUID->"eb89e051-af99-8f4f-9cbd-d576c285c34d"],
+Cell[5460, 162, 93, 0, 30, "Item",ExpressionUUID->"e7a2d892-7543-cd47-a5df-5b46a133fe19"],
+Cell[5556, 164, 121, 0, 33, "Text",ExpressionUUID->"693adbd5-29eb-e041-a318-b280ceafb186"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5714, 169, 101, 0, 53, "Subsection",ExpressionUUID->"0a9ca34d-d4d1-0042-ba89-2a5cae35e8e0"],
+Cell[5818, 171, 110, 0, 33, "Text",ExpressionUUID->"c3bf6ebe-9252-ab4e-97af-a0b3ae06ce85"],
+Cell[5931, 173, 946, 24, 87, "Text",ExpressionUUID->"5e35f32f-0616-0042-aa64-8604b554e58d"],
+Cell[6880, 199, 596, 20, 48, "Text",ExpressionUUID->"c9db94d3-70e4-b944-84ff-597ee85ddcd8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7525, 225, 116, 0, 66, "Section",ExpressionUUID->"abc39d11-d044-b446-829c-a4f1ab6828eb"],
+Cell[7644, 227, 276, 8, 55, "Text",ExpressionUUID->"50fd25b7-20fd-4b4e-9752-94d413e5f833"],
+Cell[7923, 237, 172, 3, 55, "Text",ExpressionUUID->"41974330-06de-3a46-91a7-6afd6802a643"],
+Cell[8098, 242, 987, 25, 87, "Text",ExpressionUUID->"c26b7a5e-3852-3c46-a07a-5a5720f2eb6c"],
+Cell[9088, 269, 122, 0, 33, "Text",ExpressionUUID->"5b7cf1c9-8e98-0747-8b40-c78fa4159f37"],
+Cell[CellGroupData[{
+Cell[9235, 273, 102, 0, 53, "Subsection",ExpressionUUID->"363aa2e2-ef23-ff4e-88e0-372d2ecbb914"],
+Cell[9340, 275, 110, 0, 33, "Text",ExpressionUUID->"c35e32f7-e16e-c54b-b61e-92e93b47eb31"],
+Cell[9453, 277, 98, 0, 33, "Text",ExpressionUUID->"5de53175-a189-c040-96fe-1c44737488f4"],
+Cell[9554, 279, 97, 0, 33, "Text",ExpressionUUID->"d93ef49d-91ac-4a47-a7f9-211682d0af19"],
+Cell[9654, 281, 94, 0, 33, "Text",ExpressionUUID->"8b3e1020-3a71-2945-b130-364a5d35cc64"],
+Cell[9751, 283, 91, 0, 33, "Text",ExpressionUUID->"ff6e2f27-e488-cc43-a804-294e925f7cf5"],
+Cell[9845, 285, 102, 0, 33, "Text",ExpressionUUID->"e4ed3208-7fef-9847-a142-dfc8a0f5ef40"],
+Cell[9950, 287, 97, 0, 33, "Text",ExpressionUUID->"799c5b65-ae76-7d48-b798-e7612bf450df"],
+Cell[10050, 289, 111, 0, 33, "Text",ExpressionUUID->"586b5251-c596-3749-9ee9-6380cc9e1d7a"],
+Cell[10164, 291, 90, 0, 30, "Item",ExpressionUUID->"8f0832bd-a2b4-b847-af9e-20bca79e4146"],
+Cell[10257, 293, 84, 0, 30, "Item",ExpressionUUID->"a120bdc4-ffba-2942-9e94-4d74f1ec86c3"],
+Cell[10344, 295, 122, 0, 30, "Item",ExpressionUUID->"5da56bc8-9be6-e944-ad69-b938e953e101"],
+Cell[10469, 297, 118, 0, 30, "Item",ExpressionUUID->"cd90760d-6568-9d49-a002-d31b74ce2f10"],
+Cell[10590, 299, 596, 20, 48, "Text",ExpressionUUID->"75caa423-cce1-fe4c-a7e0-c5c997f359bc"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11235, 325, 116, 0, 66, "Section",ExpressionUUID->"0efa85ac-4783-1541-bdd3-e930125086b1"],
+Cell[CellGroupData[{
+Cell[11376, 329, 97, 0, 53, "Subsection",ExpressionUUID->"6e522171-a7bf-1748-9d80-e69ea5b22326"],
+Cell[11476, 331, 336, 5, 77, "Text",ExpressionUUID->"1bcb95ac-a209-064c-8ffb-5c9ebebc0fca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11849, 341, 105, 0, 53, "Subsection",ExpressionUUID->"5755f6c6-2b2d-914e-a665-7f86f31916ce"],
+Cell[11957, 343, 391, 6, 99, "Text",ExpressionUUID->"50bb585f-b09d-e64f-a8b2-cec28c92de97"],
+Cell[12351, 351, 108, 0, 33, "Text",ExpressionUUID->"0b447815-7405-7146-926e-55ed62e5469c"],
+Cell[12462, 353, 596, 20, 48, "Text",ExpressionUUID->"9708565a-fea2-2d4c-9098-90b4ede5b676"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13107, 379, 111, 0, 66, "Section",ExpressionUUID->"6b2b3a35-3efe-f446-8d50-3e68a8bf6d81"],
+Cell[CellGroupData[{
+Cell[13243, 383, 138, 1, 53, "Subsection",ExpressionUUID->"bfb80a09-e1e2-684f-86b8-486ea827437d"],
+Cell[13384, 386, 255, 4, 77, "Text",ExpressionUUID->"04871c24-a6a2-2446-be58-3f5ebf5c73bb"],
+Cell[13642, 392, 105, 0, 33, "Text",ExpressionUUID->"b6c43d08-504f-3645-bbcf-0044f296fc21"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13784, 397, 146, 2, 53, "Subsection",ExpressionUUID->"b6d7c73b-d36e-b646-8f93-2d34bbf433a2"],
+Cell[13933, 401, 292, 4, 55, "Text",ExpressionUUID->"42e5e917-775e-d34e-9a25-73f4558a94df"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14262, 410, 129, 0, 53, "Subsection",ExpressionUUID->"9fdd2d46-f3f2-524f-9943-2653ca843bb4"],
+Cell[14394, 412, 269, 4, 55, "Text",ExpressionUUID->"6770866c-71bd-004f-97c9-497781e7fa28"],
+Cell[14666, 418, 193, 3, 33, "Text",ExpressionUUID->"8938c4fc-70dc-184a-b483-afd68132942f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14896, 426, 186, 3, 53, "Subsection",ExpressionUUID->"5ff7fb30-c75b-d148-a320-7c4068bc56af"],
+Cell[15085, 431, 150, 2, 33, "Text",ExpressionUUID->"e06d2982-5b4d-c841-a6a7-535a31602b97"],
+Cell[15238, 435, 922, 24, 43, "Text",ExpressionUUID->"28bd7d8e-650d-5d4c-9d15-c272165c7758"],
+Cell[16163, 461, 164, 3, 33, "Text",ExpressionUUID->"467788d5-681c-c248-b9d5-54385ffe32a3"],
+Cell[16330, 466, 596, 20, 48, "Text",ExpressionUUID->"9e0ac559-7569-054c-8af9-6d74433f1f2a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16975, 492, 117, 0, 66, "Section",ExpressionUUID->"4d6badf0-911f-1449-8870-50cf24e87727"],
+Cell[17095, 494, 2003, 47, 55, "Text",ExpressionUUID->"86c305e0-eb6a-2a46-8100-ab82a446e849"],
+Cell[19101, 543, 380, 9, 30, "Item",ExpressionUUID->"ca7f1f07-144f-0442-9b88-af4b40f4bcb9"],
+Cell[19484, 554, 424, 10, 30, "Item",ExpressionUUID->"0f713b0b-e41a-914c-8e30-ecfacc607771"],
+Cell[19911, 566, 467, 10, 30, "Item",ExpressionUUID->"9a3d5c67-c685-964d-89df-51853b88bf4d"],
+Cell[20381, 578, 468, 11, 30, "Item",ExpressionUUID->"3934ef5b-4e8d-cb43-8153-0ae6285cec39"],
+Cell[20852, 591, 468, 10, 30, "Item",ExpressionUUID->"9936dce4-4941-a249-81ff-053aaa8e7f80"],
+Cell[21323, 603, 461, 10, 30, "Item",ExpressionUUID->"548eba44-bdb0-4349-832e-3791dbfe7867"],
+Cell[21787, 615, 471, 11, 30, "Item",ExpressionUUID->"769e500e-81c2-434b-8358-6741d35ee821"],
+Cell[22261, 628, 472, 11, 30, "Item",ExpressionUUID->"0336e6e4-752a-c644-bfa4-7c2ec98472a9"],
+Cell[22736, 641, 488, 11, 30, "Item",ExpressionUUID->"1cc16c4a-820f-f44b-bba8-a61ac565f7ef"],
+Cell[CellGroupData[{
+Cell[23249, 656, 107, 0, 53, "Subsection",ExpressionUUID->"554b6a86-9d86-0640-8f03-c1588e55542a"],
+Cell[23359, 658, 182, 3, 55, "Text",ExpressionUUID->"9aadb0f9-4ced-1240-a0b5-c0e31d7b8e36"],
+Cell[23544, 663, 596, 20, 48, "Text",ExpressionUUID->"fcf4024f-ae3f-5d43-86a0-57da72823854"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24189, 689, 130, 0, 103, "Section",ExpressionUUID->"f5415983-72f2-d744-9d67-2313ee7dbcd8"],
+Cell[CellGroupData[{
+Cell[24344, 693, 91, 0, 53, "Subsection",ExpressionUUID->"f382a48a-be3d-1e4b-94f8-45082426b54f"],
+Cell[24438, 695, 124, 0, 33, "Text",ExpressionUUID->"a7ac3c69-a3f3-7047-923d-1f40fd965ed1"],
+Cell[24565, 697, 89, 0, 30, "Item",ExpressionUUID->"8f997870-60bd-9b40-abee-82be37b45f0c"],
+Cell[24657, 699, 92, 0, 30, "Item",ExpressionUUID->"e21bc738-fb94-be47-9ba7-77be492cbf2b"],
+Cell[24752, 701, 89, 0, 30, "Item",ExpressionUUID->"04f46ef2-1fdf-8241-81e3-eefe1300fe71"],
+Cell[24844, 703, 97, 0, 30, "Item",ExpressionUUID->"ab4709f1-08a0-f041-962b-39cb8476f9c1"],
+Cell[24944, 705, 101, 0, 30, "Item",ExpressionUUID->"7cd6049a-7245-fe41-923a-02a1b3be521b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25082, 710, 101, 0, 53, "Subsection",ExpressionUUID->"7efa38c7-16a4-2848-86d9-57250a5c5905"],
+Cell[25186, 712, 116, 0, 33, "Text",ExpressionUUID->"87bb63f0-5055-d746-b250-a8cde17e6e70"],
+Cell[25305, 714, 96, 0, 33, "Text",ExpressionUUID->"ad10a9ee-2e16-7a47-9fdd-cf89bb44dc97"],
+Cell[25404, 716, 87, 0, 33, "Text",ExpressionUUID->"775e4663-0b60-d74e-8bf6-8c2919b327fd"],
+Cell[25494, 718, 93, 0, 33, "Text",ExpressionUUID->"265cdecd-5f6b-c64d-a228-252d48fecaa1"],
+Cell[25590, 720, 110, 0, 33, "Text",ExpressionUUID->"1e7cfd49-a754-9e47-937f-198afb02df81"],
+Cell[25703, 722, 103, 0, 33, "Text",ExpressionUUID->"416bb75d-d309-fe49-9e1d-13269bf9b5f7"],
+Cell[25809, 724, 89, 0, 30, "Item",ExpressionUUID->"980763e2-b6c0-b94d-aa78-dbf44c809b3e"],
+Cell[25901, 726, 80, 0, 30, "Item",ExpressionUUID->"cb6bb57b-5b02-af4c-a9c3-c1b0c044956b"],
+Cell[25984, 728, 87, 0, 30, "Item",ExpressionUUID->"8c672375-9ef9-4b44-9cc1-142460c7ab30"],
+Cell[26074, 730, 86, 0, 30, "Item",ExpressionUUID->"c441245f-713e-a844-b150-5dcf5f35044c"],
+Cell[26163, 732, 83, 0, 30, "Item",ExpressionUUID->"a5386fd3-5c4f-0843-bfea-75dafa0ba316"],
+Cell[26249, 734, 90, 0, 30, "Item",ExpressionUUID->"3e245e52-34bd-994c-b98e-c406d93edfec"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26376, 739, 97, 0, 53, "Subsection",ExpressionUUID->"a483b686-c6cb-a04d-9d5b-f74a08b9071b"],
+Cell[26476, 741, 80, 0, 33, "Text",ExpressionUUID->"97351ba4-9b27-8a4d-8856-1606b47c3e1b"],
+Cell[26559, 743, 93, 0, 30, "Item",ExpressionUUID->"53de333d-c512-7b46-b9d2-74544f8bcabf"],
+Cell[26655, 745, 87, 0, 30, "Item",ExpressionUUID->"adab8d95-6a3a-db44-920d-917a98b5f2af"],
+Cell[26745, 747, 115, 0, 30, "Item",ExpressionUUID->"75514b17-4bf9-924b-b22d-2870946d1672"],
+Cell[26863, 749, 108, 0, 30, "Item",ExpressionUUID->"5a54cf5b-81d3-7240-850a-b1ff9a91d8af"],
+Cell[26974, 751, 106, 0, 30, "Item",ExpressionUUID->"46717ba3-c7bc-0246-a9f9-9b172e9c8c87"],
+Cell[27083, 753, 119, 0, 30, "Item",ExpressionUUID->"15afb832-9695-9247-98a7-3a4d13053b32"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27239, 758, 98, 0, 53, "Subsection",ExpressionUUID->"03fba399-2a27-5d41-87aa-7f3be9b00d5d"],
+Cell[27340, 760, 215, 3, 55, "Text",ExpressionUUID->"b0216ea4-0d3a-8e4c-81a5-a327d548efee"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27592, 768, 118, 0, 53, "Subsection",ExpressionUUID->"7d14e759-1473-9241-8831-66b94df68ec8"],
+Cell[27713, 770, 2100, 61, 275, "Input",ExpressionUUID->"91a229a7-e72a-404d-b2e2-364a9d02f811"],
+Cell[29816, 833, 596, 20, 48, "Text",ExpressionUUID->"2890fdd7-c3e3-f548-acb0-94e03b291642"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30461, 859, 147, 2, 103, "Section",ExpressionUUID->"eb48471d-7669-de4c-8675-45e68bc24077"],
+Cell[CellGroupData[{
+Cell[30633, 865, 91, 0, 53, "Subsection",ExpressionUUID->"f09dc596-33a5-2646-8ad3-c7e332e026c7"],
+Cell[30727, 867, 164, 3, 33, "Text",ExpressionUUID->"c80e17ef-79c4-4145-8987-129be8be7207"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30928, 875, 98, 0, 53, "Subsection",ExpressionUUID->"cf1d2af0-4b0b-ff40-b111-e4dfae0bc28b"],
+Cell[31029, 877, 80, 0, 33, "Text",ExpressionUUID->"6560443a-868a-8e44-93d8-6713a0a8b1af"],
+Cell[31112, 879, 85, 0, 30, "Item",ExpressionUUID->"034d82bf-7b6e-a54c-bdae-9e4192e74903"],
+Cell[31200, 881, 92, 0, 30, "Item",ExpressionUUID->"a36dc911-a0f4-3a44-8daa-1037691560e1"],
+Cell[31295, 883, 87, 0, 30, "Item",ExpressionUUID->"34c945b0-ad70-0e4a-a497-95473edcf5d9"],
+Cell[31385, 885, 105, 0, 30, "Item",ExpressionUUID->"0b5a2841-b888-df49-b35a-852865c85449"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31527, 890, 93, 0, 53, "Subsection",ExpressionUUID->"03413576-5679-384f-9536-6b9b87c3216a"],
+Cell[31623, 892, 80, 0, 33, "Text",ExpressionUUID->"03c8ce7c-e64b-5a47-8569-f08414758905"],
+Cell[31706, 894, 87, 0, 30, "Item",ExpressionUUID->"c46fc052-79e1-c548-bde2-14df04bb7551"],
+Cell[31796, 896, 86, 0, 30, "Item",ExpressionUUID->"a2529cdf-ff59-3e45-89f1-4ec2c3951a44"],
+Cell[31885, 898, 81, 0, 30, "Item",ExpressionUUID->"9dfda686-99e3-9547-8a17-1a492d79417d"],
+Cell[31969, 900, 103, 0, 30, "Item",ExpressionUUID->"68bc9084-e3c0-2c4b-a126-4303d0eba66d"],
+Cell[32075, 902, 87, 0, 30, "Item",ExpressionUUID->"3fb75adf-8f4b-9347-bb24-0708c266794f"],
+Cell[32165, 904, 113, 0, 30, "Item",ExpressionUUID->"e37af153-cb9a-2c49-8032-45d2501a5db7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32315, 909, 105, 0, 53, "Subsection",ExpressionUUID->"99355b0c-a84d-c94d-b725-b8178fb69c6f"],
+Cell[32423, 911, 174, 3, 55, "Text",ExpressionUUID->"cb416df9-3b0b-df4b-bf96-4d4af356f7af"],
+Cell[32600, 916, 242, 4, 55, "Text",ExpressionUUID->"b73a5c74-cf4f-a64a-a24b-aeadba15998f"],
+Cell[32845, 922, 596, 20, 48, "Text",ExpressionUUID->"55925c82-4367-7948-82cf-918e7a2c385e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33490, 948, 146, 2, 103, "Section",ExpressionUUID->"057c8eb5-fb6d-a149-b69b-bf43569ef7d2"],
+Cell[CellGroupData[{
+Cell[33661, 954, 91, 0, 53, "Subsection",ExpressionUUID->"27f8cd76-c0ff-ea48-b876-ce13bec74b75"],
+Cell[33755, 956, 255, 4, 77, "Text",ExpressionUUID->"ee124c50-bef7-c144-abfa-3fe4fec56ffb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34047, 965, 90, 0, 53, "Subsection",ExpressionUUID->"103879a9-af04-3243-a77f-e62079d2382c"],
+Cell[34140, 967, 126, 0, 33, "Text",ExpressionUUID->"33c83db2-8aa6-614d-8a56-6d08065e6e60"],
+Cell[34269, 969, 94, 0, 30, "Item",ExpressionUUID->"8d1ff78f-0d99-9644-b120-0329bfaa26b2"],
+Cell[34366, 971, 95, 0, 30, "Item",ExpressionUUID->"172deaf5-bfcf-cb40-8918-51cd1c76a377"],
+Cell[34464, 973, 122, 0, 30, "Item",ExpressionUUID->"5b82249f-b1ad-b64e-a948-f75433fa32a0"],
+Cell[34589, 975, 172, 3, 50, "Item",ExpressionUUID->"c64e3671-abc5-3041-8ef3-0a5f8c6d78b0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34798, 983, 102, 0, 53, "Subsection",ExpressionUUID->"3e5ecf1e-2a43-d542-abba-40411348aa82"],
+Cell[34903, 985, 274, 4, 55, "Text",ExpressionUUID->"954fea12-5c6f-0e4b-87b0-9ab53e843393"],
+Cell[35180, 991, 596, 20, 48, "Text",ExpressionUUID->"8806c772-d6ac-c648-8562-9f4198276d40"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35825, 1017, 145, 2, 103, "Section",ExpressionUUID->"a89663f8-2487-8f47-a948-aa8a086823b2"],
+Cell[CellGroupData[{
+Cell[35995, 1023, 106, 0, 53, "Subsection",ExpressionUUID->"f416e075-201e-5f4f-b0b5-beb72ee28c55"],
+Cell[36104, 1025, 176, 3, 55, "Text",ExpressionUUID->"991faf34-437a-5444-86cd-71d008dc08a7"],
+Cell[36283, 1030, 122, 0, 33, "Text",ExpressionUUID->"42655577-94a1-8445-88ee-e7ce8e12c304"],
+Cell[36408, 1032, 84, 0, 30, "Item",ExpressionUUID->"cb061a9e-4ff2-ff4f-9cef-923b6a9299b2"],
+Cell[36495, 1034, 91, 0, 30, "Item",ExpressionUUID->"0a4a33b0-b938-7e47-b2ed-91210042d4b1"],
+Cell[36589, 1036, 89, 0, 30, "Item",ExpressionUUID->"f975d792-4d56-274f-a902-fad39e5d6749"],
+Cell[36681, 1038, 86, 0, 30, "Item",ExpressionUUID->"05e7777c-536f-9348-82f5-205da6ea0ee5"],
+Cell[36770, 1040, 89, 0, 30, "Item",ExpressionUUID->"15dfda75-094f-4d4d-991c-a834878a5211"],
+Cell[36862, 1042, 85, 0, 30, "Item",ExpressionUUID->"54240660-ac8a-284c-80d7-1e31b6e090c8"],
+Cell[36950, 1044, 83, 0, 30, "Item",ExpressionUUID->"10109932-8873-7a43-8267-061a49bf9aff"],
+Cell[37036, 1046, 82, 0, 30, "Item",ExpressionUUID->"5a94e295-8bf6-f341-97fd-42f289e33622"],
+Cell[37121, 1048, 77, 0, 30, "Item",ExpressionUUID->"1fe8a086-ccea-fc45-9ebe-fb5c613b9b3e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37235, 1053, 86, 0, 53, "Subsection",ExpressionUUID->"2086a8ef-2d9e-6042-a4ad-cd834f68679f"],
+Cell[37324, 1055, 99, 0, 33, "Text",ExpressionUUID->"e0da05ad-a43a-214d-a819-c1202958248d"],
+Cell[37426, 1057, 145, 2, 33, "Text",ExpressionUUID->"5db1298d-cc8f-324a-9a7e-3473cd9c22e1"],
+Cell[37574, 1061, 125, 0, 33, "Text",ExpressionUUID->"e6a41b6d-6fec-0140-a55f-17156fde8609"],
+Cell[37702, 1063, 126, 0, 33, "Text",ExpressionUUID->"473ef815-65d9-ce4c-b9aa-b6123674b4a4"],
+Cell[37831, 1065, 129, 0, 33, "Text",ExpressionUUID->"b89c097f-df24-f549-8f97-3f9786a2016f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37997, 1070, 114, 0, 53, "Subsection",ExpressionUUID->"b81511f0-8f31-fa45-881d-4227d5992d0e"],
+Cell[38114, 1072, 369, 10, 55, "Text",ExpressionUUID->"bed94306-3364-c645-8c35-74096ebb8862"],
+Cell[38486, 1084, 107, 0, 33, "Text",ExpressionUUID->"f4143c04-55c0-4549-81b6-5643e7546b72"],
+Cell[38596, 1086, 300, 6, 27, "Item",ExpressionUUID->"5b224e8a-3bfb-3041-984a-626f0c1a2a34"],
+Cell[38899, 1094, 298, 6, 27, "Item",ExpressionUUID->"bfa272b9-26f2-5d42-9d00-ff211ecfcd13"],
+Cell[39200, 1102, 302, 6, 27, "Item",ExpressionUUID->"1a2e7e31-b320-524c-af02-5166548be398"],
+Cell[39505, 1110, 307, 6, 27, "Item",ExpressionUUID->"e27e754f-82a4-1049-ac97-a88f12aa0029"],
+Cell[39815, 1118, 304, 6, 27, "Item",ExpressionUUID->"8ab19a13-8f50-374e-b7d8-36953444991f"],
+Cell[40122, 1126, 596, 20, 48, "Text",ExpressionUUID->"c321e73c-c179-3240-9922-d70c419ee609"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40767, 1152, 159, 2, 103, "Section",ExpressionUUID->"d37efe37-7a74-9945-b2ee-86133a9f34aa"],
+Cell[CellGroupData[{
+Cell[40951, 1158, 87, 0, 53, "Subsection",ExpressionUUID->"c735eada-2a79-8141-afa2-66da081d64d3"],
+Cell[41041, 1160, 203, 3, 55, "Text",ExpressionUUID->"d9222fcc-172f-6641-acaa-a4d99fbe8aee"],
+Cell[41247, 1165, 222, 6, 33, "Text",ExpressionUUID->"8addfb4c-7e6f-e648-a39d-6b2a35064de8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41506, 1176, 98, 0, 53, "Subsection",ExpressionUUID->"587d8ffa-85fd-6547-a50b-beed23f15d26"],
+Cell[41607, 1178, 91, 0, 33, "Text",ExpressionUUID->"141f4985-1b74-4f46-b7fe-c5edcfe846a2"],
+Cell[41701, 1180, 100, 0, 30, "Item",ExpressionUUID->"64a0b706-b02c-2040-bebd-0eacc72b5727"],
+Cell[41804, 1182, 150, 2, 30, "Item",ExpressionUUID->"2a3e3623-4a0d-7545-9181-de4adff93f0d"],
+Cell[41957, 1186, 124, 0, 33, "Text",ExpressionUUID->"ea54bcf0-c3a1-9140-ab7d-b846df12c702"],
+Cell[42084, 1188, 293, 6, 27, "Item",ExpressionUUID->"1a09e91a-6d4e-f548-9415-2f5f5eb5c130"],
+Cell[42380, 1196, 294, 6, 27, "Item",ExpressionUUID->"18455250-89b3-0f4f-bc2d-cc839771e837"],
+Cell[42677, 1204, 89, 0, 30, "Item",ExpressionUUID->"6dc93593-5ca1-5244-aac3-e2fe99e0e3f9"],
+Cell[42769, 1206, 93, 0, 30, "Item",ExpressionUUID->"229796bf-a83b-3845-9b97-8229d0487f1d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42899, 1211, 99, 0, 53, "Subsection",ExpressionUUID->"b467867d-a732-334c-9205-d94ce0732cdf"],
+Cell[43001, 1213, 180, 3, 55, "Text",ExpressionUUID->"55767542-23e4-c94e-a713-458491f4000c"],
+Cell[43184, 1218, 596, 20, 48, "Text",ExpressionUUID->"dd92a4dd-7533-ad4d-82e2-ebbad4b47f0f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43829, 1244, 149, 2, 103, "Section",ExpressionUUID->"6cd1d135-39b4-f04f-810f-da534c6be32a"],
+Cell[CellGroupData[{
+Cell[44003, 1250, 93, 0, 53, "Subsection",ExpressionUUID->"bcdc9759-9795-2940-9dd7-47d54bbaf8e1"],
+Cell[44099, 1252, 186, 3, 55, "Text",ExpressionUUID->"8b957d53-ea9a-1048-88cd-7765a4a0cbe9"],
+Cell[44288, 1257, 221, 6, 33, "Text",ExpressionUUID->"9aefc8da-7f2e-2b48-b76f-0655af6691de"],
+Cell[44512, 1265, 81, 0, 30, "Item",ExpressionUUID->"07a9ab7a-c5ef-3944-a27b-c3b0ac186781"],
+Cell[44596, 1267, 85, 0, 30, "Item",ExpressionUUID->"147857cd-aa84-8143-b596-6b5b1d1fa45e"],
+Cell[44684, 1269, 81, 0, 30, "Item",ExpressionUUID->"cafc61b3-6015-5845-9ef3-9afd9229f3e3"],
+Cell[44768, 1271, 82, 0, 30, "Item",ExpressionUUID->"1629d5fd-6f92-8341-9c5a-ba0052301de4"],
+Cell[44853, 1273, 83, 0, 30, "Item",ExpressionUUID->"5f44e518-c2ec-0a46-a3b5-b758bbce7648"],
+Cell[44939, 1275, 92, 0, 30, "Item",ExpressionUUID->"542fd6da-5b04-244a-a88c-6a8ed193b0e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45068, 1280, 103, 0, 53, "Subsection",ExpressionUUID->"59914063-c259-5049-96e8-f181ece82871"],
+Cell[45174, 1282, 187, 3, 55, "Text",ExpressionUUID->"5ea6fa2a-0976-bf44-9836-a3de3e8de202"],
+Cell[45364, 1287, 250, 4, 55, "Text",ExpressionUUID->"c8ae857d-a84b-e34a-8574-837134f82a5e"],
+Cell[45617, 1293, 596, 20, 48, "Text",ExpressionUUID->"8f691e20-d17d-884a-9fb3-709f311a4e9f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46262, 1319, 107, 0, 66, "Section",ExpressionUUID->"5877c13e-3903-4e44-924c-21e8082235ec"],
+Cell[CellGroupData[{
+Cell[46394, 1323, 107, 0, 53, "Subsection",ExpressionUUID->"06f3319f-9c46-b246-93e9-87ee49bc0438"],
+Cell[46504, 1325, 141, 2, 33, "Text",ExpressionUUID->"a0d612ad-e81c-ef49-b8cc-280edbb4fd82"],
+Cell[46648, 1329, 176, 3, 55, "Text",ExpressionUUID->"73ac8d5e-91d0-7c48-bc52-a2c2fe6a164c"],
+Cell[46827, 1334, 130, 0, 33, "Text",ExpressionUUID->"532f7faa-0743-e24c-b233-e4d7cc320eee"],
+Cell[46960, 1336, 151, 2, 33, "Text",ExpressionUUID->"f9c86a01-0fb8-b14a-8c08-38271a5d11cc"],
+Cell[47114, 1340, 145, 2, 33, "Text",ExpressionUUID->"38242aca-9925-de43-9218-3928010ad05c"],
+Cell[47262, 1344, 113, 0, 33, "Text",ExpressionUUID->"0e8f2209-b5d1-b84d-b3ee-78ff4f0225a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47412, 1349, 103, 0, 53, "Subsection",ExpressionUUID->"80e7a969-bed1-a946-aaba-47912fe84414"],
+Cell[47518, 1351, 166, 5, 33, "Text",ExpressionUUID->"c9f4e9e8-fa35-f144-8532-1f0e2b4e127e"],
+Cell[47687, 1358, 108, 0, 30, "Item",ExpressionUUID->"c81237d6-a181-dd4e-a2af-c4dbd9c23282"],
+Cell[47798, 1360, 89, 0, 30, "Item",ExpressionUUID->"56faa8a5-fdc3-5946-ac16-f5e978a67b8f"],
+Cell[47890, 1362, 105, 0, 30, "Item",ExpressionUUID->"de173651-3710-d246-b7e0-fc668d5d261c"],
+Cell[47998, 1364, 102, 0, 30, "Item",ExpressionUUID->"02aeded0-619e-b948-b1fc-4642cb4bd816"],
+Cell[48103, 1366, 104, 0, 30, "Item",ExpressionUUID->"49bf29e4-07d8-724d-9c67-ea90cbbc906e"],
+Cell[48210, 1368, 596, 20, 48, "Text",ExpressionUUID->"6c50670a-63b1-144f-a730-0f24cac438d9"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48855, 1394, 105, 0, 66, "Section",ExpressionUUID->"7d3c993b-a6b1-2b48-967e-f859b9e29443"],
+Cell[48963, 1396, 94, 0, 33, "Text",ExpressionUUID->"fd49a600-6256-4440-9647-bc5926ed571c"],
+Cell[49060, 1398, 99, 0, 33, "Text",ExpressionUUID->"3779f4d0-0f35-9844-9bb0-ddb74bc3fc81"],
+Cell[49162, 1400, 104, 0, 33, "Text",ExpressionUUID->"e2ea4b33-acf4-9a42-82f2-965d02fe4282"],
+Cell[49269, 1402, 88, 0, 33, "Text",ExpressionUUID->"a568c00e-8e4d-ff46-b2cf-27cc4d7695b1"],
+Cell[49360, 1404, 106, 0, 33, "Text",ExpressionUUID->"f2ec3d59-21aa-b649-a5d9-ed45ff1ed40e"],
+Cell[49469, 1406, 99, 0, 33, "Text",ExpressionUUID->"eb129062-55ec-6c4c-b00d-8e4cbe30f28c"],
+Cell[49571, 1408, 95, 0, 33, "Text",ExpressionUUID->"ab6ef511-9d64-334f-ba6e-149ceb960546"],
+Cell[49669, 1410, 112, 0, 33, "Text",ExpressionUUID->"3448bc9e-39e0-e845-9200-b92955c2e820"],
+Cell[49784, 1412, 145, 2, 33, "Text",ExpressionUUID->"83d3a6aa-20c7-b444-93e1-d35e6c3c24b8"],
+Cell[49932, 1416, 596, 20, 48, "Text",ExpressionUUID->"d2d245d2-0475-c547-88e3-a3084a407cd1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50565, 1441, 124, 0, 103, "Section",ExpressionUUID->"bfea0ac3-6101-2a41-aa24-78f22b6126df"],
+Cell[CellGroupData[{
+Cell[50714, 1445, 125, 0, 53, "Subsection",ExpressionUUID->"631bf33e-1470-734a-9367-f8ab92e4f37c"],
+Cell[50842, 1447, 166, 3, 55, "Text",ExpressionUUID->"763dc5ab-44bc-324e-9b3c-f0cdc5be75e6"],
+Cell[51011, 1452, 99, 0, 33, "Text",ExpressionUUID->"520a576a-1768-4c43-be97-99a4aafda58f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51147, 1457, 131, 0, 53, "Subsection",ExpressionUUID->"66ea9f81-45ff-bb43-9f0f-fd8416f08f69"],
+Cell[51281, 1459, 171, 3, 55, "Text",ExpressionUUID->"4e64d03f-86dd-be4e-a06d-b964c333dbe4"],
+Cell[51455, 1464, 100, 0, 33, "Text",ExpressionUUID->"c57cef10-5db0-2e4c-9f8e-0d5d321831fb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51592, 1469, 133, 0, 53, "Subsection",ExpressionUUID->"293b929e-e550-954f-9f7a-9d148aaa256b"],
+Cell[51728, 1471, 179, 3, 55, "Text",ExpressionUUID->"6801b45d-a84c-f64c-8420-9e2435a12497"],
+Cell[51910, 1476, 120, 0, 33, "Text",ExpressionUUID->"9198028e-f8e9-1b47-9642-62e192b6183c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52067, 1481, 134, 0, 53, "Subsection",ExpressionUUID->"5f7af5a1-1194-3247-ae01-4f40cf1ee47d"],
+Cell[52204, 1483, 167, 3, 55, "Text",ExpressionUUID->"9017dcd9-78bf-7e4e-bd89-cd84b99a4d95"],
+Cell[52374, 1488, 118, 0, 33, "Text",ExpressionUUID->"88ce7e69-a450-7d42-8c65-8f5870a3acc2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52529, 1493, 152, 2, 79, "Subsection",ExpressionUUID->"78bee8fb-4816-e14a-9752-753a037148cb"],
+Cell[52684, 1497, 208, 3, 55, "Text",ExpressionUUID->"48d936a8-6e9f-4d44-86b4-5d43b1fd3dd6"],
+Cell[52895, 1502, 103, 0, 33, "Text",ExpressionUUID->"e0cc98f5-bc42-0a45-be15-2cc6fd30734a"],
+Cell[53001, 1504, 596, 20, 48, "Text",ExpressionUUID->"3739a2f2-935b-4f40-89b1-d2c61c25b694"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53646, 1530, 153, 2, 103, "Section",ExpressionUUID->"95677a18-2057-f742-82ab-19bf5f17b11e"],
+Cell[53802, 1534, 318, 5, 77, "Text",ExpressionUUID->"77e2c478-fc05-824d-bff4-cf9682a75718"],
+Cell[54123, 1541, 175, 3, 55, "Text",ExpressionUUID->"ad06f118-4f77-fd4d-89d1-aefa0e66a21f"],
+Cell[CellGroupData[{
+Cell[54323, 1548, 105, 0, 53, "Subsection",ExpressionUUID->"d1057705-06e6-b147-b944-13b2c976e506"],
+Cell[54431, 1550, 1530, 37, 55, "Text",ExpressionUUID->"77696f4c-d65a-0344-aeef-3284977345f9"],
+Cell[55964, 1589, 92, 0, 33, "Text",ExpressionUUID->"71cbd357-7bbd-a94c-ae59-1a9803bc87aa"],
+Cell[56059, 1591, 116, 0, 30, "Item",ExpressionUUID->"19c2b810-5613-b84c-9b75-0a65705d577a"],
+Cell[56178, 1593, 116, 0, 30, "Item",ExpressionUUID->"eb0d7718-eb0d-1942-aa12-1af5848ecae3"],
+Cell[56297, 1595, 118, 0, 30, "Item",ExpressionUUID->"2bc61b7d-3cab-4a41-a6c6-67b36c9b9a5e"],
+Cell[56418, 1597, 113, 0, 33, "Text",ExpressionUUID->"f4ba26b1-4ed6-3d4e-ab05-cc96de5f4b25"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56568, 1602, 96, 0, 53, "Subsection",ExpressionUUID->"4727c207-0782-9746-8e1e-0d08ef5175be"],
+Cell[56667, 1604, 79, 0, 33, "Text",ExpressionUUID->"b04e7cff-fa70-2f49-afb0-1b6d6b2d92ed"],
+Cell[56749, 1606, 379, 10, 30, "Item",ExpressionUUID->"f936a1db-e2bd-5146-b150-5f2a2b354cd7"],
+Cell[57131, 1618, 403, 10, 30, "Item",ExpressionUUID->"f856d3fb-676b-cc49-afe1-bf68cacfbef9"],
+Cell[57537, 1630, 405, 10, 30, "Item",ExpressionUUID->"8b2c515d-82d1-f748-bf51-6fd050cbe35c"],
+Cell[57945, 1642, 109, 0, 30, "Item",ExpressionUUID->"538d48a4-fee8-7c4e-910c-900aab04b12a"],
+Cell[58057, 1644, 196, 3, 55, "Text",ExpressionUUID->"646b4a89-7273-3146-a78f-f74bd0845cb3"],
+Cell[58256, 1649, 596, 20, 48, "Text",ExpressionUUID->"107d9264-df16-fa47-87af-015bdf5262fc"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58901, 1675, 118, 0, 66, "Section",ExpressionUUID->"879c6ad8-29c7-f644-a023-08765c8ad78e"],
+Cell[59022, 1677, 227, 3, 55, "Text",ExpressionUUID->"718625d5-46ab-fa40-b291-b57f04744f97"],
+Cell[59252, 1682, 94, 0, 33, "Text",ExpressionUUID->"716222f3-66f3-df48-9354-1635351c0be3"],
+Cell[59349, 1684, 141, 1, 33, "Text",ExpressionUUID->"84c93b66-89a8-9743-bdd3-e3ea72152929"],
+Cell[59493, 1687, 117, 0, 33, "Text",ExpressionUUID->"1df74ae0-6a4b-3c49-8c4a-fcd55bba6d66"],
+Cell[59613, 1689, 141, 2, 33, "Text",ExpressionUUID->"c1f36fa4-c4cd-8f40-9ff4-c94679140973"],
+Cell[59757, 1693, 98, 0, 33, "Text",ExpressionUUID->"299f43c7-f483-3941-9966-73c6336f5d3f"],
+Cell[59858, 1695, 105, 0, 33, "Text",ExpressionUUID->"e8913818-d4a9-724a-bcd7-ac44ffc85c8c"],
+Cell[59966, 1697, 113, 0, 33, "Text",ExpressionUUID->"b54366ed-b0d4-6a4d-8818-8f3b7a862821"],
+Cell[60082, 1699, 596, 20, 48, "Text",ExpressionUUID->"d615d278-890a-294c-ac3f-82cde8ed8202"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60715, 1724, 132, 0, 103, "Section",ExpressionUUID->"10ff3133-71bf-8b41-89ff-78f474fb70ad"],
+Cell[60850, 1726, 1461, 30, 275, "Input",ExpressionUUID->"b688ca26-70ad-d941-94fb-3a6c328042a2"],
+Cell[CellGroupData[{
+Cell[62336, 1760, 100, 0, 53, "Subsection",ExpressionUUID->"0d3bb238-2cf2-a247-bb5e-6da472efc248"],
+Cell[62439, 1762, 879, 21, 142, "Input",ExpressionUUID->"d2636676-1ee6-9543-9938-c88f977ee260"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63355, 1788, 114, 0, 53, "Subsection",ExpressionUUID->"a1287486-b6f4-884c-8087-3878f2815041"],
+Cell[63472, 1790, 801, 18, 123, "Input",ExpressionUUID->"2c974144-dd26-004e-9fef-2e1d12d52684"],
+Cell[64276, 1810, 596, 20, 48, "Text",ExpressionUUID->"df23e01b-4ba5-1544-9a6a-5e4614c720a4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64921, 1836, 110, 0, 66, "Section",ExpressionUUID->"c842fa64-8df5-154d-a0e8-0656901c2598"],
+Cell[65034, 1838, 167, 3, 33, "Text",ExpressionUUID->"8c80a4ce-d20f-354f-8372-109371215fbb"],
+Cell[65204, 1843, 153, 2, 30, "Item",ExpressionUUID->"fa8359b1-dda4-ab4c-921c-7e9fac902a2a"],
+Cell[65360, 1847, 172, 3, 50, "Item",ExpressionUUID->"0e468f84-eb73-684c-8ab5-bb9732b43dd6"],
+Cell[65535, 1852, 126, 0, 30, "Item",ExpressionUUID->"8f6aa8bd-28b5-2940-8f3e-802e04ea6524"],
+Cell[65664, 1854, 147, 2, 30, "Item",ExpressionUUID->"c914788b-76a4-9749-b2f8-7772766a218d"],
+Cell[65814, 1858, 171, 3, 55, "Text",ExpressionUUID->"053baac0-a10c-7648-8cbb-68e7d00eb768"],
+Cell[65988, 1863, 112, 0, 33, "Text",ExpressionUUID->"8dd55bdd-ad45-bd4c-abe4-8f60416aa8f0"],
+Cell[66103, 1865, 596, 20, 48, "Text",ExpressionUUID->"3474ea9c-ded2-984e-9412-4ab53b238469"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66736, 1890, 88, 0, 66, "Section",ExpressionUUID->"20ea6a9f-bc8b-d546-8b32-f4cc8dbb1fa0"],
+Cell[66827, 1892, 160, 3, 33, "Text",ExpressionUUID->"ff33c43c-8518-2942-b83d-b58d64dcf579"],
+Cell[66990, 1897, 212, 5, 55, "Text",ExpressionUUID->"ff25827a-6729-9a4a-ad53-9b2bb4dcb8b0"],
+Cell[67205, 1904, 152, 2, 33, "Text",ExpressionUUID->"90cb4fce-b56b-804e-9d45-5473e62a9bc9"],
+Cell[67360, 1908, 104, 0, 30, "Item",ExpressionUUID->"6feed50c-32b2-c94f-9e41-e5c113a1d0a4"],
+Cell[67467, 1910, 100, 0, 30, "Item",ExpressionUUID->"49f976ff-f35a-e74f-8b7f-24bd02251bf4"],
+Cell[67570, 1912, 90, 0, 30, "Item",ExpressionUUID->"051e6ca6-13c8-fb49-9184-5dcfc851c686"],
+Cell[67663, 1914, 100, 0, 30, "Item",ExpressionUUID->"3f878f87-158c-e943-b3a9-2adb5d635e63"],
+Cell[67766, 1916, 101, 0, 30, "Item",ExpressionUUID->"fa367b36-2091-b745-bf66-ebce7a043fce"],
+Cell[67870, 1918, 115, 0, 33, "Text",ExpressionUUID->"5708a4ea-68f0-bf4b-a4f2-81fef4d04e7b"],
+Cell[67988, 1920, 596, 20, 48, "Text",ExpressionUUID->"842e6d62-febe-5247-aea1-c50233c17f44"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68621, 1945, 100, 0, 66, "Section",ExpressionUUID->"b6d570bc-4544-4444-9543-bf98722eed8c"],
+Cell[68724, 1947, 310, 14, 33, "Text",ExpressionUUID->"c8e7f469-aee8-6743-9184-e151e6eb497d"],
+Cell[69037, 1963, 193, 3, 55, "Text",ExpressionUUID->"0df87d23-a9b0-ed4f-bb50-4795e6f36729"],
+Cell[69233, 1968, 103, 0, 30, "Item",ExpressionUUID->"1b4216d3-00ae-3949-bf7d-0004cec4199b"],
+Cell[69339, 1970, 92, 0, 30, "Item",ExpressionUUID->"5aacbdef-79b2-d748-92fe-7ffc47932765"],
+Cell[69434, 1972, 94, 0, 30, "Item",ExpressionUUID->"55cc1ac9-42ea-c545-bf4d-839d2bf240ee"],
+Cell[69531, 1974, 98, 0, 30, "Item",ExpressionUUID->"0dd7c849-afe5-3a4c-9bdf-863e2a0f2108"],
+Cell[69632, 1976, 120, 0, 30, "Item",ExpressionUUID->"5c08342a-b225-f940-a61d-4c7dc34f9a1a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,3589 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    152298,       3581]
+NotebookOptionsPosition[    112861,       2997]
+NotebookOutlinePosition[    113269,       3013]
+CellTagsIndexPosition[    113226,       3010]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+PLEASE SWEEP THROUGH THE NOTEBOOK ,,,MAKE IT WAYY MORE IN DEPTH , COMPLETE \
+AND RIGOROUS ,,SEE IF YOU CAN FIND AT LEAST ONE THING THATS EMERGENT OR \
+PREDICTED THROUGH OUR CALCULATIONS (SEE IF WE CAN COMPUTE AND PREDICT THINGS \
+BETTER USING THIS FRAMEWORK AND TRUE IN DEPTH UNDERSTANDING OF PHYSICS\
+\>", "ChatInput",
+ TaggingRules-><|
+  "ChatNotebookSettings" -> <|
+    "Model" -> <|"Service" -> "LLMKit", "Name" -> Automatic|>, "LLMEvaluator" -> 
+     "WolframAIAssistant", "ServiceCaller" -> "Chatbar"|>|>,
+ CellLabel->"In[8]:=",ExpressionUUID->"64e768ce-3c33-cb45-98c7-9696f6f4baea"],
+
+Cell[TextData[{
+ "I can do that, but I need the notebook contents to actually sweep through \
+it rigorously. Please either:\n\n1. paste the notebook content here, or  \n2. \
+upload/share the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[".nb", Background -> None]},
+   "ChatCodeInlineTemplate"]], "ChatCodeActive",ExpressionUUID->
+  "9efd2d10-a7ee-3b45-887f-d9fefa556fb9"],
+ " file contents in text form, or  \n3. tell me to create a new deep OPF \
+notebook from scratch.\n\nOnce I have the notebook, I can: \n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "restructure it into a rigorous L0\[RightArrow]L1\[RightArrow]L2 derivation,"
+ }], "InlineItem",ExpressionUUID->"c502affe-b9f6-3b4a-908c-ab530379259c"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "expand all assumptions and missing steps,"
+ }], "InlineItem",ExpressionUUID->"e2c27011-65ff-6a40-ad83-200b79a9213a"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "formalize the variational PDEs,"
+ }], "InlineItem",ExpressionUUID->"02103689-33d9-a84c-92cf-8f05e583f6cb"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "check internal consistency,"
+ }], "InlineItem",ExpressionUUID->"b6c28c20-7489-b943-aa21-92035afca175"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "derive linearized modes and candidate emergent predictions,"
+ }], "InlineItem",ExpressionUUID->"cb988494-93b5-fe48-8984-a38b665a9826"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "build callable Wolfram Language pipelines,"
+ }], "InlineItem",ExpressionUUID->"fe90659d-0dc3-f345-bc73-f413a83b20af"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "and identify at least one concrete OPF-emergent or OPF-predicted quantity \
+if the math supports it."
+ }], "InlineItem",ExpressionUUID->"611e9b6e-43c6-9d4c-8d43-f40c87aa989c"],
+ "\nIf you want, I can also immediately create a new \
+\[OpenCurlyDoubleQuote]deepened and rigorous OPF framework\
+\[CloseCurlyDoubleQuote] notebook scaffold for you now.\nI can do that, but I \
+need the notebook itself to sweep through it rigorously.\n\nPlease send one \
+of these: \n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "the notebook content pasted here"
+ }], "InlineItem",ExpressionUUID->"ae0a2973-9c13-3c40-a260-ab49a111c859"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "the ",
+  Cell[BoxData[
+   TemplateBox[{
+     Cell[".nb", Background -> None]},
+    "ChatCodeInlineTemplate"]], "ChatCodeActive",ExpressionUUID->
+   "0d34ab95-d613-4145-8c2c-ff921cff1854"],
+  " file content in text form"
+ }], "InlineItem",ExpressionUUID->"e2667c58-e043-d245-b832-1abf7e37cbb2"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "or tell me: ",
+  StyleBox[
+  "\[OpenCurlyDoubleQuote]create a new rigorous OPF notebook from scratch\
+\[CloseCurlyDoubleQuote]",
+   FontWeight->Bold]
+ }], "InlineItem",ExpressionUUID->"56ef7fb7-6cae-aa47-9cdd-0ef8b2c2eb21"],
+ "\nThen I\[CloseCurlyQuote]ll: \n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "expand it into a much more complete and rigorous derivation"
+ }], "InlineItem",ExpressionUUID->"b70a4207-5bb2-2a4c-949a-5d06d86a0658"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "formalize the OPF action and Euler\[Dash]Lagrange equations"
+ }], "InlineItem",ExpressionUUID->"bd4acf78-b70a-3341-9dfe-ab2913291f85"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "check consistency of assumptions"
+ }], "InlineItem",ExpressionUUID->"0881115f-6fe6-654b-a0a7-3645c197620b"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "derive linearized dynamics and stable modes"
+ }], "InlineItem",ExpressionUUID->"31e9e27c-3d9b-5c4e-9e1e-3354761f4b95"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "identify missing variables and morphisms ",
+  Cell[BoxData[
+   FormBox[
+    TemplateBox[<|"boxes" -> FormBox[
+        RowBox[{
+          StyleBox["L", "TI"], "0", "\[Rule]", 
+          StyleBox["L", "TI"], "1", "\[Rule]", 
+          StyleBox["L", "TI"], "2"}], TraditionalForm], "errors" -> {}, 
+      "input" -> "L0 \\to L1 \\to L2", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+   "a3da2caf-63bf-da42-ae87-bac5bbd141c7"]
+ }], "InlineItem",ExpressionUUID->"de2076da-761a-cb42-b79a-d43393a5c778"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "build a Wolfram Language pipeline"
+ }], "InlineItem",ExpressionUUID->"ba746ac5-c559-264d-aeba-bf1c663e6181"],
+ "\n",
+ Cell[TextData[{
+  StyleBox["\[Bullet]",
+   FontColor->LightDarkSwitched[
+     GrayLevel[0.5], 
+     GrayLevel[0.7533742]]],
+  " ",
+  "and try to extract at least one genuine emergent/predictive result from \
+the framework"
+ }], "InlineItem",ExpressionUUID->"5a8a18d3-7737-404c-a47c-491aa56c8e29"],
+ "\nIf you want, I can start immediately by generating a deep notebook \
+scaffold now."
+}], "ChatOutput",
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "I can do that, but I need the notebook contents to actually sweep through \
+it rigorously. Please either:\n\n1. paste the notebook content here, or  \n2. \
+upload/share the `.nb` file contents in text form, or  \n3. tell me to create \
+a new deep OPF notebook from scratch.\n\nOnce I have the notebook, I can:\n- \
+restructure it into a rigorous L0\[RightArrow]L1\[RightArrow]L2 derivation,\n\
+- expand all assumptions and missing steps,\n- formalize the variational \
+PDEs,\n- check internal consistency,\n- derive linearized modes and candidate \
+emergent predictions,\n- build callable Wolfram Language pipelines,\n- and \
+identify at least one concrete OPF-emergent or OPF-predicted quantity if the \
+math supports it.\n\nIf you want, I can also immediately create a new \
+\[OpenCurlyDoubleQuote]deepened and rigorous OPF framework\
+\[CloseCurlyDoubleQuote] notebook scaffold for you now.\nI can do that, but I \
+need the notebook itself to sweep through it rigorously.\n\nPlease send one \
+of these:\n- the notebook content pasted here\n- the `.nb` file content in \
+text form\n- or tell me: **\[OpenCurlyDoubleQuote]create a new rigorous OPF \
+notebook from scratch\[CloseCurlyDoubleQuote]**\n\nThen \
+I\[CloseCurlyQuote]ll:\n- expand it into a much more complete and rigorous \
+derivation\n- formalize the OPF action and Euler\[Dash]Lagrange equations\n- \
+check consistency of assumptions\n- derive linearized dynamics and stable \
+modes\n- identify missing variables and morphisms \\(L0 \\to L1 \\to L2\\)\n- \
+build a Wolfram Language pipeline\n- and try to extract at least one genuine \
+emergent/predictive result from the framework\n\nIf you want, I can start \
+immediately by generating a deep notebook scaffold now.", "ChatData" -> 
+   "OEM6eJztfUuTHFd2HjkDPpAzJEEOqaEUtnynyTC6qapqNAiAVA9BqdBdDdSwX1NZTQyi2URnVd\
+6qyumszEI+ursGgwhK4dDMOEIRtmQv5PBrZcthL7zxQiHvvSP/A1be2Vvv/\
+J1zH5lZ1U2QFDVhR4DSgKjM+zj33PP4zrnnJpuf1t0ftE77Ye5L/5aXyt0kHk+ydPCd9MJmkGaps+\
+slMsro7+6rrbTvTaS/NvISr5/\
+JJK27bzTDMD5xZSj7WRBHa3GUydMsfW7DC1NZd19pTiYy8teCzKPXqX3xAl5se2PpvrAuB14eZnXXa\
+aYppvGivrTNXm7m2QjzB33u7z6/\
+ubn1UcCN8yzeiJOxl6UXukkuiRQ8cr1jCSKOQdzMjE6xvMF3z1jdxe04k704Pkrd1+/\
+G4SDxxpteNMy9oXSzaYgRfufWdOKlaUemEwws10ayfxREQzvD62BMpjmwm8iJYuVFIgtkBv26+\
+xq1WE+CYxnZ2UzvV+ndHVASJ9NNGQ2z0c///Su6Szua5PjDJzbEiXvhf/+7v/gvdfdSeaF7e+\
+319MJ2HBHX9Qs87uShTM3zH6rnmTtNMznuxKHsxnspGhoa3ljLE2IIqB9I/\
+AU70fV67ou7aBNHHvb7e+\
+sy7SfBhHfjxh0ZTsRJkI3ESRJk4IXwIl8MZSQTj39qRgrDSdGPfczz5nqQ9uM8wZPWaZZ43TgO17ww\
+TCvc+h5aTUJvSnIyeDZ9seOd3IpPZYq/O+vTyBsHffyGqP7eRmsXTPUyebiRgP+tyMcmYfy+BC/\
+AP2K0myW0We4/0IuhUc0mGMmDYL2qR56Xrx+2Iq8XShrvdhLnE1dmtMZCwl5TDc7SI/\
+cfbuQRa0hHTuI0oE1uQ1CGiZLryzMS1zr2wpz2mjhDDUnhIDagT00CPXBlchz0aXcVfS9i2d34SEZm\
+u19vnU5kEoyxoV64Ib0sT8C8ZxRFEB8sDwyaRv0RmBbnxUIubSTyQY7tn+7KyAuzafKv/or++Zs/\
+wrs72OJQJmY9adPBymfUHJRYImZeuZmXZOblRWJmsxcXT16kJ7txah+\
+8wA9AuP79muLsbSVjcVKeauZVZaofECc7tKw068i+BDNtxzfUO6XWunvx9kWSpZCbK0a/PsuCj+\
+Q0HTyvd/rCrdifuhfpz7VRHh25r9m/gj7aL+m7DmjL8nQN2uA6XS89Ur/diy2YhoxEs+4+\
+fyfwfeym3ZU7014S+\
+ETrlsxGsaXn5XbEBlwbj4oOvdKORpABtqpdmVphxnMorBeyyZLQPP38EgTLCh8b6Ne0aDbbJS35wZZ\
+3St2UUmlz9cwfoz+9UCZQyWLwz5679Ezd/V0838kzmLG5bv/\
+zuxAEvFbtK9Rf4sfF3qRrz9Xdl7ZkMpRbYCQUxUr/72wFUTDOx7ZpV/mCZ+\
+vuc1tgc9j8DoRJ60zhRy4oJzScZPXrjWvwElvwRcE49j3LkgtfwgZjQO6CxVLtivsypFVCDiFhm0F0\
+BNJ2oAHot9teg3yGks11Z9N9Z5Rlk3R1edmbBI0Ybbyg0Y/\
+Hy8cry31sy3LftobhfZUGMXaSzWCFU8/vJMEwiNxLmsxlY/\
+awpF2vj2F4FWe8vqTt4YZ3HNMqUuMdz1qye3E39IKIertkj5mzdfe7WLL758/\
+ei3MBhyo8MYJjGOThvP33zEgCVlb6tkGzLewkDYcGSieyDwENfiFFEM0NVBO9PBNTtOt7EU+n/\
+JAXTUUWT4J+A7uj9Q2iVlirF8jTQgS7MS3CSNGCHv/Q8OVwrk3d/X65BzkkMyr+\
+fsEN44yEzWHe5L1xUHX9l5QzobdKD9Ifzc052wSqrR5Z//\
+iPzuljGmDRLIrFGKzcb891O6PVGZbu92csql78LnkwQntQqd87uwmBC/d5BTRIxqqNiHssY/\
+j3a1DFmdfN57EOxjwuCcFAoz/\
+by33R7AJotlt7f26Rs7Meaqw599ygh0SGZPnX437OXpPGtc1geRRNDHbjBNQ8v4lpgARK9LywM1G0F\
+n6WFsgq+LHCZO5zVxvvNq4ay/J654xZATdmqdTooiJVLxicYWcjoT8OfJmUMFwTBvhNAI/\
+Q68u9KCAMVmB469XM5jOMNtjGuAVXRn7FEpepeEmbVZJAmSiX3fPAsJcxDonWOsbqFUjqJXcUn7C9h\
+nZXF3SJXmEJQ3j8tEuhhO7zu+4kDLIyCdYDWPQKtyKB3aKhEmprjwEDYEk0sIMeA9P2pK/VUI//\
+ateDV8nWwjj3d3o/xw5X6Hq5CxwFx5YCrQZR9d0b7Llu5T76s/sApTIhY/ASv8EilSt9ntzMtRhKY/\
+S1deqRjVe7yGGG+\
+xzgI436qmljwVhl0tfN647MkqnhhQ0m6G1l8EpnpwARUNKAWgFu00MtvU342e8b8x9ORl7zAmN/\
+pT6AHnamFzfi0K88eQVOGw9uTWFg4hyx2x/fegUC+\
+L2ODAjIThJpmf7mebC3eRGSzKGl9Funsp9nctfLRjPoQDfoSM9Xb7/bJDP2qn7ONm6+\
+m45J9zptzRlD+EuIN1jF7tAOG/\
+j3piYKbKnKwNoHYCQ11Wis4o7PePbaLiRzZojfxxB3ZW9DZn3AtOazJQCFsJTxUfDMM88S+\
+9DMlV7C7S6YRTZ97Idunl7UWE/62BbD0upTDN6GRWYc9bwRgNtxPCQBuIQp2mOKd/+\
+e5ylrcdVRvFp+xfowo4V4bZMNaRPI8QcVs6nsMdF9BngxUvc8vQqk+VlAGvvkVpD4kZf4sbV/\
+c6x59kunqOzWlzd9tbKm7nQiyVx/n55ak2+QaDee7JJdebML433k9pM4DCFUd0cy2iXjblteorC+\
+TWKWK1a5/+OH+2s7293Wz7qrAv/e2dy53V5rbt7fvXPPba+\
+59zc6za3W3Z3OR2JxZ3djSRyvNK4cOLud1lbbba0KxCeRD44w4BOP/+mfCQQdCp/\
+KhqCIV8AWCXqU60hPxJHAUMI7DeJx2hAdSVZVUGhA3ll4k0kSnwZj3TqPKFMh4LkoNAOkS2AvGo6zv\
+9m81+rcv7Iqtne6d9rbt7dbrnvg3JbxmCwfSJtQ24ZzC8YGJE7Xc6DGDC8ewt9mFCGLx3/2F+\
+LhlZp4/Ot/++gRiJSn2ANJSLMLpB4nXkjrWhWknUzF4uNf/+ky/pehy2/\
+EOuQviJYaDnAdaW6Gpi1Yjqk7AdMRLmD23ZgGhJtZBWcG8G1k/SwzvFAsroF9QcS0iZvi8T/5b4//\
+9E9qWHa9j130JggLl4rlrqyKn+41t7t7W/c32q3N9QOOGOXHjDxWxed/vf8FOn/\
+xq5roHNTECXFg1RHiiz/B0JifQSHmXacIDPMtpn0v9BIxkQlmDDJBv+\
+VSjbr8Cl02Ahn6Kjo55fZeOKRoYASHiS2ZZCNu20HTnR5E61ivijFDTn8Xi0MEp2KYKE4hWlGpDeyP\
+DAf1LemlOQV9APOWOgFeAinJpOE0+6oxPFo/JzhEAgFZCKfUB/\
+smPEg7doakzKecRqrY6geJtgYiRfwXQk5lnKfhtOEUdnZVbOUpwgVapYD2QamEITwtj8xswfa79O92\
+dOwlAUXOLECkWVgZA+4wSMcY1Jsg2BAfUyu9y4r+HEO0cmCh1oPcKMNAuLTtv/7P2DmxGQ/3v/\
+jVgfgDYn/n06sHwv/8P5W2/+qqUIoJDe20mpvt7r0DB+\
+6X5Ir5tC77MW26XxNjZi1UJoV0yoxm2vSmMrm/0lBCg7EIeLLEh1NBspzhf+\
+ixSNACDEyxFHLOES1WbR1J2fr+W7WMiPz8L98C7VdAIJY8wY6sGjHoEbtuim2TzJL7n/\
+91TTxci2MWduzjowMRH0PsspEUMhjKqAd8k1aodPbdnc2Psez1dqe11m1/\
+3HLFIoAqJzdDwTnMpQNnpSGaYTCMyNqD+Ro/CvxK4sm0XhYsn/oOCfyqsJDfhCKMh5DnxY+\
+xfz5oE8eBB7OUBn4um9i9KQjDGq82MDiHjbyztEQIJiuzFEpJiIR9+3Zfr+S+\
+kmIoZMVcshySxT9oCNhlzOjnfbnfeiBugqk1ASlLa9iBU86ForUfKJkhqYP7PWg47zZoSMxlwGBANG\
+1iE0EDeKAJELHeu4alt0UsJwQDMt0sGAwi2LctL0uCU5DThhYQIz7/W2VDQNvi53+\
+7RJsNUf2Poj3mnx/i5yJZ1/GETLOXjGOEEWKM1RHDroFhgFmSvbQXQtoGUuszIiuyI0RjP4xh4+\
+q0FQjTwe2M9mLdpaBjSclIBE+eIHYX7YH5ew37O6BEpWj20n21WV54ID4QK1c+rV+/\
+wnu4LdPs7iiAViekI7w95H46Ded6Q5gI0Qt1/kUSD5T6ktLficf4v2QyglJDcTevMOM3V9S/\
+ri41ROt0EmsPZ/\
+xT0cFLBRYdslGZBBMJjyzThnMD3QYIXQOC7iVx7Ve8wgR8EyEDPezZCFrIDXSAnSoJDYajbK14KhaX\
+31kiw5OwIMEAgJgpURerQLnhvNcQd9CrbJ7vNDvrorO32VpaJaESKaaGu1rOtAcUQZGPToU2DOJunN\
+AZB4LJfkAWl3miHdwUQgl78zbhffv+Jn4HUfk3jHcDchCPgh4cjx+\
+fRCnFJWTX40QMglMIBWzTBAuHIsg6uxC8JbvQ7TS33c1mt72zfX+\
+ruSsWTR7IncKGnQptjmAc6kLvG9AmxIY98/6VA/GPBUBTDMWfrnuZt6/AAjSqbja4ZL3X95UC18i/\
+nuLP/w5Vfsh/gRUrHWvsrrdSHuKqnpIt8JhPTjjlpKTSGkUl3ayKA5OuoP5KpwUpNQ/\
+ELVLGwvtWuX12zsaT1MRa3gv6KZqTQ6qJn+YU3toHvDRtvmhtyoqwkjXDE2+a7leGg+\
+F5aJHEowPieetnrbU95vhue7e12d5uQSc2t2AavDSmjRE7CbRgiSAJdm2FnBHpBDGUGMNrL3O1oRrC\
+pzEZFUMQDATEOg3Ahh8LiTBMkAvrMNHk9SdGkPQg7wJ5kZUEkJSFZSP7bvw6vFnMfizVXa4pTR9rnh\
+wbq00axCmRESJYbE/fmGkejcxiogjW41wnJ6AhNXuz0raLI5lEAMYDRJSQCt3jhnIbZDqo/\
+SCH2hkLQXYGi9xcoT+\
+uLvHBGSLjPIlAqc6MiHQ67sUhzKQ8nVBChPhQd18o5ZHea1xBRPtxwBw0x3SDCzpPVgQyZyZuz05qP\
+8ehx+BFPcbLa4kEL0ym+8yAy32j8tBEPuXYdj6EqgRJ1WzD+YkBBEGkxxRT2aSbWS5l+\
+C9U48kXdMzq/s1P/p9KTjvOB4BBsq7OiD98S6g0XyjKMZvjGJoDcwII+VUjiTxlTJXE+ZB+\
+aoIsKbTRwuxZQ3ThqgT+PwyOiAOJHOYUDkS6AeSrD5AvYJ9HcGdmMDqFwNxwV6JPaWRghKA/\
+Ylnm6Wl1OQl3DK2F/I71htADvALbFsGEJZpeFi+JL4k6gVP6YscbeXjUk5J8IB9UYw+\
+UkoLJFDeq9pbqvtpcuCHoC9YTTms0elLMxRtu8gdwkNPSyDxWaeyehN7T/\
+MRlXx09KwIMgYASMTE94BWewDViuITiDz2zGFOY4fkMpXTHQUwJFBpzmAe+\
+QgerjvOOuEeUJiafin2FdegBQpAT9AlVjL3kiNwl2waFbZnuOLEU1RDGWEGjrbB9UuUgQYTqqRhjpw\
+M4ich4cWfJdR203TonTLNHUvqYDQaamvgxsR1EpqPSmCUiFW+kSjnWTLcTUia01+\
+yE6CH8ZUH3oKBJkB6V+KbJCDIj4z2vf5SGXjpaFZ+\
+8A45RnkOSJ62shcUAu5hSD0CgI4otKMcN5uRJQlkBOyYURkoeF/\
+JwlDJnA3V6yjwNjSkAGo4oQwHjS85i1Tk8PDQvHRqcHhBJlPECEzB2YaMRu7Kr2fS68mc8hyWEULIi\
+xaeoH14LAQ2w6Ntvn356FZHW9NOrb7+\
+NcenkUMe2IRmNeWPlly2u6E31nFWRU1KwKvYBT2V4sDjhc4hVROJLlQ1bdS6+I/\
+a7tFTbCFB6mZ8s8Us78c4xZfvliW3Icr1s3pvXqhefmGi0Zjtk0MiEsKc6T+GXS3p/\
+hTm2OLN8RDnEVGidrXHdiVRc9UgAqlyBssH47URgoR8rxbU9SZxpI2GL35qfiHOP4rbVWFLYjySDVI\
+hKyilzJSQGvqABBXcDG2wAu8RAf+\
+OxynpA3j2fRHNCENHPoQTosq70ijzPMBLDMO6hYwFReIYgu5xyq0gStvSSKToqMMc6jwEprxPx0Ycy\
+cJFC8WQqWFeKERdlY9gQlB9P1uDkwjW4IeL9NisWDUdihMVBF4OMYmaZsUngeIMknODO7HjU79CDHY\
+72j8QppTX+\
+5cFhedGHzZmXNKc6ouIwMpn3onazPXYtnE9HJ4SG1mEEZKkoPuGVkl9L8zArz8vbRT4kiTlWysilqW\
+Y15bsw1oma+b5R8PvSwA10jUNlq9nE6hig5JGPpXFDmhVbXhRMOIW1VFLJJ0zRUAuban8/\
+jLlfDMPC/pqacJBZspYQaNj+W62NnU4LMbJPPXivCUM2Plgu4wsScUZ1ClKwn/\
+X6HKiQl6I32rfTInvMXfZ8fZ1FUBwDou7GTIemqaR/\
+JaOjHWmZJmOr4fiorGGMLXW8ZLhCf1x1luWp7DtOc5Ap265H5cc1HlzFRMpHSnUexM8tY4yol3E0NV\
+CEQ8cVdyEkyZANRBHijtWRnRSs6DWFfgZT7k44kMRIeuCN6aqXCg71yKP1EV0qH00wDPEEk6ym5/\
+BkdtGr6jHLooMeUFRDg6OMDXFlFUPGGCNxuLVhkvPWW6J57AUq36A3VUF0i/\
+fE4nKfn9yPekvmpQfzcVJgpzKKoHVM+\
+NjYiKsR6YqD7xqG8zacCau4s8UgBAOLGYlDVOVCzrg8e8Npmj1xLpqJ6zyb+\
+RUrnbdDDamCskyc41QCEKHCEvAB/uB+yD+WnNuILDkGe4IvnRB0rFAV+\
+Cko2kHUFpO5SoxtYvlI6WF1hL1OGyhaAsrRwT6xl/\
+cfwsUm4jK71cs1cXnW1eIZBpt7XJt1nFy9WtOOF3+3RgezX55lhomxNDtS/\
+rnkcA0mGf1EhrBGYPMT+\
+JJijonMDLpJJSSacnhqwArDHuQymYJlTXAoI1dXICuuwKPhiGtFMSnt8clI4dTLhJ6TqbaBUL0Azsm\
+hYFLoaBJLOZG9+wP6teTwwzKUx9ABhZoMAFKF9D3symaFyDwJtZzhjXNRY1r1JJtOpPIfSgLZ+\
+2UJESIWFziWppkWaKoFDmsJsaULS4pMflJmfDAeWsarx8otoO3AUJueyULdWv2kOdUMpbGJE2eP/\
+ZUHVBv/Sw6+aURvySEwc9bmgQepQrDVXuDQEAqWT+\
+pZXOfsejXTqV2I8HoxECEhlIxGooQn0BtkOEEMNRlN06APPRlKwk74WRMjVdZYg/2Fz0bcQNWqY/\
+odcRoWCK69tbvT6Ta3u6vGi1L0UnIAfN5gDb1eRU0hq4Dynxz1Z1r+\
+iPIe5WgYV2KnyY5pWFR4nBMTjRgEyHEwuVY62aLCDygKpxUI9/Mh4Rm7QcKm/r4IOdCULdmQukD+\
+is2UclVmZW45OsLxeuVAbvGTbKnhXKT8Kpkw0EwuhYcfxSeCntd7U5V/\
+LXLFt7BI6UUwRhO1e0tWRgrjYHMyJDBooX/Ls4u+qw4Hu+5ZA6mTZ8rB8Gs/lgrxVp1MKmXZqRfg+\
+YgONjnBx6wX0pDCAJ/RG2OmcqhnseJMNBmQZaJ8oCZ4rPaC4lI+l/\
+BKobgZI9XuU8XtXuEByf4YnOmdOZlFqrA4nBLPlRONuTpJ8aTAimk+\
+IWFNz8SfaU4gJS0hULV0hnsJTVNgPjoqAGgKQrI6u5RymFd2lflhqTr8X3/+z/cXWE4XDg5rGiwS/\
+IZwxMM450H7WRLWb+p+WKvx12lDbJ89OHFO5TsMaLTFNpzaoLg9To504mpMJ7UUZ3t8+\
+qtWBznOQ180N+8277ma1Rj2nNWAyriXsaMYUYGbGvjwpzm5smyKpR2ug3GqAox+tcxz+\
+JgZpAJBqp8j7CUZZMS2kTNw5VgbeK1bwcuE+\
+HvQ4IFGUepCh22uRMeXY3WcDakmzS0nfRSAZ52qjKBTHgZmOfV63SG7nqyK3RCKA5O2eLqk3GP9OhF\
+93bG3cLJVAbV2qOE+hW6n+iykfr0mrj+\
+qieapTDcpqyDqH4qHC6cLNbGgBlx4ZMCqSsOuip08248Oboof7bOjO1iE+sCt80Hu8rKW3/rDwH+\
+0VCHgjkzk5ZSXMCGCoSZvv/0JZnl4+ujttyuErzo/2idav3zsEgfugIkDDwEB4miSw+\
+17a2rAWzH8TfRHc5y4LeN1fT9pn9VBNayJreYCeMOPtgGx71FecA1Cs3BwMMsII2f7KzeuNa6tgGVb\
+pIILB5XZ2uSWVAsxpvdlwmi1lWkaZkUwTm3oiLZvACsTkol3R2LlvXGNhWYA7ylOYCLaKsScXySvQk\
++tSRPLam1qoIXz13T9SuPKe8Wa0G/hDqzd7OpIaU+kjXJVL71OymNAnxO7prsk++\
+Q8YQdIzdvQFj5sCmixoRwgmqfjUdiak3NWo+\
+g2qeOTYgEsDKSdbYMAVHjMrqIIbAuPb8z32l6n09ruWjPecLQnSqncooARHCeRguoInoAAOfVyjtoY\
+PkT6JviyEzYcTl1xEiCOypRQ7lVjCloCZZ6SmbODEiaqmhvtgIu2wAxHkk/\
+apM8lExwVNDc3BceflbZ0ckED1MsPP3Se1pY9rS17Wlv2tLbsaW3Z09qyp7VlT2vLntaWPa0te1pb9\
+v9dbZnzwfI8uKdbNueVVf3XzVKYQdE6JzNSwGebGDnnDMEGSTp/o+\
+uIVEjlQ1Zu8j8U3FCkjleU16KAaa0cB8Cm2S9pOPqUBJFuFi+r1uXG7eKjG2+t3Lhy7dr776+\
+8e42zMZh8QU2DuJVOl6qZ0Uq0RDtIxzmEMb30iOwZ399U57WYVJ3CV4ksUmHlle2qdDcMyZrJgUPiY\
+Ut4y0q0w0vuq0yUsOg3nSnA+AjBbSj9oeyYY3pu1oz8Jqf9yNXuE8IEBqYpGT/\
+MDuKST8noyq16veRUXmuCMaYlmMvxIr9E7FtXr7z77nvXVt67Do3XE1KrSmVJ6fmSePzZvzAsHRgCO\
+Vi2EJcPpMFHfUDAb+25AaZZUJR5oRLRhcpcfNgwXa42qcw60a/0QTMsF0O7Yn4+\
+vORoWFVb0NlFeSc3vDEiA80eGGoYgTH43TI5vA8FX+u0D5x58s4a4q10pZ4fXe/\
+5jkLodJigzk6mMHVeqqRxwD0tbyaqb0Uw7QInCJT6AdNEa0KwkTH2sAcyrJg9Gcbq9I2TqTxVTafPS\
+bybSX+EQAkQ7TLBMDViTdyCpYI2h8HltPz4jgwgjj2gZjzfg/\
+lMKEbAEkptPFUcJXa9PAwEf5KIfbxtQmf40f7KwepNvfKbKi11xsoo4UQpx5WDm0JpzRr12F84i8WU\
+t7STUE/McpVmUT3pdHWfJ9SDXsWgD9W78wcs+FMauiae1M3y7+t1K/\
+hbYu7XGoG5bple6vqoEPK9dLbQoxJuxzpldk5CXB1/HJPPS0tZ9cPS/hQ/\
+d5WOmbS7iNWFbC7V6qhjWOVurYNWBbtWiKmyraQlpKsdc3zr6fILVTKk1XlKQaMuox2QU+\
+TeNTsin8uXJtEDLyJGWXWoFvAkdBTtH9PgKkGsW84Qw8MspkvEd/\
+2cTptpmxYsNX0vojDIUyUGEEsqN3T0h17E4UIzTeO+\
+QkELh1zUNuKDj8QvylSo7KpE06GqJkvUN3CIf1zJgJ2JOLtYWfJUDOkbR6SWy7E1etMfK3ugwARZEK\
+pcM4TooyK9t6br7JaazaTY5khO06/BPkXS+ex7eC7/aqLRaDwixSzxTTO1a+\
+CTTnAcUwRflq2vwlqPcmTOLwX/FL8Upc9kiV/ieZ3+Efxv/\
+r2gepfJwdsZflLhkZFolTumPnW7SE0jj2f4+8QRC//1xDGrO/flI0MEi+\
+pwrUZljSRcSNutLL2eRdXjI6TN+\
+OT0m9JpKPwqPD2HzvJsX5fSr7xHBHYgZEyV8NWPvwPjztvaqS5LehI5s4w6a3kKBik1Iyq4toEUJkg\
+AHELYU3WsYScoN0ol4h5ft+Ipt+NIx4/fsrzao84iFOPnPtpRXmlm9m9R+\
+548M8HDIKRyd7y1Q6qau/\
+JQXKQIIuYs5kxRJp7qRFfVfQpV6FYrDsH1JQAmsSTrVLyQ6EjmMNWfszmcMcQMfCroqWxta87Fh87F\
+i1VKZ5qc787IVD+\
+goxTQo9zqAp0iLyjHzL8fHdATQ1zttzwXvIVz8ZFzoF0ExY0KwqRU8UNxgm5MJYhT2hxdMuTr0hZVL\
+FTdnlKgbS/k5GnOpS0sQDFdgtB5vUyXPJMYDuakh5GQ/pojPZ+rdjjrxkDpggLQnDoSUxd/\
+VIiTqApL38CJuai3hI/mgdp26+NWR2NA/Xaf9qbGPD44rNyPoBNQsHDw43LdBpy+\
+llgq8zJU2DIIKliK+OyupkqTVcXp3NKV8eOqLeXKDSNKBIB/\
+QUM2ziR64VYehBTlkFS1xpMgkXzUYR9zZTvDWku+HoFhi+oiuI8odcKcTV+\
+l372iGMRqHffdlVGUTsNjLwq8BQPbD9Q7LJCwGsJwIdUpQWqbrKkARZ13XxGE6c2xvH76Ey/\
+KvWQqrl6piZU/fP89tCgKXSy8VGBd18wBjmtzub+wFx1FYL+aTcEpZgN/\
+klSW0jlspDzys4r5WktTfWjBuwPxp5zykDLSqpa02PrGbymqznor1xJEdKYYyOBfi/gGIUQ/N0c+\
+YMNEBzojCdg8rlEhGB9bUKKFxO+EvZWOwXUaQ1f/3vESLHh7+iAPuAoNO3D1feM3qZSZ2sikR/\
+LMH9FS9eRAprFPGP2uDDOFXVb+8PpKTdfN9kzBAMf5JNajYAJblJ3QFboS/bo2SBfR850nrn/\
+XRWjKpUCLep4541ciaeJtFqAn8GM+5j4/2twohlovRuragVgYfytS8OAXK+/\
+HX5pbsekFvc5S2uTrpUxoo27l/MXgEYzRbiC6RpJue3maXk5hqU+KREibC7lgR+C8EjqFO3liBsSQ+\
+LXzHwXrv5XsR7HM3cAO/eQkBLMhxUK/\
+SmPNHsUd7vPo68mMTqfuFum8ry42k3p2PRllpaQCXx4MxoGtT1E3FrhYmW8njenRtjyBHnNFG4WTIe\
+23Av9cOaQl6YRPG9V1xBNBJwhAmZIqjgMqWlSbzxs+ln3yCH0uZWYkwnXPHNd7/\
+jGdVNA9V9ioUhWlud2rrMYxx/xDff24/CxO7M+UjlMfkEPJx8Wkqji/\
+n9MpFN2wU0ZJQmVkFMMselSmdEylzem4KICggu7hCM9DIG2bWsGyNK+\
+GiXcc2DPMAR0onWORnsjc8o6UdeLhQnOYSFniKmED/alkneA/i8d0q5uYbG8O8U2QmM5q+\
+Qvl6nLuWN/\
+DSG1B7rfHcT6LqjAzpM8W0gzSV5z8MjYuPPr6tvXvpifBtZPJaEZPECLazLqNuMA7G0l9A9dbOhr4+\
+3S9GrhrQnSCPTX15MqdqkSi8rWzrlUs2tp8PoTrKeRPVbFBRPBs4iX2ulOapwzOewHVdS2ZC+\
+U0ja5EmnPypbtyixru6nq3IgjMSOx8Xbzl3j/d/+I3B0s1LlXXforrWaI4UNjA7sCxVHdXKZ/\
+6jTBCebPt0UpFMTvxyf7DBSqF4+\
+zZvlsTpwdE4ALVsyxcPRLdheWFL37DHmC8T3eNuwDYkgqeqNkBYrlvIOPfGD/Esl8PBzdu/\
+JzSiEFqUL0ASOdTNC0bA+Idh3dUZMmVUupbq+ce3SjBCDjzCnGgiiJ9rZCgh7mtaZurj0So/\
+4yDkgMQw+nSBoCERiReqsYQJfwlSgDMABKKS1Ww5aWcGdbyyKtge4OFlCnleic0MgUhc8JRgSvXizH\
+OWHWx3q+LYh7OJgjOP+3BFOs8A8X9Xe8IAIIp2r9+8OhbwkBPwLhzQmrvbrIsptVjV/\
+NSvXtr5dr777//7o0bNxxng4oC9HX0vq5vVDW9sa4JyHuQmBGXL5ijeIVhq47LV1/\
+HVRdLBl6ffAvlOqZ8T8JeN/\
+DjwkwX9TJkcOB4bZBXvp1iBySx8kmcOBiJ7LdJ1iC8RCojiGAYqSRXyIkWuDZoCOyfl9BFEL8+sZ/\
+0pvyINxnFVN9WpaQ4bGe9yKPgQU4AZUKX3unDL9UyqYIrKsOjrthAz44rBVV0/6wXwHjCSp/\
+FLOY2JTxUUhfdavoSov5h7zKpINuLQKYZWZh6ZwZHdZUxNd8P4D52qpr+aIXg6+DZCNKHB4w4+\
+5aTcTL0IvYwtiZI3781ER4XvyNgHGR/IGloPg33Y02KXrNu9oFaBwQXHtP/\
+UB2cj2KqPRmp2gw1hLpiszj/\
+OZwB0BbX5NT0xxfoVG9pfuDFm4IjKThDLgbCmnhMdVZPOSI7EvmrYc7ym6q7h/pm/\
+owsqHtUeiEbKzzQkHeoOLsEaqKP9DgOXyWo98Ogf2Qbeup+1WlWt8kvSEs+X8bhha0B1SZ+\
+TddS7WycyvgaAMKMUzH3/GyGYt6r+PpOL2V5TVQoeWCCioE69uNLbb2pScWULkma+\
+3G6iwWwNNudYDhM9RuWpY9igPwp1J7DGPttCL4aDDXmz7ZHWanywIYF1juyHOvPP1Cp+zys+\
+FLPUSyOvZBe+1RMpZec6z2q/D7Lb8y1WDBXpafflteYn4LZq3+Wwt/\
+5horts2HyfLtbXuT5ceoG4dFdEPlVhm7e+smWm4MLkHhV1cz+\
+avrlve55yVF8nB5Ndz6SciA7nv8LQP30KAh2Pd/3+kdmavZ5dfeivheRTNXXiovPdl2gayyl6rL/\
+8J3dzVbTbQn3bqu1K7p3Ojt7t+/g3y26r9G6tbPzkajValvNj1qi3RV3m/\
+fuiS36HEZ7W6y3drt3RE2s7WxhkG5LNLfXRad9ewdjuOjlttBsQ9zb2RNrzW2x0cbrZlfQfF2xs90S\
+fB8Efza7rmhttTq36cbPTkfsdlrr7bVua93Ss7PXwRiba3uqmNQVi3rwuy0em0jY0xTo3mp0V9xqdb\
+utjthz1VxtVxR3Zah5t7NXWs3e9nqr43bxgprvbOg6frfg4MXSd9wsG//\
+P99rGd5OHU3Fsu7giPfs9LR3YZ+\
+pkIj2hz96YL40FfN8qTtQ1CLEbSrqeIwOKGlYdKqOf0JedzhxX5+5hvQTVweeTMPb8ZWCTRLU/\
+bES9Q76TWlBiP/zFzoO7vtvAo5ACcz4GKH/\
+dwidS6V5Q8ZkLxkd9eAb6QoGzQ1X7bXUjtkxiTTCLVp062UI+\
+9aCPYwWZuf1tFi3KlZWqYFv5cPTki6k+V1NB7fPxpPC75myQ72FTW6VeVLOtPhNS3PKgMldq0af/\
+vJhy+/SYKkj5mkV/Sm9VqTh/skQV8qqCeVUXhz/\
+UHQQ55psKhNalHygcQL17dCpRVJbPnRTZUnNqzHBDWewpuWfa8ozjAtAE9mMesLxu58Im0W89JSh7o\
+E8iqCBXfR+EIlF7k7n4Ogt/LkxvBdhI93/HY4yi8kuVnX782b+mzZYRnzb4xf7Q7tuM1+PP/\
+k0hCmnfGwzi0Lefionik4bzFVUjyOi4iq+Cf4k+OI5WCL67X4RO9OGb+\
+tk6weqiQnTdZF4NKlqAVuT/lQasinfeASsqrKmw4kxFAFveeYcLXyLRfvzZX4XhaiG+\
+hcyPyftzjsui0wqrC+mfE2i+m9dXCR504ftKjz/7y00PgDaio0gT/\
+VtBL8k3Z1AKBTpT2jUC15GMqs5mDUBrK6zzZdn6kxH6dsUndB/jE6x1c0X96+\
+onS1Y7vPPVQitFlvCX2aSuGa+oBjQhpyMFoxXLRgOP7ZcH7LcPrbieqQcp/VfMKooArFO6L+\
+Apqzcv5iTedff75f+g11kf/Py/GWzH+A=="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"950bdeb5-2b36-a446-89a0-ac4b7ff64906"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "01",
+ StyleBox["RHUFT",
+  FontSlant->Italic],
+ "Complete",
+ StyleBox["Ontological",
+  FontSlant->Italic],
+ "Framework_Foundation"
+}], "Title",ExpressionUUID->"29840340-b4fa-6241-9d8e-11ce0ccd9062"],
+
+Cell[CellGroupData[{
+
+Cell["Purpose", "Section",ExpressionUUID->"a064a17f-2c30-c94e-b3f9-c9a30c88731d"],
+
+Cell[TextData[{
+ "This notebook is ",
+ StyleBox["Notebook 1",
+  FontWeight->Bold],
+ " in a numbered RHUFT series. It is written as a deep, rigorous foundation \
+document for a proposed ontological framework centered on recursive \
+self-measurement, layered emergence, structured spacetime, closure dynamics, \
+and scale-dependent stabilization."
+}], "Text",ExpressionUUID->"e3ea180f-9725-c348-a007-c238897f5dd0"],
+
+Cell[TextData[{
+ "This notebook does ",
+ StyleBox["not",
+  FontWeight->Bold],
+ " assume that speculative claims are established physical facts. Instead, it \
+separates: "
+}], "Text",ExpressionUUID->"7bae69f1-0388-3f4a-a1c2-373d795c7088"],
+
+Cell["formal ontology", "Item",ExpressionUUID->"ff8b8195-8794-4c4e-ba2a-f58e984fae98"],
+
+Cell["mathematical proposals", "Item",ExpressionUUID->"cc9ab978-f5c9-5f4a-97fa-8c764fc2767c"],
+
+Cell["physical interpretations", "Item",ExpressionUUID->"2621df7c-ecea-4f4f-bd79-8a2bd559d0e7"],
+
+Cell["phenomenological extensions", "Item",ExpressionUUID->"a0e66cde-53bb-0b4a-abfd-061af0f49e46"],
+
+Cell["empirical status and falsifiability", "Item",ExpressionUUID->"1b880ccf-1703-8a43-a8bb-cb96903578e1"],
+
+Cell["\<\
+The goal is to construct the strongest possible version of the framework \
+while keeping clear boundaries between:\
+\>", "Text",ExpressionUUID->"9fc33022-3680-c841-b5e2-4033e2618494"],
+
+Cell["1. what is axiomatic,", "Text",ExpressionUUID->"8b1ca011-f6d0-124a-b42e-79fdd74bf6fc"],
+
+Cell["2. what is mathematically definable,", "Text",ExpressionUUID->"3c60ff02-3ba2-674f-90d9-0e1601a58751"],
+
+Cell["3. what is physically testable,", "Text",ExpressionUUID->"6ddab1aa-eddb-1743-91fb-4aac99f9e56a"],
+
+Cell["4. what is metaphorical or phenomenological. ", "Text",ExpressionUUID->"9b8ed33f-594a-2645-84e9-9ba191d5ccf7"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"35d4e7fe-228f-ef48-8186-945694a4acb5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. Epistemological status", "Section",ExpressionUUID->"da801f94-9b2f-be48-8809-e36b8d186a4a"],
+
+Cell[CellGroupData[{
+
+Cell["1.1. Why begin with epistemology?", "Subsection",ExpressionUUID->"5b16fd23-86b4-064c-8c92-e58b6075d1ae"],
+
+Cell["\<\
+Any framework claiming to reinterpret reality through measurement must first \
+clarify what kind of claim it is making. Otherwise, ontology, physics, and \
+phenomenology become conflated.\
+\>", "Text",ExpressionUUID->"d0e8e5b1-5ff5-344f-b882-c98f3b49c694"],
+
+Cell["The present framework proposes that: ", "Text",ExpressionUUID->"3ee98ed9-c395-fa40-812d-28757b80094c"],
+
+Cell["reality is not merely passively observed,", "Item",ExpressionUUID->"bafdc636-2d57-cc48-a437-e279fac5052c"],
+
+Cell["measurement is not only an external laboratory operation,", "Item",ExpressionUUID->"0ebdfb06-330c-9942-8cf6-62634a8f9cc6"],
+
+Cell["\<\
+persistent structures may be understood as stabilized outcomes of recursive \
+self-discrimination within a lawful field.\
+\>", "Item",ExpressionUUID->"04c2243e-330b-9b4f-a30e-30eeb50364d4"],
+
+Cell["\<\
+This is a strong claim. To make it rigorous, we distinguish four levels of \
+status. \
+\>", "Text",ExpressionUUID->"65688d26-ecfd-9c49-934d-93bb2b135d76"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.2. Four levels of status", "Subsection",ExpressionUUID->"414410dd-afa3-5649-8be5-f7a4b862dcbf"],
+
+Cell[CellGroupData[{
+
+Cell["Level A: Formal axioms", "Subsubsection",ExpressionUUID->"c29502eb-c739-974c-8867-357b127bbc82"],
+
+Cell["\<\
+These are assumed starting principles. They are not empirical conclusions.\
+\>", "Text",ExpressionUUID->"2495ae2f-7856-8d46-bfca-4138a74c69b7"],
+
+Cell["Examples: ", "Text",ExpressionUUID->"bca60c36-c0b9-1e45-95ff-d6fe1eae0378"],
+
+Cell["\<\
+unrestricted ontological potential prior to realized distinction,\
+\>", "Item",ExpressionUUID->"f43b47be-e63c-754e-b82c-4317f84ef09f"],
+
+Cell["recursive self-measurement as a primitive process,", "Item",ExpressionUUID->"5d906060-4b12-5548-b62a-50cb3ea042ad"],
+
+Cell["persistence through closure and coherence,", "Item",ExpressionUUID->"930859b5-daae-6243-9652-30a2a4aaf024"],
+
+Cell["\<\
+scale-locked observation as a constraint on what can appear real.\
+\>", "Item",ExpressionUUID->"9b3a4130-7781-ec43-8ea8-de9275a6324e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Level B: Mathematical constructions", "Subsubsection",ExpressionUUID->"7344b60e-68fc-5c4b-b121-7284e3ada9ed"],
+
+Cell["\<\
+These are symbolic or geometric models built from the axioms.\
+\>", "Text",ExpressionUUID->"b7450016-cda9-2b4c-81b1-3b265046fd2d"],
+
+Cell["Examples: ", "Text",ExpressionUUID->"12cb7a0e-a54b-5846-89c4-a52a5ac7c973"],
+
+Cell["field states represented by tuples,", "Item",ExpressionUUID->"23dc81d3-8ed5-5a42-bb24-5d5f1ebcfaeb"],
+
+Cell["operator compositions,", "Item",ExpressionUUID->"c5f43485-1c4c-aa43-bae0-629d0c7abfcd"],
+
+Cell["closure functionals,", "Item",ExpressionUUID->"1d705ddb-85a2-2444-a279-44fcde47c562"],
+
+Cell["spherical node distributions,", "Item",ExpressionUUID->"825424a4-16ba-f744-8784-f0305f1104ff"],
+
+Cell["toroidal recurrence maps,", "Item",ExpressionUUID->"8ecc962d-7449-764d-8740-670489ca2dce"],
+
+Cell["variational principles.", "Item",ExpressionUUID->"a870d875-a322-3d45-b374-cec1274dc622"],
+
+Cell["\<\
+These may be internally valid even if not physically realized. \
+\>", "Text",ExpressionUUID->"0345849a-f033-0b4a-8da1-42d64ea835fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Level C: Physical hypotheses", "Subsubsection",ExpressionUUID->"38e2d45c-ea2d-9d41-9074-e0b6db4365f9"],
+
+Cell["\<\
+These are claims that the mathematical structure corresponds to nature.\
+\>", "Text",ExpressionUUID->"3fc4a291-f778-df4c-8fa3-63b3ab5d56fb"],
+
+Cell["Examples: ", "Text",ExpressionUUID->"c84dffaa-bbd8-314c-88e7-2163f1b7ff49"],
+
+Cell["spacetime has structured node-density organization,", "Item",ExpressionUUID->"d86e18b0-f5fa-b74c-b183-305078302f15"],
+
+Cell["constants encode closure invariants,", "Item",ExpressionUUID->"ca43d3c2-bad1-ca43-8513-a36c20532349"],
+
+Cell["matter arises as stabilized recursive geometry,", "Item",ExpressionUUID->"306525fa-94b0-7842-a79b-44ccb5974aa5"],
+
+Cell["biological senses are scale-locked measurement channels.", "Item",ExpressionUUID->"9085aa6f-1bfb-e241-a0f4-099e2223a0f7"],
+
+Cell["These require testability. ", "Text",ExpressionUUID->"4929aa69-c769-2c47-87cd-b91c1a5bd8f3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Level D: Phenomenological or metaphysical extensions", "Subsubsection",ExpressionUUID->"f471b3f6-d9f1-e04f-905a-8e6760fd7fd0"],
+
+Cell["These include broad interpretive claims such as: ", "Text",ExpressionUUID->"b753bae4-a88a-e54b-844f-fd3ea83820e5"],
+
+Cell["consciousness as recursive interiority,", "Item",ExpressionUUID->"333a1618-a17f-db4d-93b8-300702ad1652"],
+
+Cell["intuition as weak-signal field integration,", "Item",ExpressionUUID->"34379e28-646c-af42-8313-1320ea96b152"],
+
+Cell["\<\
+symbolic or spiritual systems as coarse descriptions of field organization.\
+\>", "Item",ExpressionUUID->"9d64df59-8fa1-0c4e-a503-c6ac83e70a8d"],
+
+Cell["\<\
+These may be meaningful, but they are not automatically physical theory. \
+\>", "Text",ExpressionUUID->"2b802469-8207-9247-ac08-fa46c631ba70"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.3. Core epistemic rule", "Subsection",ExpressionUUID->"45a759b4-0a85-114c-ab79-973bc37f1007"],
+
+Cell["A central rule for this notebook is: ", "Text",ExpressionUUID->"df9edf83-fef5-3245-842d-6ba228be3f71"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"Never present metaphysical possibility as established \
+physical fact.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"dbd8a02f-eb9e-d14e-a32a-d44e687b6617"],
+
+Cell["\<\
+This rule does not weaken the framework. It improves its precision. \
+\>", "Text",ExpressionUUID->"b3c56fca-ae76-244b-af87-5273c7c20fce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.4. Measurement and reality", "Subsection",ExpressionUUID->"f2a0635e-de80-6443-b69c-b40e6e4543a3"],
+
+Cell["\<\
+The phrase \"measured into existence\" must be handled carefully.\
+\>", "Text",ExpressionUUID->"0f20b658-6ecd-1d4d-9e7a-2e5ab6c6b0fd"],
+
+Cell["A rigorous interpretation is: ", "Text",ExpressionUUID->"e6b4fd59-b751-ed49-884d-473c306acd57"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"a structure becomes physically real when it achieves \
+persistent, recursively stable distinguishability within an interacting \
+field.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"0e695989-b5c0-4b45-b48c-8ea00b85b61b"],
+
+Cell["\<\
+This avoids the weaker and misleading claim that human observation creates \
+the universe. \
+\>", "Text",ExpressionUUID->"154cb050-a15a-9241-86bb-cfc9d951c3a8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.5. Scientific posture", "Subsection",ExpressionUUID->"b21a74e6-77eb-674f-85b3-34b7d6c1ef2e"],
+
+Cell["This notebook therefore adopts the following posture: ", "Text",ExpressionUUID->"795ba8f4-d9c6-be44-94c1-d955f0db7036"],
+
+Cell["constructive in ontology,", "Item",ExpressionUUID->"ea432de4-25a9-8a4d-8abe-295a83985f46"],
+
+Cell["explicit in mathematics,", "Item",ExpressionUUID->"20dc2516-8765-0d47-8981-29b15913d2ca"],
+
+Cell["conservative in empirical claims,", "Item",ExpressionUUID->"a0e7f430-847e-0849-995a-8def9984d202"],
+
+Cell["open in phenomenology,", "Item",ExpressionUUID->"f34066ca-5ddb-4e4d-844d-1dfba0f2f87a"],
+
+Cell["strict in separating categories.", "Item",ExpressionUUID->"1381670f-aa0f-d045-b5cd-217111510db0"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"8e24c95d-d4bb-914f-b88c-de52fff67b5f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Primitive ontology", "Section",ExpressionUUID->"23748e24-7b8e-5842-b44b-bd8509f2bf5c"],
+
+Cell[CellGroupData[{
+
+Cell["2.1. Primitive question", "Subsection",ExpressionUUID->"64d97d6b-2889-9d42-8260-e2e90ab7c73a"],
+
+Cell["\<\
+What must exist before physics, particles, and observers can exist?\
+\>", "Text",ExpressionUUID->"201619cf-a1ec-fd4c-bb0f-72fe398c4e61"],
+
+Cell["\<\
+The framework answers with a primitive ontological distinction between: \
+\>", "Text",ExpressionUUID->"3470fa74-23f2-e245-8de7-fc9de8f45e9b"],
+
+Cell["unrealized potential,", "Item",ExpressionUUID->"90f16cba-383a-5f49-a92a-33e4c0b51474"],
+
+Cell["self-differentiating field structure,", "Item",ExpressionUUID->"c62286df-314d-1048-81c4-d02b53132704"],
+
+Cell["stabilized measured reality.", "Item",ExpressionUUID->"9bc8bc1c-884c-b242-bb5b-b4db17706caf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.2. Ontological primitives", "Subsection",ExpressionUUID->"93502e07-8c8d-fb42-87f1-7d15a1fbccd0"],
+
+Cell["We introduce the following primitive notions: ", "Text",ExpressionUUID->"8b86df6b-4c4f-8742-918e-b96a1a780eac"],
+
+Cell[TextData[{
+ StyleBox["potential",
+  FontWeight->Bold],
+ ": admissibility of distinction before realized form,"
+}], "Item",ExpressionUUID->"f0983df7-2f47-4a46-a01b-628bf23a6291"],
+
+Cell[TextData[{
+ StyleBox["distinction",
+  FontWeight->Bold],
+ ": the minimal event of difference,"
+}], "Item",ExpressionUUID->"fb4035d5-de41-f343-86c0-2a1e4aa7ba01"],
+
+Cell[TextData[{
+ StyleBox["relation",
+  FontWeight->Bold],
+ ": structured connection between distinctions,"
+}], "Item",ExpressionUUID->"f2a771aa-bb7e-1e45-a51a-fff1e132bac7"],
+
+Cell[TextData[{
+ StyleBox["measurement",
+  FontWeight->Bold],
+ ": recursive discrimination of state by state,"
+}], "Item",ExpressionUUID->"b245233e-0491-d24d-81c6-6b8d90f656fc"],
+
+Cell[TextData[{
+ StyleBox["closure",
+  FontWeight->Bold],
+ ": self-returning relational persistence,"
+}], "Item",ExpressionUUID->"cd865aba-6ab1-8749-855b-d33cefc50db6"],
+
+Cell[TextData[{
+ StyleBox["stability",
+  FontWeight->Bold],
+ ": persistence under recursive updating,"
+}], "Item",ExpressionUUID->"ae386099-972a-d44d-a44e-01162d7e16cd"],
+
+Cell[TextData[{
+ StyleBox["scale",
+  FontWeight->Bold],
+ ": resolution-dependent accessibility of distinctions."
+}], "Item",ExpressionUUID->"fbd27cae-8042-304c-bbad-9d1a75cdbb6e"],
+
+Cell["\<\
+These primitives are not yet particles or forces. They are ontological \
+preconditions for those concepts. \
+\>", "Text",ExpressionUUID->"e16d78b5-24ba-4048-bd62-ce4e115ba730"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.3. Minimal primitive law", "Subsection",ExpressionUUID->"81e63297-a610-5e40-9180-62fc56c701f7"],
+
+Cell["A minimal law candidate is: ", "Text",ExpressionUUID->"04272a31-777d-1245-b441-e91b13c241b4"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"whatever persists must be recursively distinguishable from \
+its alternatives across repeated self-updating.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"acebcb48-0b9d-9543-8f18-565d06694ecf"],
+
+Cell["\<\
+This transforms ontology into a problem of persistence under recursive \
+comparison. \
+\>", "Text",ExpressionUUID->"09c7cef1-c302-a04b-ba1a-e685fe0b30bf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.4. Why closure matters", "Subsection",ExpressionUUID->"60dc53b7-58c9-4246-8820-a81a184db8fe"],
+
+Cell["\<\
+Without closure, distinctions dissipate. With closure, differences can recur, \
+reinforce, and sustain an identity-like pattern.\
+\>", "Text",ExpressionUUID->"905d929c-02ed-e64c-8c50-e137920d37c0"],
+
+Cell["\<\
+This motivates closure as a primitive ontological operator rather than a \
+secondary emergent property. \
+\>", "Text",ExpressionUUID->"a80c1757-5681-2445-834d-4a4f18bb4aed"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"e25a2591-9875-fa49-b1f5-c2b693441474"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Three-layer and five-layer architecture", "Section",ExpressionUUID->"fc5c70b4-1092-a244-b428-a0d467f261aa"],
+
+Cell[CellGroupData[{
+
+Cell["3.1. Three-layer architecture", "Subsection",ExpressionUUID->"5b14cc10-ae06-a145-84f7-76d43516bf60"],
+
+Cell["The basic version of the framework contains three layers. ", "Text",ExpressionUUID->"27866a0a-59ab-1c41-9ccd-06043791a23c"],
+
+Cell[CellGroupData[{
+
+Cell["Layer 0: ontological potential", "Subsubsection",ExpressionUUID->"1693471e-b221-8448-92db-a268597af321"],
+
+Cell["\<\
+This is not ordinary physical vacuum. It is pre-physical admissibility.\
+\>", "Text",ExpressionUUID->"b1adee2f-9a7c-1843-ae81-d4648b4153d8"],
+
+Cell["Properties: ", "Text",ExpressionUUID->"b797fb2e-2091-fb4f-b8d5-477fc52a123a"],
+
+Cell["timeless,", "Item",ExpressionUUID->"30a7dda5-9b8a-a640-a25d-ca569aa29b44"],
+
+Cell["pre-metric or proto-metric,", "Item",ExpressionUUID->"fce14589-1757-e942-94a8-97afc2c83c74"],
+
+Cell["unconstrained by realized law,", "Item",ExpressionUUID->"c79bcc60-07bd-fa4e-98f8-b032e771a174"],
+
+Cell["not yet partitioned into observer and observed.", "Item",ExpressionUUID->"b254424e-c3b1-b247-bdca-b0d938d09b2c"],
+
+Cell["A symbolic placeholder is: ", "CodeText",ExpressionUUID->"f66934c5-5e82-6241-9810-c5465dfd6cef"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"layer0", "=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "\"\<OntologicalPotential\>\""}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<Timeless\>\"", "->", "True"}], ",", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"\"\<MetricRealized\>\"", "->", "False"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<DistinctionsRealized\>\"", "->", "False"}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]], "Input",ExpressionUUID->\
+"4b0248e1-b127-5f45-b96a-7d8c376c6683"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Layer 1: recursive self-measuring field", "Subsubsection",ExpressionUUID->"4b86bd3f-beff-ab4b-b438-e5e8fee41cef"],
+
+Cell["\<\
+This is the domain in which distinctions, relations, coherence, geometry, and \
+closure become dynamically expressible.\
+\>", "Text",ExpressionUUID->"50fed70b-dbca-ed46-a3e9-db62fca4c25a"],
+
+Cell["Placeholder: ", "CodeText",ExpressionUUID->"b5ee3140-967b-7d4f-91ca-622eed5fa96a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"layer1", "=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "\"\<RecursiveField\>\""}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<State\>\"", 
+      "->", "\"\<Psi[rho, chi, resolution, phase, closure, memory]\>\""}], ",",
+      "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<SelfMeasurement\>\"", "->", "True"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<ScaleInvariantGoal\>\"", "->", "True"}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]], "Input",ExpressionUUID->\
+"d85d8ca7-b54d-9c4e-8f5c-29cdb9515a6e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Layer 2: stabilized physical reality", "Subsubsection",ExpressionUUID->"5306d79f-d9fb-7e4f-94dd-16e016e37b23"],
+
+Cell["\<\
+This layer contains persistent observables: matter, fields, clocks, \
+organisms, instruments, and laboratories. \
+\>", "Text",ExpressionUUID->"1bf72f91-022f-bd44-97dd-9fad56df6eee"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"layer2", "=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "\"\<MeasuredReality\>\""}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<PersistentObservables\>\"", "->", "True"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<DecoheredStructures\>\"", "->", "True"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<OperationalPhysics\>\"", "->", "True"}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]], "Input",ExpressionUUID->\
+"d9937171-9efa-e249-a839-55d6d8f6ebad"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.2. Five-layer refinement", "Subsection",ExpressionUUID->"658ff0e9-1a8a-d640-93d6-8a1b5d9aa3f1"],
+
+Cell["A deeper version distinguishes two additional layers. ", "Text",ExpressionUUID->"8716eddf-08a7-ee4f-82e8-f85fcde4ba3c"],
+
+Cell[CellGroupData[{
+
+Cell["Layer 3: biological sensing and cognition", "Subsubsection",ExpressionUUID->"824eda46-2280-114b-ad4e-7035067e72d4"],
+
+Cell["Organisms are specialized measurement structures. ", "Text",ExpressionUUID->"9f26daba-c629-7a42-8e3f-fce4a37c3f4c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Layer 4: symbolic reflective intelligence", "Subsubsection",ExpressionUUID->"ddc918df-d51f-a144-8825-64dc3a20525f"],
+
+Cell["\<\
+Language, mathematics, science, and philosophy are reality recursively \
+modeling its own measurement logic. \
+\>", "Text",ExpressionUUID->"d61f9ecb-1025-a34c-b24f-239c22c72786"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.3. Morphism chain", "Subsection",ExpressionUUID->"54b10160-bc24-364e-a7f8-729cc0f4c558"],
+
+Cell[TextData[{
+ "A strong formal scaffold is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["L", "TI"], "0"], 
+         OverscriptBox["\[LongRightArrow]", "F_{01}"], 
+         SubscriptBox[
+          StyleBox["L", "TI"], "1"], 
+         OverscriptBox["\[LongRightArrow]", "F_{12}"], 
+         SubscriptBox[
+          StyleBox["L", "TI"], "2"], 
+         OverscriptBox["\[LongRightArrow]", "F_{23}"], 
+         SubscriptBox[
+          StyleBox["L", "TI"], "3"], 
+         OverscriptBox["\[LongRightArrow]", "F_{34}"], 
+         SubscriptBox[
+          StyleBox["L", "TI"], "4"]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\mathcal{L}_0 \\xrightarrow{F_{01}} \\mathcal{L}_1 \
+\\xrightarrow{F_{12}} \\mathcal{L}_2 \\xrightarrow{F_{23}} \\mathcal{L}_3 \
+\\xrightarrow{F_{34}} \\mathcal{L}_4", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "84174e0b-5bf9-6c4d-ad70-f7221f0c83db"],
+ "Where: "
+}], "Text",ExpressionUUID->"75123b3d-2cc9-8947-aad2-8c8a3824b7e8"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["F", "TI"], "01"], TraditionalForm], "errors" -> {}, "input" -> 
+     "F_{01}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e8b2d4fa-657b-6b41-85f8-db3c8ac78eda"],
+ " maps admissible potential into differentiable field structure,"
+}], "Item",ExpressionUUID->"8af266ce-92b1-904e-9a6c-400bd188dfd8"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["F", "TI"], "12"], TraditionalForm], "errors" -> {}, "input" -> 
+     "F_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "5dc67243-10c0-2b46-987a-cf66947e5423"],
+ " maps field recursions into stable observables,"
+}], "Item",ExpressionUUID->"7fc4dc35-290f-4a41-ad1f-37230e745d31"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["F", "TI"], "23"], TraditionalForm], "errors" -> {}, "input" -> 
+     "F_{23}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ad1e766f-3b1c-0243-bc58-3f83298f97ee"],
+ " maps observables into adaptive sensory systems,"
+}], "Item",ExpressionUUID->"a4c072ca-46cf-1d46-adcd-3fe8133e5267"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["F", "TI"], "34"], TraditionalForm], "errors" -> {}, "input" -> 
+     "F_{34}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "bed715c9-9a29-174c-8844-fc5b84c1a9a6"],
+ " maps sensing into symbolic self-modeling."
+}], "Item",ExpressionUUID->"80c2d87e-3b93-d94c-b1ad-db730244d06c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"d019ea9d-eb2c-144f-839d-04752a531d26"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Formal state space", "Section",ExpressionUUID->"23236fc5-8bc0-2e46-9f83-4b1a7532871a"],
+
+Cell[CellGroupData[{
+
+Cell["4.1. Why a state space is required", "Subsection",ExpressionUUID->"23f2e76b-7d54-6941-9bef-4769778c4b3a"],
+
+Cell["\<\
+To make the framework computationally meaningful, the field must be \
+represented by explicit state variables. \
+\>", "Text",ExpressionUUID->"583707d4-054f-c94c-92ab-408921107a3d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.2. Candidate state tuple", "Subsection",ExpressionUUID->"8d4676fa-58f7-024c-86b8-693f1be38f25"],
+
+Cell[TextData[{
+ "Let the field state at scale index ",
+ StyleBox["n", "TI"],
+ " and update index ",
+ StyleBox["t", "TI"],
+ " be: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubsuperscriptBox["\[CapitalPsi]", 
+          StyleBox["n", "TI"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", 
+         SubsuperscriptBox[
+          RowBox[{"(", 
+            RowBox[{
+              SubscriptBox["\[Rho]", 
+               StyleBox["I", "TI"]], ",", 
+              StyleBox["c", "TI"], ",", "\[CurlyPhi]", ",", 
+              StyleBox["d", "TI"], ",", "\[Kappa]", ",", 
+              StyleBox["g", "TI"], ",", 
+              StyleBox["m", "TI"], ",", 
+              StyleBox["r", "TI"]}], ")"}], 
+          StyleBox["n", "TI"], 
+          StyleBox["t", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Psi_n^t = (\\rho_I, c, \\varphi, d, \\kappa, g, m, r)_n^t", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "730973c4-c9e1-c642-b91c-a92e5be22d62"],
+ "where: "
+}], "Text",ExpressionUUID->"331db7e0-4a59-5a44-8cc9-e97fe90f282d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Rho]", 
+        StyleBox["I", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho_I", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f98f7671-ffe3-924d-8881-07c0975ca89a"],
+ " = information density,"
+}], "Item",ExpressionUUID->"45f79dc0-89ad-cf4a-9999-9eb4a19bf38e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["c", "TI"], TraditionalForm], "errors" -> {}, "input" -> "c", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "292d243a-3328-0049-ba36-6577cca9c005"],
+ " = coherence,"
+}], "Item",ExpressionUUID->"2f769b97-28e0-6f41-a7bb-1a609570aa9f"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CurlyPhi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\varphi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b62167ce-a0b7-1a43-9b4c-a7ebc1d999ed"],
+ " = phase/alignment,"
+}], "Item",ExpressionUUID->"8147df7f-2269-2f4c-ad50-18455ac827dd"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["d", "TI"], TraditionalForm], "errors" -> {}, "input" -> "d", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e6ab34b9-79e1-5347-bbca-45cf9acf4896"],
+ " = drift from an attractor,"
+}], "Item",ExpressionUUID->"9e8757b2-3352-f340-b676-c0da195d3580"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|
+    "boxes" -> FormBox["\[Kappa]", TraditionalForm], "errors" -> {}, "input" -> 
+     "\\kappa", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f2779ca5-9fad-184b-82da-564670f8531f"],
+ " = closure score,"
+}], "Item",ExpressionUUID->"13658577-b76a-de47-ae54-5c6714bc70fd"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["g", "TI"], TraditionalForm], "errors" -> {}, "input" -> "g", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "394da38c-d871-0f49-9e61-79c86562dd79"],
+ " = geometry class,"
+}], "Item",ExpressionUUID->"3e7cf7bf-0e42-6d4b-9a8d-91861fb1323f"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> "m", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7a51ceb7-662f-2840-b1b7-2bf11d482653"],
+ " = memory trace,"
+}], "Item",ExpressionUUID->"e9bd77c1-53a4-fb49-ad33-617375a03da0"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["r", "TI"], TraditionalForm], "errors" -> {}, "input" -> "r", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "73140434-6f28-c640-86f5-ddc87775cbce"],
+ " = observational resolution."
+}], "Item",ExpressionUUID->"705c699f-d2bf-9940-9566-27d498989b86"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.3. Wolfram Language representation", "Subsection",ExpressionUUID->"0872e7da-8625-784b-869e-824f6654ffe0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "fieldState", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fieldState", "[", 
+    RowBox[{
+    "informationDensity_", ",", "coherence_", ",", "phase_", ",", "drift_", ",",
+      "closure_", ",", "\[IndentingNewLine]", "   ", "geometry_", ",", 
+     "memory_", ",", "resolution_"}], "]"}], ":=", 
+   RowBox[{"<|", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"\"\<InformationDensity\>\"", "->", "informationDensity"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<Coherence\>\"", "->", "coherence"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<Phase\>\"", "->", "phase"}], ",", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"\"\<Drift\>\"", "->", "drift"}], ",", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"\"\<Closure\>\"", "->", "closure"}], ",", "\[IndentingNewLine]",
+      "  ", 
+     RowBox[{"\"\<Geometry\>\"", "->", "geometry"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"\"\<Memory\>\"", "->", "memory"}], ",", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"\"\<Resolution\>\"", "->", "resolution"}]}], 
+    "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",ExpressionUUID->\
+"0b2bde38-7622-6343-a72c-5483e1058ed0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.4. State admissibility", "Subsection",ExpressionUUID->"c63ca40e-a88f-c845-8ffb-ba71c06ea34f"],
+
+Cell["A valid state must satisfy domain conditions. For example: ", "CodeText",ExpressionUUID->"0ee6c3cd-f461-5a47-b411-ed6417b79fcf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "admissibleStateQ", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"admissibleStateQ", "[", "state_Association", "]"}], ":=", 
+   RowBox[{"And", "[", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<InformationDensity\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Coherence\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Phase\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Drift\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Closure\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Geometry\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Memory\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"state", ",", "\"\<Resolution\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<InformationDensity\>\"", "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<Coherence\>\"", "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<Phase\>\"", "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<Drift\>\"", "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<Closure\>\"", "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"NumericQ", "[", 
+      RowBox[{"state", "[", "\"\<Resolution\>\"", "]"}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",ExpressionUUID->\
+"4176dd4a-8696-334c-8930-4498d2dcaea7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.5. Interpretation", "Subsection",ExpressionUUID->"eefc5c94-6f9b-3941-99ed-4cc2d229adc8"],
+
+Cell["\<\
+This state space is not yet standard quantum mechanics, general relativity, \
+or neuroscience. It is a proposed ontological state space whose relation to \
+those theories must be established by mappings. \
+\>", "Text",ExpressionUUID->"190c6b28-6ff6-7c42-b98e-ac1bbb51408a"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"3a4e053e-3719-1244-baf8-7a235b402503"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. Measurement operator algebra", "Section",ExpressionUUID->"bcf4c569-1bd1-274c-ab5b-9ec072aa4b1c"],
+
+Cell[CellGroupData[{
+
+Cell["5.1. General idea", "Subsection",ExpressionUUID->"9bac7a55-4fd6-a24a-a77a-7be671a4f924"],
+
+Cell["\<\
+Measurement is generalized from laboratory intervention to recursive state \
+discrimination. \
+\>", "Text",ExpressionUUID->"6e1325c2-e38c-4042-8bff-bebb137b5029"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5.2. Operator chain", "Subsection",ExpressionUUID->"1c1fc129-d58c-734d-a870-05db39b6278a"],
+
+Cell[TextData[{
+ "A useful proposal is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["M", "TI"], 
+          StyleBox["n", "TI"]], "\[LongEqual]", 
+         SubscriptBox[
+          StyleBox["U", "TI"], 
+          StyleBox["n", "TI"]], "\[EmptySmallCircle]", 
+         SubscriptBox[
+          StyleBox["S", "TI"], 
+          StyleBox["n", "TI"]], "\[EmptySmallCircle]", 
+         SubscriptBox[
+          StyleBox["Q", "TI"], 
+          StyleBox["n", "TI"]], "\[EmptySmallCircle]", 
+         SubscriptBox[
+          StyleBox["R", "TI"], 
+          StyleBox["n", "TI"]], "\[EmptySmallCircle]", 
+         SubscriptBox[
+          StyleBox["P", "TI"], 
+          StyleBox["n", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "M_n = U_n \\circ S_n \\circ Q_n \\circ R_n \\circ P_n", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cb635de9-afa4-7543-8984-6f0bca67ee4b"],
+ "where: "
+}], "Text",ExpressionUUID->"84fbb2ef-3d1b-af4e-853d-7be8291e9d83"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["P", "TI"], 
+        StyleBox["n", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "P_n", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f3cf14a5-4c06-4e49-be84-7ce784b91bc0"],
+ " = projection/selective access at scale ",
+ StyleBox["n", "TI"],
+ ","
+}], "Item",ExpressionUUID->"2e92d067-def8-ac4d-b75a-cebced7020c6"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["R", "TI"], 
+        StyleBox["n", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "R_n", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b0508891-b202-d940-a42a-536567bbe68f"],
+ " = relational comparison,"
+}], "Item",ExpressionUUID->"3bc27873-db54-094e-8e2f-db0ae7beb66e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["Q", "TI"], 
+        StyleBox["n", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "Q_n", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cb93495e-a7b5-1542-9d06-12600a69daea"],
+ " = quality or coherence weighting,"
+}], "Item",ExpressionUUID->"25829aea-751c-624f-8189-f6ec76309546"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["S", "TI"], 
+        StyleBox["n", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "S_n", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2e33c12b-f795-a04d-b71f-bf35977b4367"],
+ " = stabilization operator,"
+}], "Item",ExpressionUUID->"2db9f067-c66b-324a-84cb-ca7422b7e960"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["U", "TI"], 
+        StyleBox["n", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "U_n", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a18cd07d-a7e4-9b41-994f-be529dda54b8"],
+ " = update or memory incorporation."
+}], "Item",ExpressionUUID->"8039a522-5751-6a4f-a18c-a5c7aef5e457"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5.3. Wolfram Language skeleton", "Subsection",ExpressionUUID->"7ba5193a-a4cf-914c-8cba-9efb9a286d9d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClearAll", "[", 
+    RowBox[{
+    "projectionOp", ",", "relationOp", ",", "qualityOp", ",", 
+     "stabilizationOp", ",", "updateOp", ",", "\[IndentingNewLine]", "  ", 
+     "measurementOp"}], "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"projectionOp", "[", 
+     RowBox[{"state_", ",", "scale_"}], "]"}], ":=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"state", ",", 
+      RowBox[{"\"\<ProjectedScale\>\"", "->", "scale"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"relationOp", "[", "state_", "]"}], ":=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"state", ",", 
+      RowBox[{"\"\<RelationalScore\>\"", "->", "\[IndentingNewLine]", "   ", 
+       RowBox[{
+        RowBox[{"state", "[", "\"\<InformationDensity\>\"", "]"}], " ", 
+        RowBox[{"state", "[", "\"\<Coherence\>\"", "]"}]}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"qualityOp", "[", "state_", "]"}], ":=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"state", ",", 
+      RowBox[{"\"\<QualityScore\>\"", "->", "\[IndentingNewLine]", "   ", 
+       RowBox[{
+        RowBox[{"state", "[", "\"\<Closure\>\"", "]"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"state", "[", "\"\<Drift\>\"", "]"}]}], ")"}]}]}]}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"stabilizationOp", "[", "state_", "]"}], ":=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"state", ",", 
+      RowBox[{"\"\<StabilizedQ\>\"", "->", "\[IndentingNewLine]", "   ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"state", "[", "\"\<Closure\>\"", "]"}], ">", "1"}], "&&", 
+         RowBox[{
+          RowBox[{"state", "[", "\"\<Drift\>\"", "]"}], "<", 
+          RowBox[{"1", "/", 
+           RowBox[{"state", "[", "\"\<Coherence\>\"", "]"}]}]}]}], ")"}]}]}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"updateOp", "[", "state_", "]"}], ":=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"state", ",", 
+      RowBox[{"\"\<UpdatedMemory\>\"", "->", "\[IndentingNewLine]", "   ", 
+       RowBox[{
+        RowBox[{"state", "[", "\"\<Memory\>\"", "]"}], "+", 
+        RowBox[{
+         RowBox[{"state", "[", "\"\<Closure\>\"", "]"}], " ", 
+         RowBox[{"state", "[", "\"\<Coherence\>\"", "]"}]}]}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"measurementOp", "[", 
+    RowBox[{"state_", ",", "scale_"}], "]"}], ":=", "\[IndentingNewLine]", 
+   "  ", 
+   RowBox[{
+    RowBox[{"RightComposition", "[", "\[IndentingNewLine]", "    ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"projectionOp", "[", 
+        RowBox[{"#", ",", "scale"}], "]"}], " ", "&"}], ",", 
+      "\[IndentingNewLine]", "    ", "relationOp", ",", "\[IndentingNewLine]",
+       "    ", "qualityOp", ",", "\[IndentingNewLine]", "    ", 
+      "stabilizationOp", ",", "\[IndentingNewLine]", "    ", "updateOp"}], 
+     "\[IndentingNewLine]", "  ", "]"}], "[", "state", "]"}]}], 
+  ";"}]}], "Input",ExpressionUUID->"8fbfe428-fd1b-5b45-ac17-0e3a3b36a212"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5.4. Why operator algebra matters", "Subsection",ExpressionUUID->"98afd0da-8f5a-0e41-81ee-943e4097cf5f"],
+
+Cell["\<\
+If measurement is fundamental, then physics becomes not merely the evolution \
+of states, but the evolution of states under recursive discrimination and \
+stabilization.\
+\>", "Text",ExpressionUUID->"47fbf85f-d317-b74f-9130-7bab146e861c"],
+
+Cell["\<\
+This is a major reinterpretation and should be treated as a hypothesis to be \
+formalized carefully. \
+\>", "Text",ExpressionUUID->"cdc8cc31-f12d-5748-a3c9-97e1f238740f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"7f87d9e9-d197-544c-9d4c-92f3b5565ff8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6. Scale stabilization law", "Section",ExpressionUUID->"289df7fd-5ce0-974e-8e3a-2e88eb503c62"],
+
+Cell[CellGroupData[{
+
+Cell["6.1. Motivating principle", "Subsection",ExpressionUUID->"422978fb-a846-df4a-bb2b-d60e9ed0bfb6"],
+
+Cell["\<\
+A structure is real at a scale if it remains recursively distinguishable and \
+dynamically persistent when interrogated at that scale. \
+\>", "Text",ExpressionUUID->"a60352db-d832-0f4a-8263-54f8758cc0fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.2. Generic criterion", "Subsection",ExpressionUUID->"d75b4fe0-b3a9-f244-a726-a7c6fa0045e5"],
+
+Cell[TextData[{
+ "A candidate realization rule is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["Realized", FontSlant -> "Plain"], 
+          StyleBox["n", "TI"]], 
+         RowBox[{"(", "\[CapitalPsi]", ")"}], " ", 
+         "\[DoubleLongLeftRightArrow] ", "\[Kappa]", 
+         RowBox[{"(", "\[CapitalPsi]", ")"}], ">", 
+         SubscriptBox["\[Kappa]", 
+          StyleBox["c", "TI"]], " ", "\[Wedge] ", 
+         StyleBox["d", "TI"], 
+         RowBox[{"(", "\[CapitalPsi]", ")"}], "<", 
+         SubscriptBox[
+          StyleBox["d", "TI"], 
+          StyleBox["c", "TI"]], " ", "\[Wedge] ", 
+         StyleBox["c", "TI"], 
+         RowBox[{"(", "\[CapitalPsi]", ")"}], ">", 
+         SubscriptBox[
+          StyleBox["c", "TI"], 
+          StyleBox["c", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathrm{Realized}_n(\\Psi) \\iff \\kappa(\\Psi) > \\kappa_c \\; \
+\\wedge \\; d(\\Psi) < d_c \\; \\wedge \\; c(\\Psi) > c_c", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d059ba65-fde2-a14b-b051-f718f26c146a"]
+}], "Text",ExpressionUUID->"99ce5b23-10a8-764b-a967-91f4afd560e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.3. Wolfram Language implementation", "Subsection",ExpressionUUID->"dae4013f-d169-cb42-a8e9-0faa9539e4f0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "realizedAtScaleQ", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"realizedAtScaleQ", "[", 
+    RowBox[{
+    "state_", ",", "closureThreshold_", ",", "driftThreshold_", ",", 
+     "coherenceThreshold_"}], "]"}], ":=", "\[IndentingNewLine]", "  ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"state", "[", "\"\<Closure\>\"", "]"}], ">", 
+     "closureThreshold"}], "&&", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"state", "[", "\"\<Drift\>\"", "]"}], "<", "driftThreshold"}], "&&",
+     "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"state", "[", "\"\<Coherence\>\"", "]"}], ">", 
+     "coherenceThreshold"}]}]}], ";"}]}], "Input",ExpressionUUID->"97e95736-\
+4ee3-0a42-bb4d-59411fbb301f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6.4. Scale-locking", "Subsection",ExpressionUUID->"fbe274bd-b7d2-d148-a5c0-a10beda78b34"],
+
+Cell["\<\
+A sense, instrument, or theory accesses only those structures whose stability \
+exceeds threshold at its operating resolution.\
+\>", "Text",ExpressionUUID->"f798bb34-9b9d-0043-8315-c39feeef1f69"],
+
+Cell["\<\
+This idea will later support the interpretation of senses as scale-specific \
+measurement channels. \
+\>", "Text",ExpressionUUID->"d21cd6fd-20c5-164f-85d1-e5abc14d2f74"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"6bf52ba7-7261-904a-a6df-b2aed360a6ee"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7. Geometry of closure", "Section",ExpressionUUID->"1d0157e1-c8b7-fc4c-abd7-f79d0fc9e53d"],
+
+Cell[CellGroupData[{
+
+Cell["7.1. Why geometry enters ontology", "Subsection",ExpressionUUID->"604ca374-3d0a-c74e-87ad-8400df82fca2"],
+
+Cell["\<\
+If persistent structure requires closure, then geometry is not ornamental. It \
+becomes one of the forms by which stability is achieved. \
+\>", "Text",ExpressionUUID->"4b27e9bf-91e3-c846-8c51-eb230011b1b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.2. Minimal closure motifs", "Subsection",ExpressionUUID->"daa964fc-fbbd-bb46-bdd8-c3407fb49862"],
+
+Cell["Candidate motifs include: ", "Text",ExpressionUUID->"61dd5d31-98ce-a746-9537-9e2f13076476"],
+
+Cell["pair or dipole,", "Item",ExpressionUUID->"8b2a2657-ecd9-6a41-9389-14018d3e73c8"],
+
+Cell["triangle,", "Item",ExpressionUUID->"094f0acc-c1ec-c24b-8775-e41cc6a591a4"],
+
+Cell["loop,", "Item",ExpressionUUID->"0f816e25-1e92-fd4e-94e4-a0de11f6358a"],
+
+Cell["sphere,", "Item",ExpressionUUID->"4cfc0dfd-177c-be41-b285-c381d999b6ce"],
+
+Cell["torus,", "Item",ExpressionUUID->"c7a4d0fe-5bf2-9e48-87bc-5ef13215ff52"],
+
+Cell["nested toroidal recursions,", "Item",ExpressionUUID->"d2200ad0-76a0-564b-8ec7-a4569049da30"],
+
+Cell["graph cycles,", "Item",ExpressionUUID->"6cc0aff4-85cd-5944-a4d7-0cd23d393a78"],
+
+Cell["recurrent attractor manifolds.", "Item",ExpressionUUID->"60d6180e-5dfc-f946-89b2-b8610cd63076"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.3. Dipole as first nontrivial distinction", "Subsection",ExpressionUUID->"0e6b480e-3ebf-9c46-ae93-97ff0c96b13f"],
+
+Cell["\<\
+A dipole may be interpreted as the smallest persistent polarity structure: a \
+relation with contrast, direction, tension, and return. \
+\>", "Text",ExpressionUUID->"624739b5-83a1-7144-b67d-d1361541b8b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.4. Triangle as minimal stable relational area", "Subsection",ExpressionUUID->"12fe044c-2247-3140-811f-39019a218489"],
+
+Cell["\<\
+Triangles are special because they are the smallest rigid relational \
+enclosure in Euclidean geometry. If field nodes form local surface tension \
+networks, triangulation becomes a natural stabilization mechanism. \
+\>", "Text",ExpressionUUID->"2ad603f0-8d75-7844-9f41-5484c906d6b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7.5. Toroidal closure", "Subsection",ExpressionUUID->"1e7589df-f6b2-6c49-9822-87b4246184cb"],
+
+Cell["A torus supports: ", "Text",ExpressionUUID->"10b60ff3-2419-d149-b4bd-31ed5bbb21dc"],
+
+Cell["circulation,", "Item",ExpressionUUID->"d438fe86-3890-f242-a0ca-c06e21494598"],
+
+Cell["recurrence,", "Item",ExpressionUUID->"3eabb777-187d-144e-bcc2-49136133c553"],
+
+Cell["interior/exterior distinction,", "Item",ExpressionUUID->"18624f61-ab31-a343-a11c-301b65a66fa8"],
+
+Cell["self-returning flow.", "Item",ExpressionUUID->"8d774a84-504c-a14a-bc4e-452a767fffee"],
+
+Cell["\<\
+This makes it a plausible canonical geometry for recursive maintenance. \
+\>", "Text",ExpressionUUID->"4659e702-be97-3b44-a0c6-45977c298ebc"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"7cd4d336-07be-6641-ac06-19b669b2c3bf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8. Golden, silver, and irrational spacing principles", "Section",ExpressionUUID->"8357f93e-7007-b44e-a9de-dd6c44faadb0"],
+
+Cell[CellGroupData[{
+
+Cell["8.1. Why irrational spacing matters", "Subsection",ExpressionUUID->"eea51489-919b-324a-8568-f5784fe8b4f2"],
+
+Cell["\<\
+Irrational angular increments minimize repetitive overlap and can produce \
+highly uniform recursive distributions. \
+\>", "Text",ExpressionUUID->"36a12588-6fba-a347-8771-1b39557c7e43"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.2. Golden ratio and angle", "Subsection",ExpressionUUID->"f35d626a-b44b-6c4a-8168-8fc727a257c6"],
+
+Cell[TextData[{
+ "The golden ratio is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Phi]", "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"1", "+", 
+            SqrtBox["5"]}], "2"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\phi = \\frac{1 + \\sqrt{5}}{2}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9bfe482c-e316-f44e-8339-6c0ab85074aa"],
+ "The golden angle is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Theta]", 
+          StyleBox["g", "TI"]], "\[LongEqual]", "2", "\[Pi]", 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", "\[Phi]"]}], ")"}], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"2", "\[Pi]"}], 
+          SuperscriptBox["\[Phi]", "2"]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\theta_g = 2\\pi\\left(1 - \\frac{1}{\\phi}\\right) = \
+\\frac{2\\pi}{\\phi^2}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b2a9705c-544b-7743-bc27-cb0910318f17"]
+}], "Text",ExpressionUUID->"365a7d3c-bb64-a340-a735-1bb5b8614ba6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.3. Silver ratio", "Subsection",ExpressionUUID->"9f7c385a-3954-0040-9ea5-50afc7bb922d"],
+
+Cell[TextData[{
+ "The silver ratio is: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Delta]", 
+          StyleBox["S", "TI"]], "\[LongEqual]", "1", "+", 
+         SqrtBox["2"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\delta_S = 1 + \\sqrt{2}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f56e5891-b359-b240-a28e-83362aff3bdf"]
+}], "Text",ExpressionUUID->"129c47fa-8520-da40-aa8d-7acbff176550"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.4. Interpretive role", "Subsection",ExpressionUUID->"7d5b8f88-f22d-454f-98bc-348c84e06c81"],
+
+Cell["\<\
+These constants should not be imposed dogmatically on all physics. Their \
+strongest role is as candidate principles for: \
+\>", "Text",ExpressionUUID->"1587e0fa-4e52-d44e-8814-7d7c72ae5a90"],
+
+Cell["balanced recursive packing,", "Item",ExpressionUUID->"09a1389a-9ad6-0540-9d1f-44eb459acb97"],
+
+Cell["quasiperiodic order,", "Item",ExpressionUUID->"414ffb26-37eb-ad44-8d7b-d2afb1470802"],
+
+Cell["spherical node distribution,", "Item",ExpressionUUID->"5f821c7b-3b21-9c41-83fe-aef23c38e499"],
+
+Cell["multiscale spacing that avoids simple resonance collapse.", "Item",ExpressionUUID->"4100632e-2dea-db43-9fec-df9b8ea1a335"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.5. Wolfram Language constants", "Subsection",ExpressionUUID->"dbed830e-9282-a84f-bbc4-969971f713fd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goldenRatio", "=", "GoldenRatio"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"silverRatio", "=", 
+   RowBox[{"1", "+", 
+    RowBox[{"Sqrt", "[", "2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goldenAngle", "=", 
+   RowBox[{"2", " ", "Pi", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"1", "/", "goldenRatio"}]}], ")"}]}]}], ";"}]}], "Input",Express\
+ionUUID->"8d2c0950-8fc9-314c-bb99-71cdbffe2930"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.6. Spherical balanced spacing", "Subsection",ExpressionUUID->"9e87a12e-4da6-9349-96f3-ce2dd43c552e"],
+
+Cell["\<\
+A phyllotactic sphere construction gives nearly uniform node placement: \
+\>", "CodeText",ExpressionUUID->"9d66f1af-c0f1-d341-8162-db17ab609173"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "sphericalGoldenNodes", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sphericalGoldenNodes", "[", 
+    RowBox[{"nodeCount_Integer", "?", "Positive"}], "]"}], ":=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"With", "[", "\[IndentingNewLine]", "    ", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", "      ", 
+        RowBox[{
+         RowBox[{"z", "=", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"2", " ", "n"}], "-", "1"}], ")"}], "/", 
+            "nodeCount"}]}]}], ",", "\[IndentingNewLine]", "      ", 
+         RowBox[{"azimuth", "=", 
+          RowBox[{"n", " ", "goldenAngle"}]}]}], "\[IndentingNewLine]", 
+        "    ", "}"}], ",", "\[IndentingNewLine]", "    ", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"rad", "=", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"1", "-", 
+             RowBox[{"z", "^", "2"}]}], "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"rad", " ", 
+            RowBox[{"Cos", "[", "azimuth", "]"}]}], ",", 
+           RowBox[{"rad", " ", 
+            RowBox[{"Sin", "[", "azimuth", "]"}]}], ",", "z"}], "}"}]}], 
+        "]"}]}], "\[IndentingNewLine]", "  ", "]"}], ",", 
+     "\[IndentingNewLine]", "  ", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "nodeCount"}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",ExpressionUUID->\
+"2a33bb4d-1002-994f-8547-a36f7867912b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8.7. Interpretation warning", "Subsection",ExpressionUUID->"c29d93cf-ec24-d34b-b261-bb50a8452534"],
+
+Cell[TextData[{
+ "The usefulness of golden-angle spacing in geometry does ",
+ StyleBox["not",
+  FontWeight->Bold],
+ " by itself prove that all fundamental physics is golden-ratio governed. \
+Mathematical convenience and physical law must be distinguished. "
+}], "Text",ExpressionUUID->"f62c1856-229d-c94e-864c-2a2da79eee13"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"f3b28cb1-cdc2-1341-813b-deefa1a56b62"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9. Toroidal recursion and circulation", "Section",ExpressionUUID->"2a76b75d-4e9d-6041-b7ec-63e216e27eb5"],
+
+Cell[CellGroupData[{
+
+Cell["9.1. Recurrence as self-maintenance", "Subsection",ExpressionUUID->"0b08ab1a-8e92-1b4d-b7bd-6bd106801c42"],
+
+Cell["\<\
+Any persistent system must in some sense feed forward and feed back into \
+itself. \
+\>", "Text",ExpressionUUID->"8c4739ea-aa99-3841-b232-de46b99540e8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9.2. Why toroidal models recur", "Subsection",ExpressionUUID->"28e56b2d-da44-7343-999c-14abe48cf09b"],
+
+Cell["Toroidal forms naturally encode: ", "Text",ExpressionUUID->"bcbe7499-c184-6745-80e6-5a9afd149220"],
+
+Cell["closed-loop flow,", "Item",ExpressionUUID->"9a7b82b5-639a-114b-bcf9-f742e4289483"],
+
+Cell["central exclusion region,", "Item",ExpressionUUID->"4550ee4f-7c4a-ed43-8625-ac8f5341ec88"],
+
+Cell["circulation without trivial collapse,", "Item",ExpressionUUID->"256e5926-04df-f545-9d25-e6a0dc99f85f"],
+
+Cell["periodic return.", "Item",ExpressionUUID->"2c8d2968-fe4c-b649-847b-60c87d2e15f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9.3. Ontological relevance", "Subsection",ExpressionUUID->"2bfbe96d-8a4a-1e4c-8192-0c79731a7a67"],
+
+Cell["\<\
+If the field sustains itself through recursive self-measurement, toroidal \
+circulation may function as a geometric image of closure-maintenance. \
+\>", "Text",ExpressionUUID->"3d143dce-7407-514d-ae98-dd85bcc0611f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["9.4. Mathematical caution", "Subsection",ExpressionUUID->"76707d26-cf19-284f-a87b-7c5a3d4429cd"],
+
+Cell["\<\
+Torus-like structure is suggestive and useful, but cannot be declared \
+universal without derivation from equations or data. \
+\>", "Text",ExpressionUUID->"f96b2561-40f5-ff4d-b4fe-458449059be3"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"1a0e6b02-99e6-cf42-ae11-e07f8debd55f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10. Constants as closure invariants", "Section",ExpressionUUID->"aececcdc-c6dd-5a48-b32e-844afb2831a1"],
+
+Cell[CellGroupData[{
+
+Cell["10.1. Guiding idea", "Subsection",ExpressionUUID->"7c71b0d1-f1ba-2b4f-99a5-a9af6fc59ff6"],
+
+Cell["\<\
+Rather than treating constants as arbitrary insertions, the framework \
+proposes that some constants may encode stable closure ratios or recurrence \
+constraints. \
+\>", "Text",ExpressionUUID->"33e8b302-b99c-984e-80ba-d5a8591edf82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10.2. Examples of interpretive candidates", "Subsection",ExpressionUUID->"1570b900-ce4d-564e-b145-9a17916f1655"],
+
+Cell["geometric ratios such as the golden ratio,", "Item",ExpressionUUID->"80a4b08a-56da-f848-b449-0de1c2b34cdc"],
+
+Cell["dimensionless constants such as the fine-structure constant,", "Item",ExpressionUUID->"db77946a-0420-c647-a541-1cace61254c1"],
+
+Cell["\<\
+scaling thresholds separating stable from unstable recursion.\
+\>", "Item",ExpressionUUID->"cf1b3ec5-9abc-b041-b59f-0c95acc68cac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10.3. Warning on overreach", "Subsection",ExpressionUUID->"7415bf7a-6927-5d4a-a5a5-57959b252f17"],
+
+Cell["\<\
+One must not simply identify a numerically interesting constant with a \
+preferred ontology. Any such identification requires derivation. \
+\>", "Text",ExpressionUUID->"436cd3cf-7a9d-8d4f-812c-fe0b4da1ec46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["10.4. Productive research program", "Subsection",ExpressionUUID->"0651f0f1-0b96-1642-a6d2-a60f6049fc07"],
+
+Cell["A defensible goal is: ", "Text",ExpressionUUID->"d3ff90a8-aecd-ff4b-8479-1057933994d5"],
+
+Cell["derive candidate invariants from closure equations,", "Item",ExpressionUUID->"1b8536fb-7142-0042-9038-483d995cde8c"],
+
+Cell["compare against measured constants,", "Item",ExpressionUUID->"5c98d253-6d2d-ea48-9696-600b1fb91d6d"],
+
+Cell["evaluate fit quality,", "Item",ExpressionUUID->"36c6dcf6-ce50-5146-9ec8-ecf7d5515895"],
+
+Cell["reject unsupported numerical mythology.", "Item",ExpressionUUID->"60bf47b2-4d05-5b42-a02d-71302240e958"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"091481fd-824c-e443-be3f-d67993034041"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11. Emergence of matter, time, gravity, and electromagnetism", "Section",ExpressionUUID->"736f7c06-4b3f-d149-a663-269dbe13f60e"],
+
+Cell[CellGroupData[{
+
+Cell["11.1. Matter", "Subsection",ExpressionUUID->"52d85cee-82e9-fe4f-95b6-f4eb64a92f0d"],
+
+Cell["\<\
+In this framework, matter would not be primitive substance. It would be \
+stable closure under recursive field maintenance. \
+\>", "Text",ExpressionUUID->"2620e34b-3a1b-5749-92b7-fde5d4ac0f3b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11.2. Time", "Subsection",ExpressionUUID->"968276b1-a630-cc47-a141-ec42ff09804a"],
+
+Cell["\<\
+Time may be interpreted as ordered recurrence or countable asymmetry in field \
+update.\
+\>", "Text",ExpressionUUID->"6c270399-6d10-f445-94e7-7f53ffe298bc"],
+
+Cell["A conceptual definition is: ", "Text",ExpressionUUID->"3e8bcc8e-0b5a-f841-ade7-a3e627135128"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"time is the ordering parameter of irreversible stabilization \
+sequences.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"d2e3390c-a71a-ee45-9275-cfb04bdb0a9b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11.3. Gravity", "Subsection",ExpressionUUID->"2aa3923a-ebcd-f146-9cdc-59c0ad1ae9b1"],
+
+Cell["\<\
+Gravity could be reinterpreted as geometry-dependent drift of closure density \
+or compression in the field\[CloseCurlyQuote]s stable relational structure. \
+\>", "Text",ExpressionUUID->"6a6b02df-646f-5f4a-b9f9-aae6472ffabd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11.4. Electromagnetism", "Subsection",ExpressionUUID->"aad476fd-813d-bc40-8a00-277e8b0b260d"],
+
+Cell["\<\
+Electromagnetism may emerge from polarized relational organization and \
+phase-sensitive propagation across structured media of distinction. \
+\>", "Text",ExpressionUUID->"b8a9ba3d-d5e4-8a45-9d2f-b9f806ece737"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["11.5. Status note", "Subsection",ExpressionUUID->"ad9f5295-84f3-b043-95e4-150ea3f162e0"],
+
+Cell["\<\
+All of these are hypotheses unless tied to equations that reproduce known \
+experimental results. \
+\>", "Text",ExpressionUUID->"79397792-2455-9e4b-b88d-cfda5f6ad911"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"b570a67f-6823-d84c-a813-78d09968f564"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12. Emergence of senses as scale-locked measurement", "Section",ExpressionUUID->"3d06cc99-d948-3e46-8ac8-79337e21a8b4"],
+
+Cell[CellGroupData[{
+
+Cell["12.1. Central proposal", "Subsection",ExpressionUUID->"d8a18a89-6983-fe45-8a66-e54dc2d49eee"],
+
+Cell["\<\
+Biological senses are not arbitrary. They are specialized measurement \
+interfaces tuned to ranges where the organism can maintain useful stability. \
+\>", "Text",ExpressionUUID->"26303099-54cc-e14e-8cdb-d00ccd390603"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12.2. Examples", "Subsection",ExpressionUUID->"edcd26ba-cf59-d141-a535-ec67b7d4fdae"],
+
+Cell["eyes: tuned to a narrow electromagnetic band,", "Item",ExpressionUUID->"f5be0c34-9151-a44f-8819-546a0966e69c"],
+
+Cell["ears: tuned to a pressure-wave frequency range,", "Item",ExpressionUUID->"159581a0-af54-0542-8938-cfd1fb92c148"],
+
+Cell["touch: tuned to macro contact and deformation,", "Item",ExpressionUUID->"06d03833-e468-3148-893b-455ec2c4dd26"],
+
+Cell["smell and taste: tuned to molecular interaction classes,", "Item",ExpressionUUID->"546b7d39-9645-794a-9fb8-803b17d8babd"],
+
+Cell["proprioception: tuned to body-state geometry.", "Item",ExpressionUUID->"d7956ab3-cf1d-744d-a890-349269261a8e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12.3. Formal statement", "Subsection",ExpressionUUID->"425c0b54-2b23-1144-9ffe-f00a64cfc270"],
+
+Cell[TextData[{
+ "A sense channel may be written as a scale-selective measurement map: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[CapitalSigma]", 
+          StyleBox["i", "TI"]], ":", 
+         SubscriptBox[
+          StyleBox["L", "TI"], "2"], "\[Rule]", 
+         SubscriptBox[
+          StyleBox["I", "TI"], 
+          StyleBox["i", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Sigma_i : \\mathcal{L}_2 \\to \\mathcal{I}_i", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "062a1f24-afb0-4144-b91f-48efc500716a"],
+ "where ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["I", "TI"], 
+        StyleBox["i", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{I}_i", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b7eae75e-cef2-e044-9af6-25918547aa22"],
+ " is the internal information space of the sensing modality. "
+}], "Text",ExpressionUUID->"87331a4c-84bf-1641-aeb4-552c636feb15"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["12.4. Consequence", "Subsection",ExpressionUUID->"31523c0b-6085-f749-b871-12aed586cea9"],
+
+Cell["\<\
+Reality as lived is filtered reality, not exhaustive reality. Organisms \
+inherit ontological access through scale-locked stabilizing interfaces. \
+\>", "Text",ExpressionUUID->"8d219323-7ae4-004b-9dab-0d4d7c445756"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"012433b0-ff01-d44e-87fa-5ecd97e9b41e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["13. Consciousness as recursive interiority", "Section",ExpressionUUID->"9fb1287c-5e3e-f34c-bd59-4b054947cd08"],
+
+Cell[CellGroupData[{
+
+Cell["13.1. Strong and weak versions", "Subsection",ExpressionUUID->"a9b5a5e7-5d20-1846-a7e8-aab4c313e9a5"],
+
+Cell["A weak version: ", "Text",ExpressionUUID->"4157f6e6-8a89-3f49-804b-7efb6fb578fa"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"consciousness correlates with systems that model aspects of \
+their own state recursively.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"cbc033bd-e6e1-064e-bd7c-f0fce5695fff"],
+
+Cell["A stronger ontological version: ", "Text",ExpressionUUID->"4ece8e21-f16e-664e-b22e-197bfe2d9cc8"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"consciousness is the interior aspect of recursive \
+self-measurement under sufficient closure, memory, and integration.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"1fc812fc-4c51-134f-a13a-37a5af305099"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["13.2. Why caution is needed", "Subsection",ExpressionUUID->"1c971650-4e39-d04f-9718-9cc787165a62"],
+
+Cell["\<\
+This is a serious philosophical proposal, but it is not established \
+neuroscience. \
+\>", "Text",ExpressionUUID->"3171fa4f-a013-3a4b-a09c-83e528161df9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["13.3. Productive formal direction", "Subsection",ExpressionUUID->"72a5d9e1-c215-514c-83c3-8a6d3856169a"],
+
+Cell["\<\
+One possible path is to define a consciousness functional depending on: \
+\>", "Text",ExpressionUUID->"aecf0f11-d43c-5440-9042-2af573d0fcfd"],
+
+Cell["recursion depth,", "Item",ExpressionUUID->"a24eb0fc-b884-5e4d-85a5-b9a27dd7d72e"],
+
+Cell["memory integration,", "Item",ExpressionUUID->"e5b1f48a-9799-184e-a1e4-5416439c5529"],
+
+Cell["cross-scale coherence,", "Item",ExpressionUUID->"12e2e3a1-ae12-4f45-8ade-713a188d875c"],
+
+Cell["self-model fidelity,", "Item",ExpressionUUID->"f1e6bbf6-7925-d24e-a11b-99d03aadcfcc"],
+
+Cell["closure persistence.", "Item",ExpressionUUID->"a70b5a88-725c-7946-a44f-fefbddbbbf0e"],
+
+Cell["This is a research program, not yet a completed result. ", "Text",ExpressionUUID->"4ea569ee-131b-584b-9779-9a40896564d7"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"700499e8-07b9-9d4c-b37b-80e4ad35f2ee"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14. Scientific reinterpretation of experiment", "Section",ExpressionUUID->"39f1c926-eea1-3747-b83f-4e9e0540e942"],
+
+Cell[CellGroupData[{
+
+Cell["14.1. Standard view", "Subsection",ExpressionUUID->"2f910072-7d31-4b44-965d-85055951a8af"],
+
+Cell["Experiment measures pre-existing properties. ", "Text",ExpressionUUID->"1d75de01-6b0b-5f4e-9c29-21da467b0f05"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14.2. RHUFT-style reinterpretation", "Subsection",ExpressionUUID->"d25c593b-3433-784d-a454-0ffc35239b3a"],
+
+Cell["\<\
+Experiment may instead be understood as constraining which latent field \
+distinctions become stabilized in the measurement context. \
+\>", "Text",ExpressionUUID->"56f718d2-2466-5d4d-8a60-610cfbd80a69"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["14.3. Compatibility condition", "Subsection",ExpressionUUID->"c4ebe2a5-177b-ac41-8db7-ba7cd51d828d"],
+
+Cell["\<\
+To remain scientifically valid, this reinterpretation must recover ordinary \
+laboratory predictions where current theory already succeeds.\
+\>", "Text",ExpressionUUID->"529ce583-efbd-c540-a4ef-5bfa03ece67f"],
+
+Cell["\<\
+Thus the new ontology must be at least empirically conservative in known \
+domains. \
+\>", "Text",ExpressionUUID->"234e4f9e-022e-9143-9137-1ce456b2ae6e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"5ba696f9-8e58-3f45-a522-19d16e7cef29"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["15. Predictions and falsifiability conditions", "Section",ExpressionUUID->"9487bfb0-ff98-734b-85cb-c9e9adea244d"],
+
+Cell["A framework becomes science only where it risks failure. ", "Text",ExpressionUUID->"4b7b0d38-2ae6-e947-ba40-f62d0efc07a2"],
+
+Cell[CellGroupData[{
+
+Cell["15.1. Candidate prediction classes", "Subsection",ExpressionUUID->"c0f5a3be-e425-5940-a0b0-c969ed58dd0f"],
+
+Cell["\<\
+1. preferred node-spacing statistics in naturally stable field configurations,\
+\>", "Text",ExpressionUUID->"a74dfaa0-8e1b-2d48-bf14-ca2c4ab31c1e"],
+
+Cell["2. closure-derived scaling laws absent from standard theory,", "Text",ExpressionUUID->"50c9a3c5-2455-b547-b6e6-97c1cffa87e0"],
+
+Cell["\<\
+3. measurable anisotropies or resonance bands from structured recursive \
+geometry,\
+\>", "Text",ExpressionUUID->"deaa4df8-73d6-e54b-a4f5-92ff74b9c75d"],
+
+Cell["\<\
+4. cross-scale relations among constants derivable from a common closure \
+equation,\
+\>", "Text",ExpressionUUID->"724aa5de-ee9b-5e48-a7aa-8a13aaf35eb6"],
+
+Cell["\<\
+5. new sensor designs exploiting scale-locked coherence regimes. \
+\>", "Text",ExpressionUUID->"24a0617b-fb6c-8641-b7f6-60b2175916fe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["15.2. Falsifiability conditions", "Subsection",ExpressionUUID->"bec8ff84-58f9-444f-9076-caa95ec48643"],
+
+Cell["The framework is weakened or falsified if: ", "Text",ExpressionUUID->"71b2d124-3930-af4d-b658-f99e1d774cfc"],
+
+Cell["it cannot derive any nontrivial quantitative prediction,", "Item",ExpressionUUID->"4c6cf6c7-7db5-644a-b90d-b799b515a7f1"],
+
+Cell["closure variables have no operational definitions,", "Item",ExpressionUUID->"5a6ebc51-ae52-644a-96ea-1c145da9881c"],
+
+Cell["all constants are introduced by fit rather than derivation,", "Item",ExpressionUUID->"edb90338-78bb-5942-8586-081e87f7a505"],
+
+Cell["it explains every possible result equally well,", "Item",ExpressionUUID->"81bce905-2405-ce41-a5f8-23a46be75503"],
+
+Cell["its reinterpretations never outperform existing theory.", "Item",ExpressionUUID->"fe7de9b0-356d-1242-965b-cd34a16e446c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"47197730-0159-404b-98df-2d682adccdba"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+16. Boundary between established physics and metaphysical extension\
+\>", "Section",ExpressionUUID->"69018a87-f6da-8649-9fee-91d0881a9dc1"],
+
+Cell[CellGroupData[{
+
+Cell["16.1. Established physics includes", "Subsection",ExpressionUUID->"b358113e-5667-974e-8fcd-8738a35abd71"],
+
+Cell["experimentally validated quantum theory,", "Item",ExpressionUUID->"b2b45261-06bc-ff4c-85ac-8f7503500823"],
+
+Cell["relativity,", "Item",ExpressionUUID->"0fdba41d-e124-6341-a3a2-414eb3364b14"],
+
+Cell["standard measurement theory in operational settings,", "Item",ExpressionUUID->"bea6b22d-8cac-9546-bdc7-15677bc4ac4f"],
+
+Cell["known field equations and particle phenomenology.", "Item",ExpressionUUID->"cca1660f-8253-894a-b822-b1b4bf7a23dd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+16.2. This framework extends beyond established physics when it asserts\
+\>", "Subsection",ExpressionUUID->"fcec2b7c-9887-a440-a572-bda3465b575c"],
+
+Cell["ontological potential prior to physical law,", "Item",ExpressionUUID->"8bfc1199-3c72-2c47-8a3a-98d91c830952"],
+
+Cell["recursive self-measurement as fundamental,", "Item",ExpressionUUID->"0110fdc3-b90a-d043-ab31-d7bbc2729560"],
+
+Cell["closure invariants underlying constants,", "Item",ExpressionUUID->"8c05f7c9-75e7-934f-adeb-8f64fbdce2ac"],
+
+Cell["consciousness as intrinsic interiority of recursive systems,", "Item",ExpressionUUID->"1d60c7c7-ce44-b648-a61d-ee4843641f88"],
+
+Cell["\<\
+spiritual or symbolic categories as field-correlative descriptions.\
+\>", "Item",ExpressionUUID->"3585a011-1c22-9443-b911-186b3bb381b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["16.3. Why this boundary matters", "Subsection",ExpressionUUID->"df497643-2e4d-7849-b4fc-8622bf94004f"],
+
+Cell["\<\
+Without this boundary, the theory loses scientific credibility. With it, the \
+theory can be both ambitious and rigorous. \
+\>", "Text",ExpressionUUID->"396e5b55-c0b1-2842-91d7-0dda7235ebba"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"ba03ae79-c985-5845-b1b1-2b2b64e62d66"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["17. Initial formal pipeline", "Section",ExpressionUUID->"849bb77c-0303-8343-9ebb-7965f97735b7"],
+
+Cell["\<\
+A minimal computational scaffold for further development is: \
+\>", "CodeText",ExpressionUUID->"35ae7b24-215e-d546-b636-b5ca9e05c113"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "opfPipeline", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"opfPipeline", "[", 
+    RowBox[{
+    "state_", ",", "scale_", ",", "closureThreshold_", ",", "driftThreshold_",
+      ",", "coherenceThreshold_"}], "]"}], ":=", "\[IndentingNewLine]", "  ", 
+   RowBox[{
+    RowBox[{"measurementOp", "[", 
+     RowBox[{"state", ",", "scale"}], "]"}], " ", "//", " ", 
+    "\[IndentingNewLine]", "   ", 
+    RowBox[{"Function", "[", 
+     RowBox[{"s", ",", 
+      RowBox[{"Append", "[", 
+       RowBox[{"s", ",", 
+        RowBox[{"\"\<RealizedQ\>\"", "->", "\[IndentingNewLine]", "      ", 
+         RowBox[{"realizedAtScaleQ", "[", 
+          RowBox[{
+          "s", ",", "closureThreshold", ",", "driftThreshold", ",", 
+           "coherenceThreshold"}], "]"}]}]}], "]"}]}], "]"}]}]}], 
+  ";"}]}], "Input",ExpressionUUID->"41b87f29-dd44-ae47-ad72-109cabc227fb"],
+
+Cell["\<\
+This is only a skeleton, but it shows how the framework can be evolved into \
+an executable model. \
+\>", "Text",ExpressionUUID->"3528afa1-6608-a248-9dbe-e56a90b38092"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"548fa0d1-42df-e646-8896-ef463cf847e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["18. Immediate research tasks", "Section",ExpressionUUID->"702efab8-c9b0-7645-835f-67bf526ba67a"],
+
+Cell["1. Define all primitive variables operationally.", "Text",ExpressionUUID->"b00542da-376c-4c40-b628-0f25da74dd90"],
+
+Cell["2. Derive a proper action functional.", "Text",ExpressionUUID->"52993c12-0c1d-0f42-b6c7-fb0118fd2ead"],
+
+Cell["3. Produce Euler-Lagrange equations for the field variables.", "Text",ExpressionUUID->"223eadb1-62c4-494e-b3ce-582f875d49f5"],
+
+Cell["\<\
+4. Define closure metrics on graphs, manifolds, or state spaces.\
+\>", "Text",ExpressionUUID->"b189438b-fc31-ca4f-a187-85eade4fe1f4"],
+
+Cell["5. Build spherical and toroidal node simulations.", "Text",ExpressionUUID->"038e46f0-03e1-5a43-9b35-0fb63ddf974b"],
+
+Cell["6. Compare closure-derived invariants to known constants.", "Text",ExpressionUUID->"5e6b53b1-6372-3242-901f-d3bf95c133bc"],
+
+Cell["7. Separate symbolic phenomenology from physics claims.", "Text",ExpressionUUID->"6632b4ad-43a7-5647-a9f3-c77961b4c170"],
+
+Cell["8. Build explicit falsification tests. ", "Text",ExpressionUUID->"6d0e3849-58ca-e44d-ac6b-75a6acf2c1e7"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"09549b3e-1c1f-c24e-9028-bfff78bdda17"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["19. Provisional conclusion", "Section",ExpressionUUID->"51fe1137-97c1-c242-9eed-899bb6e7cbf5"],
+
+Cell["\<\
+This notebook establishes the first rigorous foundation of the RHUFT \
+ontological program in numbered form.\
+\>", "Text",ExpressionUUID->"afadb7f0-76d0-e243-897e-1a2634bee6b7"],
+
+Cell["\<\
+Its main achievement is not to prove the whole framework, but to make it \
+discussable with precision by separating: \
+\>", "Text",ExpressionUUID->"a66840cf-8afc-f448-bf3f-78776f55e6ec"],
+
+Cell["ontology,", "Item",ExpressionUUID->"e633b9d8-e157-da41-90b1-b07d2611228d"],
+
+Cell["mathematics,", "Item",ExpressionUUID->"02cb7c58-79b9-1947-8cd7-610ab0e3c6c2"],
+
+Cell["physics,", "Item",ExpressionUUID->"63667710-ead4-8f49-927b-97eb1c8932e9"],
+
+Cell["phenomenology,", "Item",ExpressionUUID->"82675c3e-5b5f-e746-8120-dd7cabe9a337"],
+
+Cell["testability.", "Item",ExpressionUUID->"8f66b964-1d2b-5446-bb96-a09e1e261ed5"],
+
+Cell["\<\
+The strongest central thesis emerging from this notebook is: \
+\>", "Text",ExpressionUUID->"de9c05a8-ee4c-6f41-b9c1-7e661691a210"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox["\<\"persistent reality may be modeled as recursively stabilized \
+distinction under scale-dependent measurement and closure.\"\>",
+     BaseStyle->{"Text", FontColor -> LightDarkSwitched[
+         GrayLevel[0.35], 
+         GrayLevel[0.8602474]]},
+     ImageMargins->5,
+     ImageSize->{Full, Automatic}]}
+  },
+  AutoDelete->False,
+  GridBoxBackground->{"Columns" -> {{
+       LightDarkSwitched[
+        GrayLevel[1], 
+        GrayLevel[0.278317]]}}},
+  GridBoxDividers->{"ColumnsIndexed" -> {1 -> Directive[
+        LightDarkSwitched[
+         RGBColor[0.87, 0.94, 1], 
+         RGBColor[0.2491127, 0.3295188, 0.4231198]], 
+        AbsoluteThickness[4]]}, "Rows" -> {{False}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], "Text", \
+"BlockQuote",
+ Background->None,ExpressionUUID->"8ecfe565-6109-8e40-b79f-47c1960c18b9"],
+
+Cell["\<\
+This is the foundation on which the later notebooks should build. \
+\>", "Text",ExpressionUUID->"6d117c7a-17d4-b448-9013-384817764da3"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{0},
+      "Spacer1"]},
+    {
+     TemplateBox[{0},
+      "Spacer1"]}
+   },
+   AutoDelete->False,
+   FrameStyle->Directive[
+     LightDarkSwitched[
+      GrayLevel[0.8], 
+      GrayLevel[0.4867756]], 
+     AbsoluteThickness[1]],
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text", "MarkdownDelimiter",
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"5d2e79fe-c58e-9447-a8fc-87589a428000"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["20. Proposed continuation", "Section",ExpressionUUID->"f90b2ea3-66e5-5c47-980f-3c76146b8a7c"],
+
+Cell["Suggested next notebook title:", "Text",ExpressionUUID->"04269bc4-5df0-4241-a9bd-84b68d3ced35"],
+
+Cell[TextData[{
+ "02",
+ StyleBox["RHUFT",
+  FontSlant->Italic],
+ "Formal",
+ StyleBox["Dynamics",
+  FontSlant->Italic],
+ "And",
+ StyleBox["Variational",
+  FontSlant->Italic],
+ "Field_Equations"
+}], "Text",ExpressionUUID->"9ba8ea73-55f0-0746-b376-2bbefe883554"],
+
+Cell["This second notebook should derive: ", "Text",ExpressionUUID->"711b36c2-aed3-8b4e-8a1a-c5e31003f8ce"],
+
+Cell["the action functional,", "Item",ExpressionUUID->"b9fbe08e-1ca4-764f-91e7-bc187e5592eb"],
+
+Cell["Euler-Lagrange equations,", "Item",ExpressionUUID->"911ae969-36cc-2e47-afa7-8aa6cd04525c"],
+
+Cell["linearization,", "Item",ExpressionUUID->"5cafdc12-b7a6-6641-853e-4e0200294346"],
+
+Cell["stability spectrum,", "Item",ExpressionUUID->"bf0fd131-8bff-3b47-b038-fc4767840eed"],
+
+Cell["closure potentials,", "Item",ExpressionUUID->"122cd483-62a3-d643-8060-f7b094c2343e"],
+
+Cell["spherical and toroidal geometric terms.", "Item",ExpressionUUID->"d8b317f8-d2c2-2949-9cc2-3b2f2a96820d"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{581.25, 654},
+WindowMargins->{{Automatic, 185.25}, {Automatic, 198.75}},
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8e23981d-01d9-3549-93f1-d6bb77f36217"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 599, 10, 156, "ChatInput",ExpressionUUID->"64e768ce-3c33-cb45-98c7-9696f6f4baea"],
+Cell[1178, 34, 22331, 443, 753, "ChatOutput",ExpressionUUID->"950bdeb5-2b36-a446-89a0-ac4b7ff64906"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23546, 482, 215, 8, 157, "Title",ExpressionUUID->"29840340-b4fa-6241-9d8e-11ce0ccd9062"],
+Cell[CellGroupData[{
+Cell[23786, 494, 81, 0, 66, "Section",ExpressionUUID->"a064a17f-2c30-c94e-b3f9-c9a30c88731d"],
+Cell[23870, 496, 412, 8, 121, "Text",ExpressionUUID->"e3ea180f-9725-c348-a007-c238897f5dd0"],
+Cell[24285, 506, 237, 6, 55, "Text",ExpressionUUID->"7bae69f1-0388-3f4a-a1c2-373d795c7088"],
+Cell[24525, 514, 86, 0, 30, "Item",ExpressionUUID->"ff8b8195-8794-4c4e-ba2a-f58e984fae98"],
+Cell[24614, 516, 93, 0, 30, "Item",ExpressionUUID->"cc9ab978-f5c9-5f4a-97fa-8c764fc2767c"],
+Cell[24710, 518, 95, 0, 30, "Item",ExpressionUUID->"2621df7c-ecea-4f4f-bd79-8a2bd559d0e7"],
+Cell[24808, 520, 98, 0, 30, "Item",ExpressionUUID->"a0e66cde-53bb-0b4a-abfd-061af0f49e46"],
+Cell[24909, 522, 106, 0, 30, "Item",ExpressionUUID->"1b880ccf-1703-8a43-a8bb-cb96903578e1"],
+Cell[25018, 524, 193, 3, 55, "Text",ExpressionUUID->"9fc33022-3680-c841-b5e2-4033e2618494"],
+Cell[25214, 529, 92, 0, 33, "Text",ExpressionUUID->"8b1ca011-f6d0-124a-b42e-79fdd74bf6fc"],
+Cell[25309, 531, 107, 0, 33, "Text",ExpressionUUID->"3c60ff02-3ba2-674f-90d9-0e1601a58751"],
+Cell[25419, 533, 102, 0, 33, "Text",ExpressionUUID->"6ddab1aa-eddb-1743-91fb-4aac99f9e56a"],
+Cell[25524, 535, 116, 0, 33, "Text",ExpressionUUID->"9b8ed33f-594a-2645-84e9-9ba191d5ccf7"],
+Cell[25643, 537, 596, 20, 48, "Text",ExpressionUUID->"35d4e7fe-228f-ef48-8186-945694a4acb5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26276, 562, 99, 0, 66, "Section",ExpressionUUID->"da801f94-9b2f-be48-8809-e36b8d186a4a"],
+Cell[CellGroupData[{
+Cell[26400, 566, 110, 0, 53, "Subsection",ExpressionUUID->"5b16fd23-86b4-064c-8c92-e58b6075d1ae"],
+Cell[26513, 568, 266, 4, 77, "Text",ExpressionUUID->"d0e8e5b1-5ff5-344f-b882-c98f3b49c694"],
+Cell[26782, 574, 108, 0, 33, "Text",ExpressionUUID->"3ee98ed9-c395-fa40-812d-28757b80094c"],
+Cell[26893, 576, 112, 0, 30, "Item",ExpressionUUID->"bafdc636-2d57-cc48-a437-e279fac5052c"],
+Cell[27008, 578, 128, 0, 30, "Item",ExpressionUUID->"0ebdfb06-330c-9942-8cf6-62634a8f9cc6"],
+Cell[27139, 580, 199, 3, 50, "Item",ExpressionUUID->"04c2243e-330b-9b4f-a30e-30eeb50364d4"],
+Cell[27341, 585, 164, 3, 55, "Text",ExpressionUUID->"65688d26-ecfd-9c49-934d-93bb2b135d76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27542, 593, 103, 0, 53, "Subsection",ExpressionUUID->"414410dd-afa3-5649-8be5-f7a4b862dcbf"],
+Cell[CellGroupData[{
+Cell[27670, 597, 102, 0, 43, "Subsubsection",ExpressionUUID->"c29502eb-c739-974c-8867-357b127bbc82"],
+Cell[27775, 599, 153, 2, 55, "Text",ExpressionUUID->"2495ae2f-7856-8d46-bfca-4138a74c69b7"],
+Cell[27931, 603, 81, 0, 33, "Text",ExpressionUUID->"bca60c36-c0b9-1e45-95ff-d6fe1eae0378"],
+Cell[28015, 605, 144, 2, 30, "Item",ExpressionUUID->"f43b47be-e63c-754e-b82c-4317f84ef09f"],
+Cell[28162, 609, 121, 0, 30, "Item",ExpressionUUID->"5d906060-4b12-5548-b62a-50cb3ea042ad"],
+Cell[28286, 611, 113, 0, 30, "Item",ExpressionUUID->"930859b5-daae-6243-9652-30a2a4aaf024"],
+Cell[28402, 613, 144, 2, 30, "Item",ExpressionUUID->"9b3a4130-7781-ec43-8ea8-de9275a6324e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28583, 620, 115, 0, 43, "Subsubsection",ExpressionUUID->"7344b60e-68fc-5c4b-b121-7284e3ada9ed"],
+Cell[28701, 622, 140, 2, 33, "Text",ExpressionUUID->"b7450016-cda9-2b4c-81b1-3b265046fd2d"],
+Cell[28844, 626, 81, 0, 33, "Text",ExpressionUUID->"12cb7a0e-a54b-5846-89c4-a52a5ac7c973"],
+Cell[28928, 628, 106, 0, 30, "Item",ExpressionUUID->"23dc81d3-8ed5-5a42-bb24-5d5f1ebcfaeb"],
+Cell[29037, 630, 93, 0, 30, "Item",ExpressionUUID->"c5f43485-1c4c-aa43-bae0-629d0c7abfcd"],
+Cell[29133, 632, 91, 0, 30, "Item",ExpressionUUID->"1d705ddb-85a2-2444-a279-44fcde47c562"],
+Cell[29227, 634, 100, 0, 30, "Item",ExpressionUUID->"825424a4-16ba-f744-8784-f0305f1104ff"],
+Cell[29330, 636, 96, 0, 30, "Item",ExpressionUUID->"8ecc962d-7449-764d-8740-670489ca2dce"],
+Cell[29429, 638, 94, 0, 30, "Item",ExpressionUUID->"a870d875-a322-3d45-b374-cec1274dc622"],
+Cell[29526, 640, 142, 2, 33, "Text",ExpressionUUID->"0345849a-f033-0b4a-8da1-42d64ea835fc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29705, 647, 108, 0, 43, "Subsubsection",ExpressionUUID->"38e2d45c-ea2d-9d41-9074-e0b6db4365f9"],
+Cell[29816, 649, 150, 2, 33, "Text",ExpressionUUID->"3fc4a291-f778-df4c-8fa3-63b3ab5d56fb"],
+Cell[29969, 653, 81, 0, 33, "Text",ExpressionUUID->"c84dffaa-bbd8-314c-88e7-2163f1b7ff49"],
+Cell[30053, 655, 122, 0, 30, "Item",ExpressionUUID->"d86e18b0-f5fa-b74c-b183-305078302f15"],
+Cell[30178, 657, 107, 0, 30, "Item",ExpressionUUID->"ca43d3c2-bad1-ca43-8513-a36c20532349"],
+Cell[30288, 659, 118, 0, 30, "Item",ExpressionUUID->"306525fa-94b0-7842-a79b-44ccb5974aa5"],
+Cell[30409, 661, 127, 0, 30, "Item",ExpressionUUID->"9085aa6f-1bfb-e241-a0f4-099e2223a0f7"],
+Cell[30539, 663, 98, 0, 33, "Text",ExpressionUUID->"4929aa69-c769-2c47-87cd-b91c1a5bd8f3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30674, 668, 132, 0, 43, "Subsubsection",ExpressionUUID->"f471b3f6-d9f1-e04f-905a-8e6760fd7fd0"],
+Cell[30809, 670, 120, 0, 33, "Text",ExpressionUUID->"b753bae4-a88a-e54b-844f-fd3ea83820e5"],
+Cell[30932, 672, 110, 0, 30, "Item",ExpressionUUID->"333a1618-a17f-db4d-93b8-300702ad1652"],
+Cell[31045, 674, 114, 0, 30, "Item",ExpressionUUID->"34379e28-646c-af42-8313-1320ea96b152"],
+Cell[31162, 676, 154, 2, 50, "Item",ExpressionUUID->"9d64df59-8fa1-0c4e-a503-c6ac83e70a8d"],
+Cell[31319, 680, 152, 2, 55, "Text",ExpressionUUID->"2b802469-8207-9247-ac08-fa46c631ba70"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31520, 688, 101, 0, 53, "Subsection",ExpressionUUID->"45a759b4-0a85-114c-ab79-973bc37f1007"],
+Cell[31624, 690, 108, 0, 33, "Text",ExpressionUUID->"df9edf83-fef5-3245-842d-6ba228be3f71"],
+Cell[31735, 692, 847, 23, 43, "Text",ExpressionUUID->"dbd8a02f-eb9e-d14e-a32a-d44e687b6617"],
+Cell[32585, 717, 147, 2, 33, "Text",ExpressionUUID->"b3c56fca-ae76-244b-af87-5273c7c20fce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32769, 724, 105, 0, 53, "Subsection",ExpressionUUID->"f2a0635e-de80-6443-b69c-b40e6e4543a3"],
+Cell[32877, 726, 144, 2, 33, "Text",ExpressionUUID->"0f20b658-6ecd-1d4d-9e7a-2e5ab6c6b0fd"],
+Cell[33024, 730, 101, 0, 33, "Text",ExpressionUUID->"e6b4fd59-b751-ed49-884d-473c306acd57"],
+Cell[33128, 732, 912, 24, 65, "Text",ExpressionUUID->"0e695989-b5c0-4b45-b48c-8ea00b85b61b"],
+Cell[34043, 758, 170, 3, 55, "Text",ExpressionUUID->"154cb050-a15a-9241-86bb-cfc9d951c3a8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34250, 766, 100, 0, 53, "Subsection",ExpressionUUID->"b21a74e6-77eb-674f-85b3-34b7d6c1ef2e"],
+Cell[34353, 768, 125, 0, 33, "Text",ExpressionUUID->"795ba8f4-d9c6-be44-94c1-d955f0db7036"],
+Cell[34481, 770, 96, 0, 30, "Item",ExpressionUUID->"ea432de4-25a9-8a4d-8abe-295a83985f46"],
+Cell[34580, 772, 95, 0, 30, "Item",ExpressionUUID->"20dc2516-8765-0d47-8981-29b15913d2ca"],
+Cell[34678, 774, 104, 0, 30, "Item",ExpressionUUID->"a0e7f430-847e-0849-995a-8def9984d202"],
+Cell[34785, 776, 93, 0, 30, "Item",ExpressionUUID->"f34066ca-5ddb-4e4d-844d-1dfba0f2f87a"],
+Cell[34881, 778, 103, 0, 30, "Item",ExpressionUUID->"1381670f-aa0f-d045-b5cd-217111510db0"],
+Cell[34987, 780, 596, 20, 48, "Text",ExpressionUUID->"8e24c95d-d4bb-914f-b88c-de52fff67b5f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35632, 806, 95, 0, 66, "Section",ExpressionUUID->"23748e24-7b8e-5842-b44b-bd8509f2bf5c"],
+Cell[CellGroupData[{
+Cell[35752, 810, 100, 0, 53, "Subsection",ExpressionUUID->"64d97d6b-2889-9d42-8260-e2e90ab7c73a"],
+Cell[35855, 812, 146, 2, 33, "Text",ExpressionUUID->"201619cf-a1ec-fd4c-bb0f-72fe398c4e61"],
+Cell[36004, 816, 151, 2, 33, "Text",ExpressionUUID->"3470fa74-23f2-e245-8de7-fc9de8f45e9b"],
+Cell[36158, 820, 92, 0, 30, "Item",ExpressionUUID->"90f16cba-383a-5f49-a92a-33e4c0b51474"],
+Cell[36253, 822, 108, 0, 30, "Item",ExpressionUUID->"c62286df-314d-1048-81c4-d02b53132704"],
+Cell[36364, 824, 99, 0, 30, "Item",ExpressionUUID->"9bc8bc1c-884c-b242-bb5b-b4db17706caf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36500, 829, 104, 0, 53, "Subsection",ExpressionUUID->"93502e07-8c8d-fb42-87f1-7d15a1fbccd0"],
+Cell[36607, 831, 117, 0, 33, "Text",ExpressionUUID->"8b86df6b-4c4f-8742-918e-b96a1a780eac"],
+Cell[36727, 833, 182, 4, 30, "Item",ExpressionUUID->"f0983df7-2f47-4a46-a01b-628bf23a6291"],
+Cell[36912, 839, 166, 4, 30, "Item",ExpressionUUID->"fb4035d5-de41-f343-86c0-2a1e4aa7ba01"],
+Cell[37081, 845, 174, 4, 30, "Item",ExpressionUUID->"f2a771aa-bb7e-1e45-a51a-fff1e132bac7"],
+Cell[37258, 851, 177, 4, 30, "Item",ExpressionUUID->"b245233e-0491-d24d-81c6-6b8d90f656fc"],
+Cell[37438, 857, 168, 4, 30, "Item",ExpressionUUID->"cd865aba-6ab1-8749-855b-d33cefc50db6"],
+Cell[37609, 863, 169, 4, 30, "Item",ExpressionUUID->"ae386099-972a-d44d-a44e-01162d7e16cd"],
+Cell[37781, 869, 179, 4, 30, "Item",ExpressionUUID->"fbd27cae-8042-304c-bbad-9d1a75cdbb6e"],
+Cell[37963, 875, 186, 3, 55, "Text",ExpressionUUID->"e16d78b5-24ba-4048-bd62-ce4e115ba730"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38186, 883, 103, 0, 53, "Subsection",ExpressionUUID->"81e63297-a610-5e40-9180-62fc56c701f7"],
+Cell[38292, 885, 99, 0, 33, "Text",ExpressionUUID->"04272a31-777d-1245-b441-e91b13c241b4"],
+Cell[38394, 887, 885, 23, 65, "Text",ExpressionUUID->"acebcb48-0b9d-9543-8f18-565d06694ecf"],
+Cell[39282, 912, 164, 3, 55, "Text",ExpressionUUID->"09c7cef1-c302-a04b-ba1a-e685fe0b30bf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39483, 920, 101, 0, 53, "Subsection",ExpressionUUID->"60dc53b7-58c9-4246-8820-a81a184db8fe"],
+Cell[39587, 922, 207, 3, 55, "Text",ExpressionUUID->"905d929c-02ed-e64c-8c50-e137920d37c0"],
+Cell[39797, 927, 183, 3, 55, "Text",ExpressionUUID->"a80c1757-5681-2445-834d-4a4f18bb4aed"],
+Cell[39983, 932, 596, 20, 48, "Text",ExpressionUUID->"e25a2591-9875-fa49-b1f5-c2b693441474"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40628, 958, 116, 0, 66, "Section",ExpressionUUID->"fc5c70b4-1092-a244-b428-a0d467f261aa"],
+Cell[CellGroupData[{
+Cell[40769, 962, 106, 0, 53, "Subsection",ExpressionUUID->"5b14cc10-ae06-a145-84f7-76d43516bf60"],
+Cell[40878, 964, 129, 0, 33, "Text",ExpressionUUID->"27866a0a-59ab-1c41-9ccd-06043791a23c"],
+Cell[CellGroupData[{
+Cell[41032, 968, 110, 0, 43, "Subsubsection",ExpressionUUID->"1693471e-b221-8448-92db-a268597af321"],
+Cell[41145, 970, 150, 2, 33, "Text",ExpressionUUID->"b1adee2f-9a7c-1843-ae81-d4648b4153d8"],
+Cell[41298, 974, 83, 0, 33, "Text",ExpressionUUID->"b797fb2e-2091-fb4f-b8d5-477fc52a123a"],
+Cell[41384, 976, 80, 0, 30, "Item",ExpressionUUID->"30a7dda5-9b8a-a640-a25d-ca569aa29b44"],
+Cell[41467, 978, 98, 0, 30, "Item",ExpressionUUID->"fce14589-1757-e942-94a8-97afc2c83c74"],
+Cell[41568, 980, 101, 0, 30, "Item",ExpressionUUID->"c79bcc60-07bd-fa4e-98f8-b032e771a174"],
+Cell[41672, 982, 118, 0, 30, "Item",ExpressionUUID->"b254424e-c3b1-b247-bdca-b0d938d09b2c"],
+Cell[41793, 984, 102, 0, 36, "CodeText",ExpressionUUID->"f66934c5-5e82-6241-9810-c5465dfd6cef"],
+Cell[41898, 986, 582, 13, 123, "Input",ExpressionUUID->"4b0248e1-b127-5f45-b96a-7d8c376c6683"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42517, 1004, 119, 0, 43, "Subsubsection",ExpressionUUID->"4b86bd3f-beff-ab4b-b438-e5e8fee41cef"],
+Cell[42639, 1006, 198, 3, 55, "Text",ExpressionUUID->"50fed70b-dbca-ed46-a3e9-db62fca4c25a"],
+Cell[42840, 1011, 88, 0, 36, "CodeText",ExpressionUUID->"b5ee3140-967b-7d4f-91ca-622eed5fa96a"],
+Cell[42931, 1013, 630, 14, 161, "Input",ExpressionUUID->"d85d8ca7-b54d-9c4e-8f5c-29cdb9515a6e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43598, 1032, 116, 0, 43, "Subsubsection",ExpressionUUID->"5306d79f-d9fb-7e4f-94dd-16e016e37b23"],
+Cell[43717, 1034, 191, 3, 55, "Text",ExpressionUUID->"1bf72f91-022f-bd44-97dd-9fad56df6eee"],
+Cell[43911, 1039, 591, 13, 123, "Input",ExpressionUUID->"d9937171-9efa-e249-a839-55d6d8f6ebad"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44551, 1058, 103, 0, 53, "Subsection",ExpressionUUID->"658ff0e9-1a8a-d640-93d6-8a1b5d9aa3f1"],
+Cell[44657, 1060, 125, 0, 33, "Text",ExpressionUUID->"8716eddf-08a7-ee4f-82e8-f85fcde4ba3c"],
+Cell[CellGroupData[{
+Cell[44807, 1064, 121, 0, 43, "Subsubsection",ExpressionUUID->"824eda46-2280-114b-ad4e-7035067e72d4"],
+Cell[44931, 1066, 121, 0, 33, "Text",ExpressionUUID->"9f26daba-c629-7a42-8e3f-fce4a37c3f4c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45089, 1071, 121, 0, 43, "Subsubsection",ExpressionUUID->"ddc918df-d51f-a144-8825-64dc3a20525f"],
+Cell[45213, 1073, 188, 3, 55, "Text",ExpressionUUID->"d61f9ecb-1025-a34c-b24f-239c22c72786"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45450, 1082, 96, 0, 53, "Subsection",ExpressionUUID->"54b10160-bc24-364e-a7f8-729cc0f4c558"],
+Cell[45549, 1084, 1092, 27, 37, "Text",ExpressionUUID->"75123b3d-2cc9-8947-aad2-8c8a3824b7e8"],
+Cell[46644, 1113, 459, 10, 30, "Item",ExpressionUUID->"8af266ce-92b1-904e-9a6c-400bd188dfd8"],
+Cell[47106, 1125, 443, 10, 30, "Item",ExpressionUUID->"7fc4dc35-290f-4a41-ad1f-37230e745d31"],
+Cell[47552, 1137, 444, 10, 30, "Item",ExpressionUUID->"a4c072ca-46cf-1d46-adcd-3fe8133e5267"],
+Cell[47999, 1149, 438, 10, 30, "Item",ExpressionUUID->"80c2d87e-3b93-d94c-b1ad-db730244d06c"],
+Cell[48440, 1161, 596, 20, 48, "Text",ExpressionUUID->"d019ea9d-eb2c-144f-839d-04752a531d26"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49085, 1187, 95, 0, 66, "Section",ExpressionUUID->"23236fc5-8bc0-2e46-9f83-4b1a7532871a"],
+Cell[CellGroupData[{
+Cell[49205, 1191, 111, 0, 53, "Subsection",ExpressionUUID->"23f2e76b-7d54-6941-9bef-4769778c4b3a"],
+Cell[49319, 1193, 190, 3, 55, "Text",ExpressionUUID->"583707d4-054f-c94c-92ab-408921107a3d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49546, 1201, 103, 0, 53, "Subsection",ExpressionUUID->"8d4676fa-58f7-024c-86b8-693f1be38f25"],
+Cell[49652, 1203, 1130, 30, 55, "Text",ExpressionUUID->"331db7e0-4a59-5a44-8cc9-e97fe90f282d"],
+Cell[50785, 1235, 424, 10, 30, "Item",ExpressionUUID->"45f79dc0-89ad-cf4a-9999-9eb4a19bf38e"],
+Cell[51212, 1247, 375, 9, 30, "Item",ExpressionUUID->"2f769b97-28e0-6f41-a7bb-1a609570aa9f"],
+Cell[51590, 1258, 379, 9, 30, "Item",ExpressionUUID->"8147df7f-2269-2f4c-ad50-18455ac827dd"],
+Cell[51972, 1269, 389, 9, 30, "Item",ExpressionUUID->"9e8757b2-3352-f340-b676-c0da195d3580"],
+Cell[52364, 1280, 373, 9, 30, "Item",ExpressionUUID->"13658577-b76a-de47-ae54-5c6714bc70fd"],
+Cell[52740, 1291, 380, 9, 30, "Item",ExpressionUUID->"3e7cf7bf-0e42-6d4b-9a8d-91861fb1323f"],
+Cell[53123, 1302, 378, 9, 30, "Item",ExpressionUUID->"e9bd77c1-53a4-fb49-ad33-617375a03da0"],
+Cell[53504, 1313, 390, 9, 30, "Item",ExpressionUUID->"705c699f-d2bf-9940-9566-27d498989b86"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53931, 1327, 113, 0, 53, "Subsection",ExpressionUUID->"0872e7da-8625-784b-869e-824f6654ffe0"],
+Cell[54047, 1329, 1267, 28, 256, "Input",ExpressionUUID->"0b2bde38-7622-6343-a72c-5483e1058ed0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55351, 1362, 101, 0, 53, "Subsection",ExpressionUUID->"c63ca40e-a88f-c845-8ffb-ba71c06ea34f"],
+Cell[55455, 1364, 134, 0, 36, "CodeText",ExpressionUUID->"0ee6c3cd-f461-5a47-b411-ed6417b79fcf"],
+Cell[55592, 1366, 2202, 50, 332, "Input",ExpressionUUID->"4176dd4a-8696-334c-8930-4498d2dcaea7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57831, 1421, 96, 0, 53, "Subsection",ExpressionUUID->"eefc5c94-6f9b-3941-99ed-4cc2d229adc8"],
+Cell[57930, 1423, 283, 4, 77, "Text",ExpressionUUID->"190c6b28-6ff6-7c42-b98e-ac1bbb51408a"],
+Cell[58216, 1429, 596, 20, 48, "Text",ExpressionUUID->"3a4e053e-3719-1244-baf8-7a235b402503"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58861, 1455, 105, 0, 66, "Section",ExpressionUUID->"bcf4c569-1bd1-274c-ab5b-9ec072aa4b1c"],
+Cell[CellGroupData[{
+Cell[58991, 1459, 94, 0, 53, "Subsection",ExpressionUUID->"9bac7a55-4fd6-a24a-a77a-7be671a4f924"],
+Cell[59088, 1461, 172, 3, 55, "Text",ExpressionUUID->"6e1325c2-e38c-4042-8bff-bebb137b5029"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59297, 1469, 96, 0, 53, "Subsection",ExpressionUUID->"1c1fc129-d58c-734d-a870-05db39b6278a"],
+Cell[59396, 1471, 1079, 29, 33, "Text",ExpressionUUID->"84fbb2ef-3d1b-af4e-853d-7be8291e9d83"],
+Cell[60478, 1502, 485, 13, 30, "Item",ExpressionUUID->"2e92d067-def8-ac4d-b75a-cebced7020c6"],
+Cell[60966, 1517, 442, 11, 30, "Item",ExpressionUUID->"3bc27873-db54-094e-8e2f-db0ae7beb66e"],
+Cell[61411, 1530, 451, 11, 30, "Item",ExpressionUUID->"25829aea-751c-624f-8189-f6ec76309546"],
+Cell[61865, 1543, 443, 11, 30, "Item",ExpressionUUID->"2db9f067-c66b-324a-84cb-ca7422b7e960"],
+Cell[62311, 1556, 451, 11, 30, "Item",ExpressionUUID->"8039a522-5751-6a4f-a18c-a5c7aef5e457"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62799, 1572, 107, 0, 53, "Subsection",ExpressionUUID->"7ba5193a-a4cf-914c-8cba-9efb9a286d9d"],
+Cell[62909, 1574, 3374, 85, 560, "Input",ExpressionUUID->"8fbfe428-fd1b-5b45-ac17-0e3a3b36a212"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66320, 1664, 110, 0, 53, "Subsection",ExpressionUUID->"98afd0da-8f5a-0e41-81ee-943e4097cf5f"],
+Cell[66433, 1666, 248, 4, 77, "Text",ExpressionUUID->"47fbf85f-d317-b74f-9130-7bab146e861c"],
+Cell[66684, 1672, 180, 3, 55, "Text",ExpressionUUID->"cdc8cc31-f12d-5748-a3c9-97e1f238740f"],
+Cell[66867, 1677, 596, 20, 48, "Text",ExpressionUUID->"7f87d9e9-d197-544c-9d4c-92f3b5565ff8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67512, 1703, 100, 0, 66, "Section",ExpressionUUID->"289df7fd-5ce0-974e-8e3a-2e88eb503c62"],
+Cell[CellGroupData[{
+Cell[67637, 1707, 102, 0, 53, "Subsection",ExpressionUUID->"422978fb-a846-df4a-bb2b-d60e9ed0bfb6"],
+Cell[67742, 1709, 214, 3, 55, "Text",ExpressionUUID->"a60352db-d832-0f4a-8263-54f8758cc0fb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67993, 1717, 99, 0, 53, "Subsection",ExpressionUUID->"d75b4fe0-b3a9-f244-a726-a7c6fa0045e5"],
+Cell[68095, 1719, 1228, 29, 52, "Text",ExpressionUUID->"99ce5b23-10a8-764b-a967-91f4afd560e7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69360, 1753, 113, 0, 53, "Subsection",ExpressionUUID->"dae4013f-d169-cb42-a8e9-0faa9539e4f0"],
+Cell[69476, 1755, 782, 19, 123, "Input",ExpressionUUID->"97e95736-4ee3-0a42-bb4d-59411fbb301f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70295, 1779, 95, 0, 53, "Subsection",ExpressionUUID->"fbe274bd-b7d2-d148-a5c0-a10beda78b34"],
+Cell[70393, 1781, 205, 3, 55, "Text",ExpressionUUID->"f798bb34-9b9d-0043-8315-c39feeef1f69"],
+Cell[70601, 1786, 179, 3, 55, "Text",ExpressionUUID->"d21cd6fd-20c5-164f-85d1-e5abc14d2f74"],
+Cell[70783, 1791, 596, 20, 48, "Text",ExpressionUUID->"6bf52ba7-7261-904a-a6df-b2aed360a6ee"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71428, 1817, 96, 0, 66, "Section",ExpressionUUID->"1d0157e1-c8b7-fc4c-abd7-f79d0fc9e53d"],
+Cell[CellGroupData[{
+Cell[71549, 1821, 110, 0, 53, "Subsection",ExpressionUUID->"604ca374-3d0a-c74e-87ad-8400df82fca2"],
+Cell[71662, 1823, 216, 3, 55, "Text",ExpressionUUID->"4b27e9bf-91e3-c846-8c51-eb230011b1b9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71915, 1831, 104, 0, 53, "Subsection",ExpressionUUID->"daa964fc-fbbd-bb46-bdd8-c3407fb49862"],
+Cell[72022, 1833, 97, 0, 33, "Text",ExpressionUUID->"61dd5d31-98ce-a746-9537-9e2f13076476"],
+Cell[72122, 1835, 86, 0, 30, "Item",ExpressionUUID->"8b2a2657-ecd9-6a41-9389-14018d3e73c8"],
+Cell[72211, 1837, 80, 0, 30, "Item",ExpressionUUID->"094f0acc-c1ec-c24b-8775-e41cc6a591a4"],
+Cell[72294, 1839, 76, 0, 30, "Item",ExpressionUUID->"0f816e25-1e92-fd4e-94e4-a0de11f6358a"],
+Cell[72373, 1841, 78, 0, 30, "Item",ExpressionUUID->"4cfc0dfd-177c-be41-b285-c381d999b6ce"],
+Cell[72454, 1843, 77, 0, 30, "Item",ExpressionUUID->"c7a4d0fe-5bf2-9e48-87bc-5ef13215ff52"],
+Cell[72534, 1845, 98, 0, 30, "Item",ExpressionUUID->"d2200ad0-76a0-564b-8ec7-a4569049da30"],
+Cell[72635, 1847, 84, 0, 30, "Item",ExpressionUUID->"6cc0aff4-85cd-5944-a4d7-0cd23d393a78"],
+Cell[72722, 1849, 101, 0, 30, "Item",ExpressionUUID->"60d6180e-5dfc-f946-89b2-b8610cd63076"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72860, 1854, 120, 0, 53, "Subsection",ExpressionUUID->"0e6b480e-3ebf-9c46-ae93-97ff0c96b13f"],
+Cell[72983, 1856, 214, 3, 55, "Text",ExpressionUUID->"624739b5-83a1-7144-b67d-d1361541b8b1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73234, 1864, 124, 0, 53, "Subsection",ExpressionUUID->"12fe044c-2247-3140-811f-39019a218489"],
+Cell[73361, 1866, 294, 4, 77, "Text",ExpressionUUID->"2ad603f0-8d75-7844-9f41-5484c906d6b2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73692, 1875, 98, 0, 53, "Subsection",ExpressionUUID->"1e7589df-f6b2-6c49-9822-87b4246184cb"],
+Cell[73793, 1877, 89, 0, 33, "Text",ExpressionUUID->"10b60ff3-2419-d149-b4bd-31ed5bbb21dc"],
+Cell[73885, 1879, 83, 0, 30, "Item",ExpressionUUID->"d438fe86-3890-f242-a0ca-c06e21494598"],
+Cell[73971, 1881, 82, 0, 30, "Item",ExpressionUUID->"3eabb777-187d-144e-bcc2-49136133c553"],
+Cell[74056, 1883, 101, 0, 30, "Item",ExpressionUUID->"18624f61-ab31-a343-a11c-301b65a66fa8"],
+Cell[74160, 1885, 91, 0, 30, "Item",ExpressionUUID->"8d774a84-504c-a14a-bc4e-452a767fffee"],
+Cell[74254, 1887, 151, 2, 33, "Text",ExpressionUUID->"4659e702-be97-3b44-a0c6-45977c298ebc"],
+Cell[74408, 1891, 596, 20, 48, "Text",ExpressionUUID->"7cd4d336-07be-6641-ac06-19b669b2c3bf"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75053, 1917, 126, 0, 103, "Section",ExpressionUUID->"8357f93e-7007-b44e-a9de-dd6c44faadb0"],
+Cell[CellGroupData[{
+Cell[75204, 1921, 112, 0, 53, "Subsection",ExpressionUUID->"eea51489-919b-324a-8568-f5784fe8b4f2"],
+Cell[75319, 1923, 195, 3, 55, "Text",ExpressionUUID->"36a12588-6fba-a347-8771-1b39557c7e43"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75551, 1931, 104, 0, 53, "Subsection",ExpressionUUID->"f35d626a-b44b-6c4a-8168-8fc727a257c6"],
+Cell[75658, 1933, 1208, 30, 91, "Text",ExpressionUUID->"365a7d3c-bb64-a340-a735-1bb5b8614ba6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76903, 1968, 94, 0, 53, "Subsection",ExpressionUUID->"9f7c385a-3954-0040-9ea5-50afc7bb922d"],
+Cell[77000, 1970, 514, 12, 34, "Text",ExpressionUUID->"129c47fa-8520-da40-aa8d-7acbff176550"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77551, 1987, 99, 0, 53, "Subsection",ExpressionUUID->"7d5b8f88-f22d-454f-98bc-348c84e06c81"],
+Cell[77653, 1989, 201, 3, 55, "Text",ExpressionUUID->"1587e0fa-4e52-d44e-8814-7d7c72ae5a90"],
+Cell[77857, 1994, 98, 0, 30, "Item",ExpressionUUID->"09a1389a-9ad6-0540-9d1f-44eb459acb97"],
+Cell[77958, 1996, 91, 0, 30, "Item",ExpressionUUID->"414ffb26-37eb-ad44-8d7b-d2afb1470802"],
+Cell[78052, 1998, 99, 0, 30, "Item",ExpressionUUID->"5f821c7b-3b21-9c41-83fe-aef23c38e499"],
+Cell[78154, 2000, 128, 0, 30, "Item",ExpressionUUID->"4100632e-2dea-db43-9fec-df9b8ea1a335"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78319, 2005, 108, 0, 53, "Subsection",ExpressionUUID->"dbed830e-9282-a84f-bbc4-969971f713fd"],
+Cell[78430, 2007, 482, 13, 66, "Input",ExpressionUUID->"8d2c0950-8fc9-314c-bb99-71cdbffe2930"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78949, 2025, 108, 0, 53, "Subsection",ExpressionUUID->"9e87a12e-4da6-9349-96f3-ce2dd43c552e"],
+Cell[79060, 2027, 155, 2, 36, "CodeText",ExpressionUUID->"9d66f1af-c0f1-d341-8162-db17ab609173"],
+Cell[79218, 2031, 1626, 41, 237, "Input",ExpressionUUID->"2a33bb4d-1002-994f-8547-a36f7867912b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80881, 2077, 104, 0, 53, "Subsection",ExpressionUUID->"c29d93cf-ec24-d34b-b261-bb50a8452534"],
+Cell[80988, 2079, 324, 6, 77, "Text",ExpressionUUID->"f62c1856-229d-c94e-864c-2a2da79eee13"],
+Cell[81315, 2087, 596, 20, 48, "Text",ExpressionUUID->"f3b28cb1-cdc2-1341-813b-deefa1a56b62"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81960, 2113, 111, 0, 66, "Section",ExpressionUUID->"2a76b75d-4e9d-6041-b7ec-63e216e27eb5"],
+Cell[CellGroupData[{
+Cell[82096, 2117, 112, 0, 53, "Subsection",ExpressionUUID->"0b08ab1a-8e92-1b4d-b7bd-6bd106801c42"],
+Cell[82211, 2119, 162, 3, 55, "Text",ExpressionUUID->"8c4739ea-aa99-3841-b232-de46b99540e8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82410, 2127, 107, 0, 53, "Subsection",ExpressionUUID->"28e56b2d-da44-7343-999c-14abe48cf09b"],
+Cell[82520, 2129, 104, 0, 33, "Text",ExpressionUUID->"bcbe7499-c184-6745-80e6-5a9afd149220"],
+Cell[82627, 2131, 88, 0, 30, "Item",ExpressionUUID->"9a7b82b5-639a-114b-bcf9-f742e4289483"],
+Cell[82718, 2133, 96, 0, 30, "Item",ExpressionUUID->"4550ee4f-7c4a-ed43-8625-ac8f5341ec88"],
+Cell[82817, 2135, 108, 0, 30, "Item",ExpressionUUID->"256e5926-04df-f545-9d25-e6a0dc99f85f"],
+Cell[82928, 2137, 87, 0, 30, "Item",ExpressionUUID->"2c8d2968-fe4c-b649-847b-60c87d2e15f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83052, 2142, 103, 0, 53, "Subsection",ExpressionUUID->"2bfbe96d-8a4a-1e4c-8192-0c79731a7a67"],
+Cell[83158, 2144, 225, 3, 55, "Text",ExpressionUUID->"3d143dce-7407-514d-ae98-dd85bcc0611f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83420, 2152, 102, 0, 53, "Subsection",ExpressionUUID->"76707d26-cf19-284f-a87b-7c5a3d4429cd"],
+Cell[83525, 2154, 204, 3, 55, "Text",ExpressionUUID->"f96b2561-40f5-ff4d-b4fe-458449059be3"],
+Cell[83732, 2159, 596, 20, 48, "Text",ExpressionUUID->"1a0e6b02-99e6-cf42-ae11-e07f8debd55f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84377, 2185, 109, 0, 66, "Section",ExpressionUUID->"aececcdc-c6dd-5a48-b32e-844afb2831a1"],
+Cell[CellGroupData[{
+Cell[84511, 2189, 95, 0, 53, "Subsection",ExpressionUUID->"7c71b0d1-f1ba-2b4f-99a5-a9af6fc59ff6"],
+Cell[84609, 2191, 242, 4, 77, "Text",ExpressionUUID->"33e8b302-b99c-984e-80ba-d5a8591edf82"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84888, 2200, 118, 0, 53, "Subsection",ExpressionUUID->"1570b900-ce4d-564e-b145-9a17916f1655"],
+Cell[85009, 2202, 113, 0, 30, "Item",ExpressionUUID->"80a4b08a-56da-f848-b449-0de1c2b34cdc"],
+Cell[85125, 2204, 131, 0, 30, "Item",ExpressionUUID->"db77946a-0420-c647-a541-1cace61254c1"],
+Cell[85259, 2206, 140, 2, 30, "Item",ExpressionUUID->"cf1b3ec5-9abc-b041-b59f-0c95acc68cac"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85436, 2213, 103, 0, 53, "Subsection",ExpressionUUID->"7415bf7a-6927-5d4a-a5a5-57959b252f17"],
+Cell[85542, 2215, 217, 3, 55, "Text",ExpressionUUID->"436cd3cf-7a9d-8d4f-812c-fe0b4da1ec46"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85796, 2223, 110, 0, 53, "Subsection",ExpressionUUID->"0651f0f1-0b96-1642-a6d2-a60f6049fc07"],
+Cell[85909, 2225, 93, 0, 33, "Text",ExpressionUUID->"d3ff90a8-aecd-ff4b-8479-1057933994d5"],
+Cell[86005, 2227, 122, 0, 30, "Item",ExpressionUUID->"1b8536fb-7142-0042-9038-483d995cde8c"],
+Cell[86130, 2229, 106, 0, 30, "Item",ExpressionUUID->"5c98d253-6d2d-ea48-9696-600b1fb91d6d"],
+Cell[86239, 2231, 92, 0, 30, "Item",ExpressionUUID->"36c6dcf6-ce50-5146-9ec8-ecf7d5515895"],
+Cell[86334, 2233, 110, 0, 30, "Item",ExpressionUUID->"60bf47b2-4d05-5b42-a02d-71302240e958"],
+Cell[86447, 2235, 596, 20, 48, "Text",ExpressionUUID->"091481fd-824c-e443-be3f-d67993034041"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87092, 2261, 134, 0, 103, "Section",ExpressionUUID->"736f7c06-4b3f-d149-a663-269dbe13f60e"],
+Cell[CellGroupData[{
+Cell[87251, 2265, 89, 0, 53, "Subsection",ExpressionUUID->"52d85cee-82e9-fe4f-95b6-f4eb64a92f0d"],
+Cell[87343, 2267, 203, 3, 55, "Text",ExpressionUUID->"2620e34b-3a1b-5749-92b7-fde5d4ac0f3b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87583, 2275, 87, 0, 53, "Subsection",ExpressionUUID->"968276b1-a630-cc47-a141-ec42ff09804a"],
+Cell[87673, 2277, 166, 3, 55, "Text",ExpressionUUID->"6c270399-6d10-f445-94e7-7f53ffe298bc"],
+Cell[87842, 2282, 99, 0, 33, "Text",ExpressionUUID->"3e8bcc8e-0b5a-f841-ade7-a3e627135128"],
+Cell[87944, 2284, 850, 23, 43, "Text",ExpressionUUID->"d2e3390c-a71a-ee45-9275-cfb04bdb0a9b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88831, 2312, 90, 0, 53, "Subsection",ExpressionUUID->"2aa3923a-ebcd-f146-9cdc-59c0ad1ae9b1"],
+Cell[88924, 2314, 235, 3, 55, "Text",ExpressionUUID->"6a6b02df-646f-5f4a-b9f9-aae6472ffabd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89196, 2322, 99, 0, 53, "Subsection",ExpressionUUID->"aad476fd-813d-bc40-8a00-277e8b0b260d"],
+Cell[89298, 2324, 220, 3, 55, "Text",ExpressionUUID->"b8a9ba3d-d5e4-8a45-9d2f-b9f806ece737"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89555, 2332, 94, 0, 53, "Subsection",ExpressionUUID->"ad9f5295-84f3-b043-95e4-150ea3f162e0"],
+Cell[89652, 2334, 177, 3, 55, "Text",ExpressionUUID->"79397792-2455-9e4b-b88d-cfda5f6ad911"],
+Cell[89832, 2339, 596, 20, 48, "Text",ExpressionUUID->"b570a67f-6823-d84c-a813-78d09968f564"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90477, 2365, 125, 0, 103, "Section",ExpressionUUID->"3d06cc99-d948-3e46-8ac8-79337e21a8b4"],
+Cell[CellGroupData[{
+Cell[90627, 2369, 99, 0, 53, "Subsection",ExpressionUUID->"d8a18a89-6983-fe45-8a66-e54dc2d49eee"],
+Cell[90729, 2371, 228, 3, 77, "Text",ExpressionUUID->"26303099-54cc-e14e-8cdb-d00ccd390603"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90994, 2379, 91, 0, 53, "Subsection",ExpressionUUID->"edcd26ba-cf59-d141-a535-ec67b7d4fdae"],
+Cell[91088, 2381, 116, 0, 30, "Item",ExpressionUUID->"f5be0c34-9151-a44f-8819-546a0966e69c"],
+Cell[91207, 2383, 118, 0, 30, "Item",ExpressionUUID->"159581a0-af54-0542-8938-cfd1fb92c148"],
+Cell[91328, 2385, 117, 0, 30, "Item",ExpressionUUID->"06d03833-e468-3148-893b-455ec2c4dd26"],
+Cell[91448, 2387, 127, 0, 30, "Item",ExpressionUUID->"546b7d39-9645-794a-9fb8-803b17d8babd"],
+Cell[91578, 2389, 116, 0, 30, "Item",ExpressionUUID->"d7956ab3-cf1d-744d-a890-349269261a8e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[91731, 2394, 99, 0, 53, "Subsection",ExpressionUUID->"425c0b54-2b23-1144-9ffe-f00a64cfc270"],
+Cell[91833, 2396, 1123, 27, 77, "Text",ExpressionUUID->"87331a4c-84bf-1641-aeb4-552c636feb15"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92993, 2428, 94, 0, 53, "Subsection",ExpressionUUID->"31523c0b-6085-f749-b871-12aed586cea9"],
+Cell[93090, 2430, 225, 3, 55, "Text",ExpressionUUID->"8d219323-7ae4-004b-9dab-0d4d7c445756"],
+Cell[93318, 2435, 596, 20, 48, "Text",ExpressionUUID->"012433b0-ff01-d44e-87fa-5ecd97e9b41e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93963, 2461, 116, 0, 66, "Section",ExpressionUUID->"9fb1287c-5e3e-f34c-bd59-4b054947cd08"],
+Cell[CellGroupData[{
+Cell[94104, 2465, 107, 0, 53, "Subsection",ExpressionUUID->"a9b5a5e7-5d20-1846-a7e8-aab4c313e9a5"],
+Cell[94214, 2467, 87, 0, 33, "Text",ExpressionUUID->"4157f6e6-8a89-3f49-804b-7efb6fb578fa"],
+Cell[94304, 2469, 867, 23, 65, "Text",ExpressionUUID->"cbc033bd-e6e1-064e-bd7c-f0fce5695fff"],
+Cell[95174, 2494, 103, 0, 33, "Text",ExpressionUUID->"4ece8e21-f16e-664e-b22e-197bfe2d9cc8"],
+Cell[95280, 2496, 896, 23, 65, "Text",ExpressionUUID->"1fc812fc-4c51-134f-a13a-37a5af305099"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96213, 2524, 104, 0, 53, "Subsection",ExpressionUUID->"1c971650-4e39-d04f-9718-9cc787165a62"],
+Cell[96320, 2526, 163, 3, 55, "Text",ExpressionUUID->"3171fa4f-a013-3a4b-a09c-83e528161df9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96520, 2534, 110, 0, 53, "Subsection",ExpressionUUID->"72a5d9e1-c215-514c-83c3-8a6d3856169a"],
+Cell[96633, 2536, 151, 2, 33, "Text",ExpressionUUID->"aecf0f11-d43c-5440-9042-2af573d0fcfd"],
+Cell[96787, 2540, 87, 0, 30, "Item",ExpressionUUID->"a24eb0fc-b884-5e4d-85a5-b9a27dd7d72e"],
+Cell[96877, 2542, 90, 0, 30, "Item",ExpressionUUID->"e5b1f48a-9799-184e-a1e4-5416439c5529"],
+Cell[96970, 2544, 93, 0, 30, "Item",ExpressionUUID->"12e2e3a1-ae12-4f45-8ade-713a188d875c"],
+Cell[97066, 2546, 91, 0, 30, "Item",ExpressionUUID->"f1e6bbf6-7925-d24e-a11b-99d03aadcfcc"],
+Cell[97160, 2548, 91, 0, 30, "Item",ExpressionUUID->"a70b5a88-725c-7946-a44f-fefbddbbbf0e"],
+Cell[97254, 2550, 127, 0, 33, "Text",ExpressionUUID->"4ea569ee-131b-584b-9779-9a40896564d7"],
+Cell[97384, 2552, 596, 20, 48, "Text",ExpressionUUID->"700499e8-07b9-9d4c-b37b-80e4ad35f2ee"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98029, 2578, 119, 0, 66, "Section",ExpressionUUID->"39f1c926-eea1-3747-b83f-4e9e0540e942"],
+Cell[CellGroupData[{
+Cell[98173, 2582, 96, 0, 53, "Subsection",ExpressionUUID->"2f910072-7d31-4b44-965d-85055951a8af"],
+Cell[98272, 2584, 116, 0, 33, "Text",ExpressionUUID->"1d75de01-6b0b-5f4e-9c29-21da467b0f05"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98425, 2589, 111, 0, 53, "Subsection",ExpressionUUID->"d25c593b-3433-784d-a454-0ffc35239b3a"],
+Cell[98539, 2591, 212, 3, 55, "Text",ExpressionUUID->"56f718d2-2466-5d4d-8a60-610cfbd80a69"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98788, 2599, 106, 0, 53, "Subsection",ExpressionUUID->"c4ebe2a5-177b-ac41-8db7-ba7cd51d828d"],
+Cell[98897, 2601, 218, 3, 55, "Text",ExpressionUUID->"529ce583-efbd-c540-a4ef-5bfa03ece67f"],
+Cell[99118, 2606, 163, 3, 55, "Text",ExpressionUUID->"234e4f9e-022e-9143-9137-1ce456b2ae6e"],
+Cell[99284, 2611, 596, 20, 48, "Text",ExpressionUUID->"5ba696f9-8e58-3f45-a522-19d16e7cef29"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99929, 2637, 119, 0, 66, "Section",ExpressionUUID->"9487bfb0-ff98-734b-85cb-c9e9adea244d"],
+Cell[100051, 2639, 128, 0, 33, "Text",ExpressionUUID->"4b7b0d38-2ae6-e947-ba40-f62d0efc07a2"],
+Cell[CellGroupData[{
+Cell[100204, 2643, 111, 0, 53, "Subsection",ExpressionUUID->"c0f5a3be-e425-5940-a0b0-c969ed58dd0f"],
+Cell[100318, 2645, 157, 2, 55, "Text",ExpressionUUID->"a74dfaa0-8e1b-2d48-bf14-ca2c4ab31c1e"],
+Cell[100478, 2649, 131, 0, 33, "Text",ExpressionUUID->"50c9a3c5-2455-b547-b6e6-97c1cffa87e0"],
+Cell[100612, 2651, 162, 3, 55, "Text",ExpressionUUID->"deaa4df8-73d6-e54b-a4f5-92ff74b9c75d"],
+Cell[100777, 2656, 163, 3, 55, "Text",ExpressionUUID->"724aa5de-ee9b-5e48-a7aa-8a13aaf35eb6"],
+Cell[100943, 2661, 144, 2, 33, "Text",ExpressionUUID->"24a0617b-fb6c-8641-b7f6-60b2175916fe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101124, 2668, 108, 0, 53, "Subsection",ExpressionUUID->"bec8ff84-58f9-444f-9076-caa95ec48643"],
+Cell[101235, 2670, 114, 0, 33, "Text",ExpressionUUID->"71b2d124-3930-af4d-b658-f99e1d774cfc"],
+Cell[101352, 2672, 127, 0, 30, "Item",ExpressionUUID->"4c6cf6c7-7db5-644a-b90d-b799b515a7f1"],
+Cell[101482, 2674, 121, 0, 30, "Item",ExpressionUUID->"5a6ebc51-ae52-644a-96ea-1c145da9881c"],
+Cell[101606, 2676, 130, 0, 30, "Item",ExpressionUUID->"edb90338-78bb-5942-8586-081e87f7a505"],
+Cell[101739, 2678, 118, 0, 30, "Item",ExpressionUUID->"81bce905-2405-ce41-a5f8-23a46be75503"],
+Cell[101860, 2680, 126, 0, 30, "Item",ExpressionUUID->"fe7de9b0-356d-1242-965b-cd34a16e446c"],
+Cell[101989, 2682, 596, 20, 48, "Text",ExpressionUUID->"47197730-0159-404b-98df-2d682adccdba"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102634, 2708, 149, 2, 103, "Section",ExpressionUUID->"69018a87-f6da-8649-9fee-91d0881a9dc1"],
+Cell[CellGroupData[{
+Cell[102808, 2714, 111, 0, 53, "Subsection",ExpressionUUID->"b358113e-5667-974e-8fcd-8738a35abd71"],
+Cell[102922, 2716, 111, 0, 30, "Item",ExpressionUUID->"b2b45261-06bc-ff4c-85ac-8f7503500823"],
+Cell[103036, 2718, 82, 0, 30, "Item",ExpressionUUID->"0fdba41d-e124-6341-a3a2-414eb3364b14"],
+Cell[103121, 2720, 123, 0, 30, "Item",ExpressionUUID->"bea6b22d-8cac-9546-bdc7-15677bc4ac4f"],
+Cell[103247, 2722, 120, 0, 30, "Item",ExpressionUUID->"cca1660f-8253-894a-b822-b1b4bf7a23dd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103404, 2727, 156, 2, 79, "Subsection",ExpressionUUID->"fcec2b7c-9887-a440-a572-bda3465b575c"],
+Cell[103563, 2731, 115, 0, 30, "Item",ExpressionUUID->"8bfc1199-3c72-2c47-8a3a-98d91c830952"],
+Cell[103681, 2733, 113, 0, 30, "Item",ExpressionUUID->"0110fdc3-b90a-d043-ab31-d7bbc2729560"],
+Cell[103797, 2735, 111, 0, 30, "Item",ExpressionUUID->"8c05f7c9-75e7-934f-adeb-8f64fbdce2ac"],
+Cell[103911, 2737, 131, 0, 30, "Item",ExpressionUUID->"1d60c7c7-ce44-b648-a61d-ee4843641f88"],
+Cell[104045, 2739, 146, 2, 30, "Item",ExpressionUUID->"3585a011-1c22-9443-b911-186b3bb381b1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104228, 2746, 108, 0, 53, "Subsection",ExpressionUUID->"df497643-2e4d-7849-b4fc-8622bf94004f"],
+Cell[104339, 2748, 201, 3, 55, "Text",ExpressionUUID->"396e5b55-c0b1-2842-91d7-0dda7235ebba"],
+Cell[104543, 2753, 596, 20, 48, "Text",ExpressionUUID->"ba03ae79-c985-5845-b1b1-2b2b64e62d66"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105188, 2779, 101, 0, 66, "Section",ExpressionUUID->"849bb77c-0303-8343-9ebb-7965f97735b7"],
+Cell[105292, 2781, 144, 2, 36, "CodeText",ExpressionUUID->"35ae7b24-215e-d546-b636-b5ca9e05c113"],
+Cell[105439, 2785, 932, 22, 142, "Input",ExpressionUUID->"41b87f29-dd44-ae47-ad72-109cabc227fb"],
+Cell[106374, 2809, 178, 3, 55, "Text",ExpressionUUID->"3528afa1-6608-a248-9dbe-e56a90b38092"],
+Cell[106555, 2814, 596, 20, 48, "Text",ExpressionUUID->"548fa0d1-42df-e646-8896-ef463cf847e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107188, 2839, 102, 0, 66, "Section",ExpressionUUID->"702efab8-c9b0-7645-835f-67bf526ba67a"],
+Cell[107293, 2841, 119, 0, 33, "Text",ExpressionUUID->"b00542da-376c-4c40-b628-0f25da74dd90"],
+Cell[107415, 2843, 108, 0, 33, "Text",ExpressionUUID->"52993c12-0c1d-0f42-b6c7-fb0118fd2ead"],
+Cell[107526, 2845, 131, 0, 33, "Text",ExpressionUUID->"223eadb1-62c4-494e-b3ce-582f875d49f5"],
+Cell[107660, 2847, 143, 2, 33, "Text",ExpressionUUID->"b189438b-fc31-ca4f-a187-85eade4fe1f4"],
+Cell[107806, 2851, 120, 0, 33, "Text",ExpressionUUID->"038e46f0-03e1-5a43-9b35-0fb63ddf974b"],
+Cell[107929, 2853, 128, 0, 33, "Text",ExpressionUUID->"5e6b53b1-6372-3242-901f-d3bf95c133bc"],
+Cell[108060, 2855, 126, 0, 33, "Text",ExpressionUUID->"6632b4ad-43a7-5647-a9f3-c77961b4c170"],
+Cell[108189, 2857, 110, 0, 33, "Text",ExpressionUUID->"6d0e3849-58ca-e44d-ac6b-75a6acf2c1e7"],
+Cell[108302, 2859, 596, 20, 48, "Text",ExpressionUUID->"09549b3e-1c1f-c24e-9028-bfff78bdda17"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108935, 2884, 100, 0, 66, "Section",ExpressionUUID->"51fe1137-97c1-c242-9eed-899bb6e7cbf5"],
+Cell[109038, 2886, 187, 3, 55, "Text",ExpressionUUID->"afadb7f0-76d0-e243-897e-1a2634bee6b7"],
+Cell[109228, 2891, 196, 3, 55, "Text",ExpressionUUID->"a66840cf-8afc-f448-bf3f-78776f55e6ec"],
+Cell[109427, 2896, 80, 0, 30, "Item",ExpressionUUID->"e633b9d8-e157-da41-90b1-b07d2611228d"],
+Cell[109510, 2898, 83, 0, 30, "Item",ExpressionUUID->"02cb7c58-79b9-1947-8cd7-610ab0e3c6c2"],
+Cell[109596, 2900, 79, 0, 30, "Item",ExpressionUUID->"63667710-ead4-8f49-927b-97eb1c8932e9"],
+Cell[109678, 2902, 85, 0, 30, "Item",ExpressionUUID->"82675c3e-5b5f-e746-8120-dd7cabe9a337"],
+Cell[109766, 2904, 83, 0, 30, "Item",ExpressionUUID->"8f66b964-1d2b-5446-bb96-a09e1e261ed5"],
+Cell[109852, 2906, 140, 2, 33, "Text",ExpressionUUID->"de9c05a8-ee4c-6f41-b9c1-7e661691a210"],
+Cell[109995, 2910, 897, 23, 65, "Text",ExpressionUUID->"8ecfe565-6109-8e40-b79f-47c1960c18b9"],
+Cell[110895, 2935, 145, 2, 33, "Text",ExpressionUUID->"6d117c7a-17d4-b448-9013-384817764da3"],
+Cell[111043, 2939, 596, 20, 48, "Text",ExpressionUUID->"5d2e79fe-c58e-9447-a8fc-87589a428000"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111676, 2964, 99, 0, 66, "Section",ExpressionUUID->"f90b2ea3-66e5-5c47-980f-3c76146b8a7c"],
+Cell[111778, 2966, 101, 0, 33, "Text",ExpressionUUID->"04269bc4-5df0-4241-a9bd-84b68d3ced35"],
+Cell[111882, 2968, 259, 11, 33, "Text",ExpressionUUID->"9ba8ea73-55f0-0746-b376-2bbefe883554"],
+Cell[112144, 2981, 107, 0, 33, "Text",ExpressionUUID->"711b36c2-aed3-8b4e-8a1a-c5e31003f8ce"],
+Cell[112254, 2983, 93, 0, 30, "Item",ExpressionUUID->"b9fbe08e-1ca4-764f-91e7-bc187e5592eb"],
+Cell[112350, 2985, 96, 0, 30, "Item",ExpressionUUID->"911ae969-36cc-2e47-afa7-8aa6cd04525c"],
+Cell[112449, 2987, 85, 0, 30, "Item",ExpressionUUID->"5cafdc12-b7a6-6641-853e-4e0200294346"],
+Cell[112537, 2989, 90, 0, 30, "Item",ExpressionUUID->"bf0fd131-8bff-3b47-b038-fc4767840eed"],
+Cell[112630, 2991, 90, 0, 30, "Item",ExpressionUUID->"122cd483-62a3-d643-8060-f7b094c2343e"],
+Cell[112723, 2993, 110, 0, 30, "Item",ExpressionUUID->"d8b317f8-d2c2-2949-9cc2-3b2f2a96820d"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="Segoe UI, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.55" stop-color="#0d1230"/>
+      <stop offset="1" stop-color="#170f38"/>
+    </linearGradient>
+    <radialGradient id="voidGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000000"/>
+      <stop offset="0.45" stop-color="#06060f"/>
+      <stop offset="0.78" stop-color="#151c3d" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#151c3d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fieldStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="emergeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="15" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+
+  <!-- sparse star field -->
+  <g fill="#ffffff" opacity="0.35">
+    <circle cx="90" cy="150" r="1.4"/><circle cx="220" cy="90" r="1"/><circle cx="430" cy="200" r="1.2"/>
+    <circle cx="700" cy="140" r="1"/><circle cx="980" cy="110" r="1.5"/><circle cx="1300" cy="170" r="1"/>
+    <circle cx="1360" cy="330" r="1.2"/><circle cx="80" cy="520" r="1"/><circle cx="180" cy="700" r="1.3"/>
+    <circle cx="520" cy="760" r="1"/><circle cx="900" cy="740" r="1.4"/><circle cx="1200" cy="790" r="1"/>
+    <circle cx="340" cy="60" r="1.1"/><circle cx="1080" cy="70" r="1"/>
+  </g>
+
+  <text x="720" y="78" text-anchor="middle" fill="#e2e8f0" font-size="42" font-weight="700" letter-spacing="1">The Three Bodies of Reality</text>
+  <text x="720" y="118" text-anchor="middle" fill="#94a3b8" font-size="19">nothing → field → emergence — a resolution hierarchy, not a timeline</text>
+
+  <!-- ============ PANEL 1: THE NOTHING ============ -->
+  <g>
+    <circle cx="250" cy="415" r="150" fill="url(#voidGrad)"/>
+    <circle cx="250" cy="415" r="150" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="3 6"/>
+    <text x="250" y="405" text-anchor="middle" fill="#cbd5e1" font-size="58" filter="url(#glowSoft)">Ø</text>
+    <text x="250" y="470" text-anchor="middle" fill="#e2e8f0" font-size="25" font-weight="600">The Nothing</text>
+    <text x="250" y="600" text-anchor="middle" fill="#94a3b8" font-size="15">potential · pre-physical admissibility</text>
+    <text x="250" y="624" text-anchor="middle" fill="#94a3b8" font-size="15">timeless · pre-metric · no realized law</text>
+  </g>
+
+  <!-- ============ ARROW 1 ============ -->
+  <g>
+    <line x1="410" y1="415" x2="540" y2="415" stroke="url(#arrowGrad)" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="475" y="395" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">distinction</text>
+    <text x="475" y="445" text-anchor="middle" fill="#64748b" font-size="12.5">recursive self-measurement</text>
+  </g>
+
+  <!-- ============ PANEL 2: THE FIELD ============ -->
+  <g>
+    <!-- toroidal / wave field: concentric elliptical rings -->
+    <ellipse cx="720" cy="415" rx="150" ry="120" fill="none" stroke="url(#fieldStroke)" stroke-width="2" opacity="0.35"/>
+    <ellipse cx="720" cy="415" rx="118" ry="94" fill="none" stroke="url(#fieldStroke)" stroke-width="2.5" opacity="0.6"/>
+    <ellipse cx="720" cy="415" rx="86" ry="68" fill="none" stroke="url(#fieldStroke)" stroke-width="3" opacity="0.85"/>
+    <ellipse cx="720" cy="415" rx="54" ry="42" fill="none" stroke="url(#fieldStroke)" stroke-width="3.5" opacity="1"/>
+    <ellipse cx="720" cy="415" rx="24" ry="18" fill="none" stroke="#22d3ee" stroke-width="4" filter="url(#glow)"/>
+    <!-- orbiting phase markers -->
+    <circle cx="870" cy="415" r="5" fill="#22d3ee" filter="url(#glow)"/>
+    <circle cx="600" cy="330" r="4" fill="#a78bfa" filter="url(#glow)"/>
+    <circle cx="690" cy="523" r="4.5" fill="#38bdf8" filter="url(#glow)"/>
+
+    <text x="720" y="570" text-anchor="middle" fill="#e2e8f0" font-size="25" font-weight="600">The Field</text>
+    <text x="720" y="605" text-anchor="middle" fill="#94a3b8" font-size="15">multiscale field dynamics</text>
+    <text x="720" y="628" text-anchor="middle" fill="#cbd5e1" font-size="15" font-style="italic">∂²u + 2γ∂u + L·u + N(u) = f</text>
+    <text x="720" y="652" text-anchor="middle" fill="#94a3b8" font-size="13">persistent modes: Re(λ) &lt; 0</text>
+  </g>
+
+  <!-- ============ ARROW 2 ============ -->
+  <g>
+    <line x1="880" y1="415" x2="1010" y2="415" stroke="url(#arrowGrad)" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="945" y="395" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">closure</text>
+    <text x="945" y="445" text-anchor="middle" fill="#64748b" font-size="12.5">→ stability → persistence</text>
+  </g>
+
+  <!-- ============ PANEL 3: THE EMERGED ============ -->
+  <g>
+    <!-- central core -->
+    <circle cx="1190" cy="415" r="34" fill="url(#emergeGrad)" filter="url(#glowSoft)"/>
+    <circle cx="1190" cy="415" r="16" fill="#fff7ed" filter="url(#glow)"/>
+    <!-- orbiting particles / systems -->
+    <ellipse cx="1190" cy="415" rx="118" ry="62" fill="none" stroke="#475569" stroke-width="1.4"/>
+    <ellipse cx="1190" cy="415" rx="150" ry="108" fill="none" stroke="#334155" stroke-width="1.4"/>
+    <circle cx="1260" cy="385" r="8" fill="#fbbf24" filter="url(#glow)"/>
+    <circle cx="1135" cy="465" r="7" fill="#fb7185" filter="url(#glow)"/>
+    <circle cx="1215" cy="502" r="6" fill="#f59e0b" filter="url(#glow)"/>
+    <circle cx="1050" cy="360" r="5.5" fill="#fb7185" filter="url(#glow)"/>
+
+    <text x="1190" y="585" text-anchor="middle" fill="#e2e8f0" font-size="25" font-weight="600">The Emerged</text>
+    <text x="1190" y="620" text-anchor="middle" fill="#94a3b8" font-size="15">energy · particles · systems</text>
+    <text x="1190" y="644" text-anchor="middle" fill="#94a3b8" font-size="13">stable modes &amp; metastable basins</text>
+  </g>
+
+  <!-- bottom epistemic strip -->
+  <line x1="120" y1="730" x2="1320" y2="730" stroke="#1e293b" stroke-width="1"/>
+  <text x="720" y="768" text-anchor="middle" fill="#64748b" font-size="14">what persists must be recursively distinguishable from its alternatives across repeated self-updating</text>
+  <text x="720" y="800" text-anchor="middle" fill="#475569" font-size="13.5">[E] established · [A] active research · [S] speculative ontology — no claim is left unlabeled</text>
+</svg>

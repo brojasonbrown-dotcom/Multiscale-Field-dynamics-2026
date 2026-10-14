@@ -1,111 +1,126 @@
-# Multiscale Field Dynamics Research 2026
+# Multiscale Field Dynamics Research 2026 — RHUFT
 
-A research repository for modeling, analyzing, and iterating on multiscale field dynamics in 2026.
+A research archive for modeling and **testing** recursive, multiscale field dynamics — the
+"RHUFT" line of work — across geometry, field equations, resolution-hierarchy transfer, and
+neural-network-compatible representations.
 
-This repo is intended as a working research archive: notes, derivations, code experiments, hypotheses, visualizations, and output artifacts can live here in a single, searchable structure.
+> **Epistemic policy (non-negotiable).** Every claim carries a label:
+> `[E]` established · `[A]` active research · `[S]` speculative ontology.
+> No fabrication, no roleplay. Unsupported claims are flagged, never dressed up as fact.
+> Ontology (interpretation), dynamics (equations), and phenomenology (numbers) are kept separate.
 
-## Research focus
+---
 
-The current project theme is broadly defined as:
+## The three bodies: nothing → field → emergence
 
-- multiscale dynamics
-- field interactions across scales
-- computational modeling and simulation
-- hypothesis testing and iteration
-- synthesis of mathematical, computational, and visual reasoning
+![The Three Bodies of Reality](docs/three-bodies.svg)
 
-## Why this repository exists
+This project does **not** derive the three bodies from first principles. It *maps* them onto a
+decomposition that can be computed against. They are a **resolution hierarchy**, not a timeline —
+the corpus is explicit that the field does not "evolve in time"; the scale index `n` is the
+fundamental parameter, and physical time is emergent.
 
-This repo should serve as a central home for:
+### 1. The Nothing — potential / pre-physical admissibility `[S]`
 
-- raw and structured research notes
-- model formulations and equations
-- experimental code and notebooks
-- data and generated output
-- literature references and conceptual summaries
-- iteration logs and result comparisons
+The uninstantiated space of possibilities *before* any distinction is actualized. In the source
+ontology this is **Layer 0 — ontological potential**: "not ordinary physical vacuum … pre-physical
+admissibility; timeless, pre-metric or proto-metric, unconstrained by realized law, not yet
+partitioned into observer and observed."
 
-## Recommended organizational structure
+- Rigorous content: a configuration/possibility space with no realized dynamics — the set of
+  admissible field states *before* a measurement interaction selects one.
+- What it is not: a claim that "nothing" is a substance or a region. It is a boundary condition on
+  description, not an object.
 
-Use the following structure to keep the project clear and scalable:
+### 2. The Field — recursive self-measurement / multiscale field dynamics `[A]`
 
-```text
-Research-2026/
-├── README.md
-├── INDEX.md
-├── docs/
-│   ├── research-plan.md
-│   ├── glossary.md
-│   ├── literature.md
-│   └── notes/
-├── models/
-│   ├── equations/
-│   ├── simulations/
-│   └── experiments/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── metadata/
-├── results/
-│   ├── plots/
-│   ├── tables/
-│   └── summaries/
-├── notebooks/
-│   └── analysis/
-├── scripts/
-│   ├── preprocess/
-│   ├── run/
-│   └── visualize/
-├── archive/
-│   └── prior-iterations/
-└── references/
-    └── citations/
+Where the primitives (distinction, relation, measurement, closure, stability, scale) become active.
+The rigorous object is a damped, geometry-constrained operator equation:
+
+```
+∂²u + 2γ ∂u + L·u + N(u) = f      (u = state, L = geometry-dependent linear operator,
+                                   N = nonlinear coupling, f = forcing, γ = damping)
 ```
 
-## Working principles
+- `L` is fixed by the domain topology (sphere → closed isotropic modes; torus → recirculation /
+  doubly-periodic modes; lattice → discrete message-passing). `[E]`
+- Persistence is read off the spectrum: **Re(λ) < 0** for continuous-time stability; oscillatory
+  (`Im λ ≠ 0`) vs decaying (`Re λ ≪ 0`) modes. `[E]`
+- "Resonance pocket" / "metastable basin" is the model-hypothesis reading of a persistent mode. `[A]`
 
-- Keep each experiment or model version traceable.
-- Write short notes next to results so the logic remains interpretable.
-- Separate raw data, derived outputs, and narrative notes.
-- Prefer reproducible scripts and explicit metadata over ad hoc artifacts.
+### 3. The Emerged — energy, particles, systems `[A]`
 
-## Suggested research workflow
+What survives recursive updating becomes *structure*, not new substance. The minimal law from the
+source corpus:
 
-1. Define the question or hypothesis.
-2. Write a minimal model or formulation.
-3. Run a controlled experiment.
-4. Capture outputs and observations.
-5. Compare against previous runs or alternative formulations.
-6. Record what changed and why.
+> "whatever persists must be recursively distinguishable from its alternatives across repeated
+> self-updating."
 
-## How to use this repo
+- **Closure** (loop → sphere → torus → nested toroidal recursion) is the geometric signature of
+  persistence. `[A]`
+- **Energy / particles** are stabilized, localized, persistent modes of the field — metastable
+  basins and mode-locked regions — *described* as particles, not added as ingredients. `[A]`
+- **Systems** are hierarchies of closure: persistent modes that bind into further persistent modes
+  (atoms → molecules → cells → minds). `[S]`
 
-Start with:
+### The bridge: RHUFT as resolution-hierarchy transfer
 
-- `README.md` for the high-level project purpose
-- `INDEX.md` for navigation and section summaries
-- `docs/research-plan.md` for the active research agenda
-- `models/` for equations and simulation code
-- `results/` for figures, tables, and comparative summaries
+The term "RHUFT" is operationalized in this repo as a **resolution-hierarchy transfer map**: a
+family of transformations (dyadic coarse-grain / lift, RG orbits, scale residuals) that carry field
+states between resolutions while preserving diagnostically relevant structure. The rigorous
+requirement is that **a persistence claim must not depend arbitrarily on truncation** — a structure
+is "real" only if its signature survives coarse-graining with small fixed-scale residual. `[A]`
 
-## Recommended naming convention
+### Neural networks close the loop `[A]`
 
-For long-term clarity, keep the repository name descriptive and temporal:
+The field's stable, geometry-aware, resolution-compatible summaries (eigenmode coefficients,
+coarse-grained state) are the latent representation a network consumes; conversely a network is an
+adaptive operator acting back on field-derived latent structure. This is the *bidirectional
+field-latent operator coupling*, and whether it actually works is an open question here, not a
+conclusion.
 
-- Recommended: `multiscale-field-dynamics-2026`
-- Alternate: `research-multiscale-field-dynamics-2026`
-- Shorter variant: `field-dynamics-2026`
+---
 
-This naming keeps the scope discoverable, searchable, and aligned with a defined research year.
+## Repository map
 
-## Next steps
+```text
+README.md                       this file — purpose, ontology, and the three bodies
+INDEX.md                        navigation index
+00-INDEX.md                     multiscale-framework bootstrap index (method rules, roadmap)
 
-To make this repo genuinely useful, add:
+docs/
+  ontology.md                   the three layers of reality, formally stated
+  three-bodies.svg              the visual above
+  RHUFT_v6.0_Master_Index.md    master navigation for the v6.0 corpus
+  PHILOSOPHICAL_FOUNDATION.md   the core philosophical position
+  notes/phenomena/              38 phenomena (v6, corrected & labeled)
+  notes/technologies/           16 technologies (v6, labeled [SPEC]/[PHIL])
 
-- a research question and thesis statement
-- a literature or background section
-- one or two prototype models
-- sample data or placeholder structures
-- a clean summary of opening findings
+models/
+  equations/                    the 4 core chapters + the v6.1 geometric-resonance grid
+  simulations/                  (reserved)
+  experiments/                  (reserved)
 
-This repository is best treated as a living research archive rather than a static note dump.
+notebooks/
+  analysis/                     Wolfram notebooks (RHUFT 01–04, field dynamics, OPF series)
+
+01-inventory/                   what the RHUFT corpus actually contains (with line citations)
+02-scales-of-physics/           the stable-scale hierarchy ("octaves")
+03-research-notes/              sourced findings from modern physics
+04-framework/                   the framework restructured from scratch
+05-tests/                       numeric / falsifiability checks
+06-scales-audits/               per-file rigor audits and correction changelogs
+
+archive/prior-iterations/       superseded v5-era material (kept for provenance, not canonical)
+data/  results/  scripts/  references/   reserved placeholders
+```
+
+## Getting oriented
+
+1. Start with `docs/ontology.md` for the three-layer ontology and `docs/RHUFT_v6.0_Master_Index.md`
+   for the theory corpus.
+2. The **current** theory content is the `v6_*` set under `models/equations/` and
+   `docs/notes/` — the honest, corrected rewrite. Older v5-era files live in `archive/` and are
+   superseded.
+3. `06-scales-audits/` is where claims are checked for rigor; read an audit alongside its source
+   file to see the labeling policy in action.

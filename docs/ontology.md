@@ -8,6 +8,17 @@ The universal "language" that links scales across these layers is dimensional al
 
 This document explains the three layers, the role of measurement and "nothingness," the idea of infinite geometric resonance and stable information packing, and how the notebook's tests map onto the ontology. It finishes with practical recommendations for experiments and observables.
 
+### Layer 0 — unmeasured potential
+
+Before measurement, before actualization, and before any observer/observed distinction is fixed, there is a domain of possible states: the unmeasured potential manifold. In this ontology, Layer 0 is not a substance or a region; it is the admissible space of possibility. In practical terms:
+
+- 0 = unmeasured potential
+- Layer 0 = pre-physical admissibility / proto-metric possibility
+- It is the field of possible configurations before a measurement interaction selects one
+- It is not ordinary vacuum; it is the non-actualized possibility space from which actual field states can emerge
+
+This is the prior condition from which the three-layer ontology begins.
+
 ---
 
 ## 1. The three layers of reality (clear and structured)
@@ -31,6 +42,7 @@ How they relate:
 - Layer C sets the prior and admissible space of operators and configurations in Layer B.
 - Layer B implements computations and dynamics; it produces measurable outputs.
 - Layer A receives and records the outputs; inference moves from A -> B (via tests) and attempts to learn constraints on C.
+- Layer 0 is the prior possibility space from which these layers are selected and actualized.
 
 ---
 
@@ -41,7 +53,7 @@ How they relate:
 - Practical implication: A measured structure is both an observation of the field's response and a partial constructive act — the measurement conditions (probe, coupling, sampling) influence which potentialities become actual. Recording this dependency is essential: pointer-weight statistics, coherence norms, and phase schedules in `pointerModeData` are explicit tools for quantifying how measurement choices affect selections.
 
 Philosophical framing (short):
-- Potential = configurational possibility encoded in Layers B+C.
+- Potential = configurational possibility encoded in Layers B+C and prior to actualization in Layer 0.
 - Measurement = mechanism that reduces potential to actuality at Layer A, but also perturbs the field and thus changes future potentials.
 
 ---
@@ -49,10 +61,10 @@ Philosophical framing (short):
 ## 3. Infinite geometric resonance and stable information packing
 
 Core idea:
-- Infinite geometric resonance: the space of admissible mode-structures and their combinations is governed by geometric/topological constraints (symmetries, boundary conditions, conserved quantities). When many modes interact coherently, the result can be nested, scale-crossing resonances that stabilize into information-packed structures: localized basins, resonance islands, mode families, or pointer states.
+- Infinite geometric resonance: the space of admissible mode-structures and their combinations is governed by geometric/topological constraints (symmetries, boundary conditions, conserved quantities, selection rules).
 
 Stable information packing:
-- Stability arises when interacting oscillatory degrees of freedom phase-lock or organize into persistent manifolds (eigenmode combinations, localized potential basins) whose lifetimes are long relative to local timescales.
+- Stability arises when interacting oscillatory degrees of freedom phase-lock or organize into persistent manifolds (eigenmode combinations, localized potential basins) whose lifetimes are long relative to the timescale of the operating dynamics.
 - Information is packed when the system's state encodes nontrivial structure (e.g., a sparse set of dominant mode amplitudes, robust pointer weights) that survives repeated interactions and coarse-graining.
 
 How to think about it algorithmically:
@@ -72,8 +84,9 @@ Observed signatures (what to look for in the notebook):
 
 1. We only directly measure Layer A; deductions to Layer B require controlled inference, and probing Layer C requires repeated experiments and structural hypotheses.
 2. Nothingness is the unmeasured manifold of possibilities; measurement selects and partially constructs observed reality.
-3. The stable patterns we call "information" are long-lived, low-dimensional attractors or metastable pockets produced by interactions of geometry (C) and field dynamics (B).
-4. Therefore, a scientific program must explicitly connect A->B->C by (a) robust spectral and truncation tests, (b) scale-coarse-graining and fixed-point checks, and (c) selection / pointer stability experiments.
+3. Layer 0 is the pre-measurement possibility space: 0 = unmeasured potential.
+4. The stable patterns we call "information" are long-lived, low-dimensional attractors or metastable pockets produced by interactions of geometry (C) and field dynamics (B).
+5. Therefore, a scientific program must explicitly connect A->B->C by (a) robust spectral and truncation tests, (b) scale-coarse-graining and fixed-point checks, and (c) selection / pointer stability experiments.
 
 ---
 
@@ -86,7 +99,7 @@ Definition (working):
   - spectral stability (poles, eigenvalues, damping margins that quantify persistence).
 
 Why this is the universal language:
-- It operates at the intersection of scale (dimensionality), computation (algorithmic fixed points), and physics (spectral properties). It is both a description of how structures persist and a quantitative tool for cross-scale comparison.
+- It operates at the intersection of scale (dimensionality), computation (algorithmic fixed points), and physics (spectral properties). It is both a description of how structures persist and a quantitative language for comparing patterns across systems.
 
 Practical interpretation:
 - Use `spectralData` to read off spectral margins.
@@ -103,7 +116,7 @@ This triad is the cross-scale vocabulary: spectral margin (physics), fixed-point
 - Stabilization is achieved by:
   - damping and spectral gaps (dissipate competing degrees of freedom),
   - forcing / structured sources (sustain certain modes),
-  - geometric constraints and resonant matching (layer C), and
+  - geometric constraints and resonant matching (Layer C), and
   - repeated selective interactions (measurement and pointer-like channels) that amplify preferred mode combinations.
 
 Consequences for experiments:
@@ -138,10 +151,8 @@ Consequences for experiments:
 
 ## 8. Falsifiable predictions and experimental checklist
 
-1. Falsifiable prediction: If an observed pocket is truly a generative stable structure, then (a) it will correspond to a local minimum in `effectivePotential2D` with positive Hessian eigenvalues, (b) the eigenmodes of the operator appropriate to that geometry will include localized modes overlapping that pocket, and (c) the pocket's signature is robust to modest changes in truncation and coarse-graining.
-
-2. Falsifiable prediction: If selection-stable pointer states exist, then `pointerModeData` will show a dominant pointer index and monotonic coherence norms despite variations in phase schedule and moderate noise.
-
+1. Falsifiable prediction: If an observed pocket is truly a generative stable structure, then (a) it will correspond to a local minimum in `effectivePotential2D` with positive Hessian eigenvalues, and (b) it will persist under scale changes and measurement perturbations.
+2. Falsifiable prediction: If selection-stable pointer states exist, then `pointerModeData` will show a dominant pointer index and monotonic coherence norms despite variations in phase schedule and forcing.
 3. Checklist for each candidate phenomenon:
    - spectral convergence across matrix sizes (run `spectralConvergenceReport`)
    - fixed-scale residuals low and monotonic (`scaleTestReport`)
@@ -153,8 +164,9 @@ Consequences for experiments:
 
 ## 9. Practical next steps for this repository
 
-- Add the above document to `docs/ontology.md` (this file).
-- Create short reproducible experiments that target each falsifiable prediction: one spectral convergence script, one scale-fixed-point notebook cell, and one pointer-selection run with controlled phase schedules.
+- Maintain the ontology as a core document (`docs/ontology.md`).
+- Add explicit references to Layer 0 as unmeasured potential in all research summaries and explanatory materials.
+- Create short reproducible experiments that target each falsifiable prediction: one spectral convergence script, one scale-fixed-point notebook cell, and one pointer-selection run with controlled perturbations.
 - Log results in `results/summaries/ontology-experiments.md` and use `multiscaleResonanceReport` to standardize verdicts across runs.
 
 ---
@@ -163,12 +175,9 @@ Consequences for experiments:
 
 - Always separate claims about measurement (Layer A) from claims about computation (Layer B) and claims about generative-level explanation (Layer C).
 - When reporting a "resonance" or "vortex" use the precise term from the notebook: circulation/curl (field topology), phase-winding (quantized loop number), or rotating eigenmode (mode geometry) as appropriate.
+- State explicitly that Layer 0 is the unmeasured potential domain and that 0 = unmeasured potential in the ontology.
 - Use the triad (spectral margin, fixed-point residual, pointer dominance) as a compact summary of multi-criterion evidence.
 
 ---
 
-If you want, I will now:
-- commit this file into `docs/ontology.md` (done), and
-- create 3 short example scripts/notebook cells that demonstrate each of the falsifiable predictions and add them under `notebooks/examples/ontology-tests.nb` or equivalent.
-
-Which of these next steps should I take now?
+This ontology is intentionally modular: it supports both a formal research program and a clear explanatory frame for the visualizations, equations, and experiments in this repository.
